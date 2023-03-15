@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Button from '../components/button'
-
-const inter = Inter({ subsets: ['latin'] })
+import ButtonPrimary from '../components/button-primary'
+import ButtonSecondary from '../components/button-secondary'
 
 export default function Home() {
   return (
@@ -17,7 +15,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <Button/>
+        <ButtonPrimary/>
+        <ButtonSecondary/>
       </main>
     </>
   )
