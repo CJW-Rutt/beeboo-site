@@ -1,5 +1,7 @@
 ## Description
 
+test test test
+
 ### Context
 
 This website application is a collaborative project between the *Design 2* and the *Dynamic Content Design* courses, as part of the *Digital Design and Development Program* from the *British Columbia Institute of Technology (BCIT)*. Three students are actively working on this project on a weekly basis until May 2023.
