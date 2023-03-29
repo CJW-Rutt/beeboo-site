@@ -6,6 +6,7 @@ import ButtonBuzzIt from '../components/button-buzz-it'
 import ButtonLetsDoIt from '../components/button-lets-do-it'
 import Next from '../components/next'
 import Previous from '../components/previous'
+import Close from '../components/close'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <ButtonLetsDoIt/>
         <Previous/>
         <Next/>
+        <Close/>
       </main>
     </>
   )

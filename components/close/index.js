@@ -1,6 +1,6 @@
-import styles from './Previous.module.css'
+import styles from './Close.module.css'
 
-export default function Previous() {
+export default function Close() {
     return(
         <>
             <div className={styles.btn}>
