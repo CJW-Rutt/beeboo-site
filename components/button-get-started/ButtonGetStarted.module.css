@@ -10,7 +10,7 @@
 .btn__primary {
     background-color: #FED22B;
     width: 95%;
-    height: 50%;
+    height: 55%;
     border: 2px solid black;
     border-radius: 0.5rem;
     color:  black;
@@ -25,8 +25,8 @@
 .btn__background {
     background-color: #FFA629;
     width: 95%;
-    height: 50%;
-    margin-top: -2.9rem;
+    height: 55%;
+    margin-top: -3.2rem;
     margin-right: -0.6rem;
     border: 2px solid black;
     border-radius: 0.5rem;

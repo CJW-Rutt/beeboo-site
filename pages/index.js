@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import ButtonPrimary from '../components/button-primary'
-import ButtonSecondary from '../components/button-secondary'
+import ButtonGetStarted from '../components/button-get-started'
+import ButtonBuzzIt from '../components/button-buzz-it'
 
 export default function Home() {
   return (
@@ -15,8 +15,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <ButtonPrimary/>
-        <ButtonSecondary/>
+        <ButtonGetStarted/>
+        <ButtonBuzzIt/>
       </main>
     </>
   )
