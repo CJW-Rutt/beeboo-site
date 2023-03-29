@@ -8,6 +8,7 @@ import Next from '../components/next'
 import Previous from '../components/previous'
 import Close from '../components/close'
 import LearnWhat from '../components/learn-what'
+import LearnWhy from '../components/learn-why'
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <Next/>
         <Close/>
         <LearnWhat/>
+        <LearnWhy/>
       </main>
     </>
   )
