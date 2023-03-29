@@ -1,21 +1,18 @@
 .btn {
-    width: 20rem;
-    height: 6rem;
+    width: 3.8rem;
+    height: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.btn__primary {
+.btn__arrow {
     background-color: #FED22B;
     width: 95%;
-    height: 50%;
+    height: 95%;
     border: 2px solid black;
-    border-radius: 0.5rem;
-    color:  black;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: 2rem;
     z-index: 0;
     display: flex;
     align-items: center;
@@ -25,14 +22,11 @@
 .btn__background {
     background-color: #FFA629;
     width: 95%;
-    height: 50%;
-    margin-top: -2.9rem;
-    margin-right: -0.6rem;
+    height: 95%;
+    margin-top: -3.5rem;
+    margin-right: -0.5rem;
     border: 2px solid black;
-    border-radius: 0.5rem;
-    color:  black;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: 2rem;
     z-index: 0;
     display: flex;
     align-items: center;
@@ -40,7 +34,7 @@
     z-index: -1;
 }
 
-.btn__primary:hover {
-    margin-bottom: -0.35rem;
-    margin-right: -0.6rem;
+.btn__arrow:hover {
+    margin-bottom: -0.5rem;
+    margin-right: -0.5rem;
 }

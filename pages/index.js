@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import ButtonGetStarted from '../components/button-get-started'
 import ButtonBuzzIt from '../components/button-buzz-it'
 import ButtonLetsDoIt from '../components/button-lets-do-it'
+import Next from '../components/next'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ButtonGetStarted/>
         <ButtonBuzzIt/>
         <ButtonLetsDoIt/>
+        <Next/>
       </main>
     </>
   )
