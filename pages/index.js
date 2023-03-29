@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import ButtonGetStarted from '../components/button-get-started'
 import ButtonBuzzIt from '../components/button-buzz-it'
+import ButtonLetsDoIt from '../components/button-lets-do-it'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <ButtonGetStarted/>
         <ButtonBuzzIt/>
+        <ButtonLetsDoIt/>
       </main>
     </>
   )
