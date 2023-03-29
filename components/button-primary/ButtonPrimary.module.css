@@ -39,3 +39,8 @@
     justify-content: center;
     z-index: -1;
 }
+
+.btn__primary:hover {
+    margin-bottom: -0.35rem;
+    margin-right: -0.6rem;
+}
