@@ -9,6 +9,7 @@ import Previous from '../components/previous'
 import Close from '../components/close'
 import LearnWhat from '../components/learn-what'
 import LearnWhy from '../components/learn-why'
+import TextBubble from '../components/text-bubble'
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <Close/>
         <LearnWhat/>
         <LearnWhy/>
+        <TextBubble />
       </main>
     </>
   )
