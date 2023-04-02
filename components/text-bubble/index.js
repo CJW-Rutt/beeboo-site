@@ -6,7 +6,7 @@ export default function TextBubble({ component }) {
     switch (component) {
       case 'quiz':
         return (
-          <div style={styles.quizStyle}>
+          <div className={styles.quizStyle}>
             <button>Button</button>
             <button>Button</button>
             <button>Button</button>
@@ -14,7 +14,7 @@ export default function TextBubble({ component }) {
         )
       case 'learning':
         return (
-          <div style={styles.learningStyle}>
+          <div className={styles.learningStyle}>
             <p>Your text content here</p>
             <Image src='/imagehere.png' height={200} width={200} />
           </div>
