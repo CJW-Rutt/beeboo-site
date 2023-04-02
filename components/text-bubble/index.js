@@ -1,29 +1,12 @@
 import Image from 'next/image'
-
-const quizStyle = {
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  flexDirection: 'row',
-  width: '100%',
-  height: '100%',
-}
-
-const learningStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  width: '100%',
-  height: '100%',
-}
+import styles from './text-bubble.module.css'
 
 export default function TextBubble({ component }) {
   const renderContent = () => {
     switch (component) {
       case 'quiz':
         return (
-          <div style={quizStyle}>
+          <div style={styles.quizStyle}>
             <button>Button</button>
             <button>Button</button>
             <button>Button</button>
@@ -31,7 +14,7 @@ export default function TextBubble({ component }) {
         )
       case 'learning':
         return (
-          <div style={learningStyle}>
+          <div style={styles.learningStyle}>
             <p>Your text content here</p>
             <Image src='/imagehere.png' height={200} width={200} />
           </div>
