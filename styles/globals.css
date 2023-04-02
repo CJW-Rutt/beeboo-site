@@ -5,3 +5,7 @@
    --secondary: #E56E42;
    --tertiary: #4C8C4A;
 }
+
+body {
+   font-family: 'Truculenta';
+}
