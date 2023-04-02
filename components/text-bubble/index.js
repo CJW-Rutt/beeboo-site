@@ -15,7 +15,7 @@ export default function TextBubble({ component }) {
       case 'learning':
         return (
           <div className={styles.learningStyle}>
-            <p>Your text content here</p>
+            <p>Example</p>
             <Image src='/imagehere.png' height={200} width={200} />
           </div>
         )
