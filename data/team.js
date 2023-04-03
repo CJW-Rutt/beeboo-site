@@ -1,6 +1,7 @@
 export const teamInfo = [
     {
         name: "Giovana Birck",
+        avatar: "",
         description: "",
         socialMedia: [
             {
@@ -18,6 +19,7 @@ export const teamInfo = [
     },
     {
         name: "Corey Rutt",
+        avatar: "",
         description: "",
         socialMedia: [
             {
@@ -35,6 +37,7 @@ export const teamInfo = [
     },
     {
         name: "Joey Nip",
+        avatar: "",
         description: "",
         socialMedia: [
             {
