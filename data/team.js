@@ -7,12 +7,12 @@ export const teamInfo = [
             {
                 platform: "LinkedIn",
                 link: "",
-                img: ""
+                img: "/socials/linkedin.svg"
             },
             {
                 platform: "GitHub",
                 link: "",
-                img: ""
+                img: "/socials/github.svg"
             }
         ],
         portfolio: "portfolio something"
@@ -25,12 +25,12 @@ export const teamInfo = [
             {
                 platform: "LinkedIn",
                 link: "",
-                img: ""
+                img: "/socials/linkedin.svg"
             },
             {
                 platform: "GitHub",
                 link: "",
-                img: ""
+                img: "/socials/github.svg"
             }
         ],
         portfolio: "portfolio something"
@@ -43,12 +43,12 @@ export const teamInfo = [
             {
                 platform: "LinkedIn",
                 link: "https://www.linkedin.com/in/joey-nip/",
-                img: ""
+                img: "/socials/linkedin.svg"
             },
             {
                 platform: "GitHub",
                 link: "https://github.com/jnip2",
-                img: ""
+                img: "/socials/github.svg"
             }
         ],
         portfolio: "portfolio something"
