@@ -33,7 +33,7 @@ export default function Home() {
         <LearnWhy/>
         <TextBubble component='quiz' />
         <HappyBoo />
-        <TeamPage />
+        <TextBubble component='team' />
       </main>
     </>
   )
