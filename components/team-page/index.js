@@ -24,7 +24,7 @@ export default function TeamPage() {
                     })
                     :
                     <>
-                        <TeamMember name={memberData.name} description={memberData.description} />
+                        <TeamMember name={memberData.name} description={memberData.description} avatar={memberData.avatar} />
                     </>
             }
         </>
