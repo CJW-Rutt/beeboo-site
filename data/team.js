@@ -2,7 +2,7 @@ export const teamInfo = [
     {
         name: "Giovana Birck",
         avatar: "",
-        description: "",
+        description: "giovana's description",
         socialMedia: [
             {
                 platform: "LinkedIn",
@@ -20,7 +20,7 @@ export const teamInfo = [
     {
         name: "Corey Rutt",
         avatar: "",
-        description: "",
+        description: "test description",
         socialMedia: [
             {
                 platform: "LinkedIn",
@@ -38,7 +38,7 @@ export const teamInfo = [
     {
         name: "Joey Nip",
         avatar: "",
-        description: "",
+        description: "I like to creep around my home and act like a goblin",
         socialMedia: [
             {
                 platform: "LinkedIn",
