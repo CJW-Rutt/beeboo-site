@@ -28,7 +28,7 @@ export default function TextBubble({ component }) {
         style={{
           position: 'absolute',
           top: 0,
-          left: '49px',
+          left: '3.063rem',
           width: '94%',
           height: '100%',
         }}
