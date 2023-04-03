@@ -44,7 +44,7 @@ export const teamInfo = {
             },
             {
                 platform: "GitHub",
-                link: "",
+                link: "https://github.com/jnip2",
                 img: ""
             }
         ],
