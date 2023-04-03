@@ -1,42 +1,54 @@
 import { useState, useEffect } from 'react';
 import styles from './Quiz.module.css';
-import { quizData } from '../../data/quiz.js';
+import { quizButtons } from '../../data/quiz.js';
+import { quizQuestions } from '../../data/quiz.js';
 import QuizButton from '../QuizButton';
 
 export default function Quiz() {
-  const [currentPage, setCurrentPage] = useState('quiz-page-one');
+  const [currentPage, setCurrentPage] = useState('quizPageOne');
+  const [currentPageQuestion, setCurrentPageQuestion] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
 
   const handleClick = () => {
     setFadeOut(true);
     setTimeout(() => {
-      if (currentPage === 'quiz-page-one') {
-        setCurrentPage('quiz-page-two');
-      } else if (currentPage === 'quiz-page-two') {
-        setCurrentPage('quiz-page-three');
+      if (currentPage === 'quizPageOne') {
+        setCurrentPage('quizPageTwo');
+      } else if (currentPage === 'quizPageTwo') {
+        setCurrentPage('quizPageThree');
       }
       setFadeOut(false);
     }, 500); 
   };
 
+  const currentQuestion = quizQuestions[currentPage][currentPageQuestion];
+
   return (
     <>
       <div className={styles.quizStyle}>
-        {quizData[currentPage].map((item, index) => {
-          const answerKey = Object.keys(item)[0];
-          const src = item.src;
+        <div className={styles.quizQuestion}>
+          <h1>{currentQuestion.h1}</h1>
+          <p>{currentQuestion['1']}</p>
+          <p>{currentQuestion['2']}</p>
+          <p>{currentQuestion['3']}</p>
+        </div>
+        <div className={styles.quizQuestionContainer}>
+          {quizButtons[currentPage].map((item, index) => {
+            const answerKey = Object.keys(item)[0];
+            const src = item.src;
 
-          return (
-            <QuizButton
-              key={index}
-              answer={item[answerKey]}
-              src={src}
-              onClick={handleClick}
-              fadeOut={fadeOut}
-            />
-          );
-        })}
-      </div>
+            return (
+              <QuizButton
+                key={index}
+                answer={item[answerKey]}
+                src={src}
+                onClick={handleClick}
+                fadeOut={fadeOut}
+              />
+            );
+          })}
+        </div>
+      </div>  
     </>
   );
 }
