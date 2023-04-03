@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { teamInfo } from "../../data/team"
 import TeamMember from "../team-member"
+import Image from "next/image"
 
 export default function TeamPage() {
 
@@ -24,7 +25,18 @@ export default function TeamPage() {
                     })
                     :
                     <>
-                        <TeamMember name={memberData.name} description={memberData.description} avatar={memberData.avatar} />
+                        <TeamMember 
+                        name={memberData.name} 
+                        description={memberData.description} 
+                        avatar={memberData.avatar} 
+                        socialMedia={memberData.socialMedia}
+                        portfolio={memberData.portfolio} />
+                        <Image 
+                        src='/ui-icons/close.png' 
+                        height={50} 
+                        width={50} 
+                        onClick={() => setChooseMember(true)}
+                        />
                     </>
             }
         </>
