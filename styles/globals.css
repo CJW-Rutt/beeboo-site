@@ -4,6 +4,9 @@
    --primary: #F9DB6C;
    --secondary: #E56E42;
    --tertiary: #4C8C4A;
+   --button-main: #FED22B;
+   --button-back: #FFA629;
+   --black: #000000;
 }
 
 body {

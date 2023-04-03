@@ -1,22 +1,19 @@
 import Image from 'next/image'
 import styles from './text-bubble.module.css'
+import Quiz from '../Quiz'
 
 export default function TextBubble({ component }) {
   const renderContent = () => {
     switch (component) {
       case 'quiz':
         return (
-          <div className={styles.quizStyle}>
-            <button>Button</button>
-            <button>Button</button>
-            <button>Button</button>
-          </div>
+          <Quiz />
         )
       case 'learning':
         return (
           <div className={styles.learningStyle}>
             <p>Example</p>
-            <Image src='/imagehere.png' height={200} width={200} />
+            <Image src='/imagehere.png' alt='/placeholder-image' height={200} width={200} />
           </div>
         )
       default:
@@ -26,7 +23,7 @@ export default function TextBubble({ component }) {
 
   return (
     <div style={{ position: 'relative', width: '800px', height: '365px' }}>
-      <Image src='/text-bubble.png' height={365} width={800} />
+      <Image src='/text-bubble.png' alt='text-bubble' height={365} width={800} />
       <div
         style={{
           position: 'absolute',
