@@ -15,7 +15,7 @@ export const teamInfo = [
                 img: ""
             }
         ],
-        portfolio: ""
+        portfolio: "portfolio something"
     },
     {
         name: "Corey Rutt",
@@ -33,7 +33,7 @@ export const teamInfo = [
                 img: ""
             }
         ],
-        portfolio: ""
+        portfolio: "portfolio something"
     },
     {
         name: "Joey Nip",
@@ -51,6 +51,6 @@ export const teamInfo = [
                 img: ""
             }
         ],
-        portfolio: ""
+        portfolio: "portfolio something"
     }  
 ]
