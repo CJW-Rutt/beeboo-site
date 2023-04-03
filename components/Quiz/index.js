@@ -9,16 +9,15 @@ export default function Quiz() {
 
   const handleClick = () => {
     setFadeOut(true);
-  };
-
-  useEffect(() => {
-    if (fadeOut) {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (currentPage === 'quiz-page-one') {
         setCurrentPage('quiz-page-two');
-        setFadeOut(false);
-      }, 500);
-    }
-  }, [fadeOut]);
+      } else if (currentPage === 'quiz-page-two') {
+        setCurrentPage('quiz-page-three');
+      }
+      setFadeOut(false);
+    }, 500); 
+  };
 
   return (
     <>
