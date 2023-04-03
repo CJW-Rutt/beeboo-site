@@ -1,5 +1,5 @@
-export const teamInfo = {
-    giovana: {
+export const teamInfo = [
+    {
         name: "Giovana Birck",
         description: "",
         socialMedia: [
@@ -16,7 +16,7 @@ export const teamInfo = {
         ],
         portfolio: ""
     },
-    corey: {
+    {
         name: "Corey Rutt",
         description: "",
         socialMedia: [
@@ -33,7 +33,7 @@ export const teamInfo = {
         ],
         portfolio: ""
     },
-    joey: {
+    {
         name: "Joey Nip",
         description: "",
         socialMedia: [
@@ -50,4 +50,4 @@ export const teamInfo = {
         ],
         portfolio: ""
     }  
-}
+]
