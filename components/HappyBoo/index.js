@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from "./boo.module.css"
+import styles from "./HappyBoo.module.css"
 
 export default function HappyBoo() {
     return (

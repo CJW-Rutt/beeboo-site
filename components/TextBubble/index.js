@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './text-bubble.module.css'
+import styles from './TextBubble.module.css'
 import Quiz from '../Quiz'
 
 export default function TextBubble({ component }) {
