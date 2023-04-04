@@ -32,42 +32,51 @@ export const quizButtons = {
         {
             'answerOne': 'Make sure they have a water source!',
             'src': '/quiz-icons/happywater.png',
+            'weight': 1,
         },
         {
             'answerTwo': 'Give them bug friends, like ants!',
             'src': '/quiz-icons/ant.png',
+            'weight': 0,
         },
         {
             'answerThree': 'Keep clay close by for mud nesting!',
             'src': '/quiz-icons/mud.png',
+            'weight': 2,
         },
     ],
     'quizPageTwo': [
         {
             'answerOne': 'On the east side of your house!',
             'src': '/quiz-icons/home.png',
+            'weight': 2,
         },
         {
             'answerTwo': 'On top of a busy building in the city!',
             'src': '/quiz-icons/buildings.png',
+            'weight': 0,
         },
         {
             'answerThree': 'On the side of a road outside of town!',
             'src': '/quiz-icons/road.png',
+            'weight': 1,
         },
     ],
     'quizPageThree': [
         {
             'answerOne': 'A handful of yummy, delicious candy!',
             'src': '/quiz-icons/candies.png',
+            'weight': 1,
         },
         {
             'answerTwo': 'A beautiful flower field in the backyard!',
             'src': '/quiz-icons/flowers.png',
+            'weight': 2,
         },
         {
             'answerThree': 'Some beef flavoured ramen noodles!',
             'src': '/quiz-icons/ramen.png',
+            'weight': 0,
         },
     ],
 }

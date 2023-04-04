@@ -55,7 +55,25 @@
 .introContainer p  {
     width: 80%;
 }
+
+.resultsInnerContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.resultsLeftCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
   
+.resultsRightCol {
+    display: flex;
+    align-items: flex-end;
+}
+
+
 @keyframes fadeOut {
     from {
         opacity: 1;

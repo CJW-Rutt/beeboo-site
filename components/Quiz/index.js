@@ -3,6 +3,7 @@ import styles from './Quiz.module.css';
 import { quizButtons } from '../../data/quiz.js';
 import { quizQuestions } from '../../data/quiz.js';
 import QuizButton from '../QuizButton';
+import Image from 'next/image';
 
 export default function Quiz() {
   const [currentPage, setCurrentPage] = useState('quizPageOne');
@@ -18,8 +19,8 @@ export default function Quiz() {
   }, [currentPage, selectedAnswers]);
   
 
-  const handleClick = (answer) => {
-    setSelectedAnswers([...selectedAnswers, answer]);
+  const handleClick = (answer, weight) => {
+    setSelectedAnswers([...selectedAnswers, weight]);
     setFadeOut(true);
     setTimeout(() => {
       if (currentPage === 'landingPage') {
@@ -38,21 +39,18 @@ export default function Quiz() {
   };
 
   const determineResultPage = () => {
-  const answerCounts = { 1: 0, 2: 0, 3: 0 };
-  selectedAnswers.forEach((answer) => {
-    answerCounts[answer]++;
-  });
+    const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
 
-  if (answerCounts['1'] >= 2) {
-    setResultPage('ResultPage1');
-  } else if (answerCounts['2'] >= 2) {
-    setResultPage('ResultPage2');
-  } else if (answerCounts['3'] >= 2) {
-    setResultPage('ResultPage3');
-  } else {
-    setResultPage('ResultPage4');
-  }
-};
+    if (totalWeight <= 2) {
+      setResultPage('ResultPage1');
+    } else if (totalWeight <= 4) {
+      setResultPage('ResultPage2');
+    } else if (totalWeight <= 6) {
+      setResultPage('ResultPage3');
+    } else {
+      setResultPage('ResultPage4');
+    }
+  };
 
 
   const currentQuestion = quizQuestions[currentPage]?.[0];
@@ -74,25 +72,36 @@ export default function Quiz() {
     return (
       <div className={styles.resultContainer}>
         {resultPage === 'ResultPage1' && (
-          <div>
+          <div className={styles.resultsPage1}>
             <h1>Result Page 1</h1>
             <p>Content for result page 1.</p>
           </div>
         )}
         {resultPage === 'ResultPage2' && (
-          <div>
+          <div className={styles.resultsPage2}>
             <h1>Result Page 2</h1>
             <p>Content for result page 2.</p>
           </div>
         )}
         {resultPage === 'ResultPage3' && (
-          <div>
-            <h1>Result Page 3</h1>
-            <p>Content for result page 3.</p>
+          <div className={styles.resultsPage3}>
+            <div className={styles.resultsInnerContainer}>
+              <div className={styles.resultsLeftCol}>
+                <h1>You Passed! 90% WOW!</h1>
+                <h3>You're a world class Apiarist.</h3>
+                <p>Congratulations, you passed the quiz with flying colours! </p>
+                <p>Your knowledge and understanding of the important steps to create a safe and healthy environment for mason bees to thrive are impressive.</p>
+                <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
+              </div>
+              <div className={styles.resultsRightCol}>
+                <Image src="/happyBee1.png" width={264} height={264}/>
+              </div>
+            </div>
+            
           </div>
         )}
         {resultPage === 'ResultPage4' && (
-          <div>
+          <div className={styles.resultsPage4}>
             <h1>Result Page 4</h1>
             <p>Content for result page 4.</p>
           </div>
@@ -118,7 +127,7 @@ export default function Quiz() {
                 key={index}
                 answer={item[answerKey]}
                 src={src}
-                onClick={() => handleClick(answerKey)}
+                onClick={() => handleClick(answerKey, item.weight)}
                 fadeOut={fadeOut}
               />
             );
