@@ -11,6 +11,7 @@ import LearnWhat from '../components/LearnWhat'
 import LearnWhy from '../components/LearnWhy'
 import TextBubble from '../components/TextBubble'
 import HappyBoo from '../components/HappyBoo'
+import TeamPage from '../components/team-page'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
         <LearnWhy/>
         <TextBubble component='quiz' />
         <HappyBoo />
+        <TextBubble component='team' />
       </main>
     </>
   )

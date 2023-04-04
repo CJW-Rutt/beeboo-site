@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './TextBubble.module.css'
 import Quiz from '../Quiz'
+import TeamPage from '../team-page'
 
 export default function TextBubble({ component }) {
   const renderContent = () => {
@@ -16,6 +17,12 @@ export default function TextBubble({ component }) {
             <Image src='/imagehere.png' alt='/placeholder-image' height={200} width={200} />
           </div>
         )
+        case 'team':
+          return (
+            <div>
+              <TeamPage />
+            </div>
+          )
       default:
         return null
     }

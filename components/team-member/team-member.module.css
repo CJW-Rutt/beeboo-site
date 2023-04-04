@@ -1,0 +1,30 @@
+.content__container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+}
+
+.container__top {
+    display: flex;
+}
+
+.container__bottom {
+    display: flex;
+    justify-content: space-around;
+}
+
+.desc__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.social__container {
+    display: flex;
+    gap: 1rem;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
