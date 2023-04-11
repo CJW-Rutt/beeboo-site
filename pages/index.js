@@ -13,6 +13,9 @@ import TextBubble from '../components/TextBubble'
 import HappyBoo from '../components/HappyBoo'
 import TeamPage from '../components/team-page'
 import SplashScreen from '../components/SplashScreen'
+import WelcomeScreen from '../components/WelcomeScreen'
+import Quiz from '../components/Quiz'
+
 
 export default function Home() {
   return (
@@ -24,7 +27,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <SplashScreen/>
+        <HappyBoo/>
+        <TextBubble>
+          <Quiz/>
+        </TextBubble>
       </main>
     </>
   )

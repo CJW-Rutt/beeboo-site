@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from 'next/image';
 
 
-export default function SplashScreen() {
+export default function SplashScreen(props) {
 
     const handleFadeIn = (event) => {
         event.target.classList.add('fade-in');
@@ -11,21 +11,22 @@ export default function SplashScreen() {
 
     const [fadeInImage, setFadeInImage] = useState('');
 
+    const [animationFinished, setAnimationFinished] = useState(false);
 
 
     useEffect(() => {
         const fadeInTimer = setInterval(() => {
 
             if (fadeInImage === '') {
-            setFadeInImage('cloud01');
+                setFadeInImage('cloud01');
             } else if (fadeInImage === 'cloud01') {
-            setFadeInImage('cloud02');
+                setFadeInImage('cloud02');
             } else if (fadeInImage === 'cloud02') {
-            setFadeInImage('logo');
+                setFadeInImage('logo');
             } else {
-            clearInterval(fadeInTimer);
+                clearInterval(fadeInTimer);
             }
-        
+
         }, 1000);
     }, [])
 
@@ -56,11 +57,15 @@ export default function SplashScreen() {
             document.getElementById("logo").style.opacity = 0;
           }, 5000);
 
+          setTimeout(() => {
+            props.onAnimationEnd();
+          }, 7000);
+
     }, [])
 
     return(
         <>
-            <div id="background" className={styles.backgorund}></div>
+            <div id="background" className={styles.background}></div>
             <Image
                 id="cloud01"
                 className={styles.cloud01}
@@ -90,6 +95,7 @@ export default function SplashScreen() {
                 <h1 className={styles.head}>BeeBoo</h1>
                 <p className={styles.subhead}>learning saving the bees</p>
             </div>
+            {animationFinished && <div className={styles.hidden}></div>}
         </>
     )
 }
