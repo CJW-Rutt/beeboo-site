@@ -16,6 +16,7 @@ import SplashScreen from '../components/SplashScreen'
 import WelcomeScreen from '../components/WelcomeScreen'
 import Quiz from '../components/Quiz'
 import Carousel from '../components/Carousel'
+import WelcomeCard from '../components/WelcomeCard'
 
 
 
@@ -31,7 +32,8 @@ export default function Home() {
 
       <main>
 
-        <Carousel />
+        <WelcomeScreen/>
+        <Carousel/>
 
       </main>
     </>
