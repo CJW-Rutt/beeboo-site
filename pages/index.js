@@ -15,6 +15,11 @@ import TeamPage from '../components/team-page'
 import SplashScreen from '../components/SplashScreen'
 import WelcomeScreen from '../components/WelcomeScreen'
 import Quiz from '../components/Quiz'
+import IntroScreen from '../components/IntroScreen'
+import LearnScreen from '../components/LearnScreen'
+import ActivitiesScreen from '../components/ActivitiesScreen'
+import QuizScreen from '../components/QuizScreen'
+import TeamScreen from '../components/TeamScreen'
 
 
 export default function Home() {
@@ -27,10 +32,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <HappyBoo/>
-        <TextBubble>
-          <Quiz/>
-        </TextBubble>
+        <TeamScreen/>
       </main>
     </>
   )
