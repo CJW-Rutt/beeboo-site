@@ -1,0 +1,132 @@
+.backgorund {
+    background-color: var(--background-sky);
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.cloud01 {
+    opacity: 0;
+    animation-name: fadeIn, float, fadeOut;
+    animation-duration: 1s, 4s, 3s;
+    animation-timing-function: ease, ease-in-out, ease;
+    animation-delay: 1s, 1s, 5s;
+    animation-iteration-count: 1, infinite, 1;
+    animation-direction: normal, alternate, normal;
+    animation-fill-mode: both, both, forwards;
+    z-index: 0;
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
+} 
+
+.cloud02 {
+    opacity: 0;
+    animation-name: fadeIn, float, fadeOut;
+    animation-duration: 1s, 4s, 3s;
+    animation-timing-function: ease, ease-in-out, ease;
+    animation-delay: 2s, 2s, 5s;
+    animation-iteration-count: 1, infinite, 1;
+    animation-direction: normal, alternate, normal;
+    animation-fill-mode: both, both, forwards;
+    z-index: 0;
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+}
+
+.logo {
+    opacity: 0;
+    transition: opacity 2s ease;
+    animation-name: fadeIn;
+    animation-delay: 4s;
+    position: absolute;
+    top: 10rem;
+    left: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boo {
+    animation-name: float-2;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.head {
+    font-size: 5rem;
+}
+
+.subhead {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#cloud02.fade-out {
+    animation-name: fadeOut;
+    animation-duration: 6s;
+    animation-timing-function: ease;
+    animation-delay: 6s;
+    animation-iteration-count: normal;
+}
+
+#logo.fade-out {
+  animation-name: fadeOut;
+  animation-timing-function: ease;
+  animation-delay: 6s;
+  animation-iteration-count: normal;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+
+/* Ideally, we should animate Boo separatly (animate the antennas, legs, wings, etc)*/
+@keyframes float-2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+

@@ -1,16 +1,17 @@
 :root {
-   --background: #FFF7EE;
-   --text: #3A3A3A;
-   --primary: #F9DB6C;
-   --secondary: #E56E42;
-   --tertiary: #4C8C4A;
-   --button-main: #FED22B;
-   --button-back: #FFA629;
-   --black: #000000;
+   --background-sky: #C7E9FA;
+   --text: #000000;
+   --primary-yellow: #FED22B;
+   --secondary-yellow: #FFA629;
+   --orange: #E56610;
+   --primary-green: #70AE3E;
+   --secondary-green: #5B9B40;
 }
 
 body {
    font-family: 'Truculenta';
+   padding: 0;
+   margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6, p {
