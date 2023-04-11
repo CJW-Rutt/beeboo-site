@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useRouter } from 'next/router';
 
 import SplashScreen from "../SplashScreen";
 import Image from "next/image";
@@ -7,13 +6,7 @@ import WelcomeCard from "../WelcomeCard";
 import ButtonGetStarted from "../ButtonGetStarted";
 import styles from "./Welcome.module.css"
 
-export default function WelcomeScreen() {
-
-    const router = useRouter();
-
-    function handleClick() {
-      router.push('./Carousel');
-    }
+export default function WelcomeScreen(props) {
 
     const [animationFinished, setAnimationFinished] = useState(false);
 
@@ -52,7 +45,7 @@ export default function WelcomeScreen() {
                             height={60}
                         />
                         <ButtonGetStarted
-                            onClick={handleClick}
+                            onClick={props.onGetStartedClick}
                         />
                     </div>
 

@@ -5,6 +5,7 @@ import LearnScreen from '../LearnScreen';
 import QuizScreen from '../QuizScreen';
 import TeamScreen from '../TeamScreen';
 import styles from "./Carousel.module.css"
+import Image from 'next/image';
 
 
 export default function Carousel() {
@@ -15,6 +16,7 @@ export default function Carousel() {
         const index = currentIndex === images.length - 1 ? currentIndex : currentIndex + 1;
         setCurrentIndex(index);
     };
+
 
     const prevImage = () => {
         const index = currentIndex === 0 ? 0 : currentIndex - 1;
@@ -54,9 +56,46 @@ export default function Carousel() {
 
                 </div>
 
-            <button onClick={prevImage} className={styles.btn__prev}>Prev</button>
+                {currentIndex !== 0 && (
+                    <button onClick={prevImage} className={styles.btn__prev}>Prev</button>
+                )}
 
-            <button onClick={nextImage} className={styles.btn__next}>Next</button>
+                {currentIndex !== images.length - 1 && (
+                    <button onClick={nextImage} className={styles.btn__next}>Next</button>
+                )}  
+
+                <div className={styles.navigation}>
+
+                    <Image
+                        className={styles.nav__btn}
+                        src="./carousel/nav-learn.svg"
+                        width={50}
+                        height={50}
+                    />
+
+                    <Image
+                        className={styles.nav__btn}
+                        src="./carousel/nav-quiz.svg"
+                        width={50}
+                        height={50}
+                    />
+
+                    <Image
+                        className={styles.nav__btn}
+                        src="./carousel/nav-activities.svg"
+                        width={50}
+                        height={50}
+                    />
+
+                    <Image
+                        className={styles.nav__btn}
+                        src="./carousel/nav-team.svg"
+                        width={50}
+                        height={50}
+                    />
+
+                </div>
+
 
             </div>
         </>

@@ -8,7 +8,7 @@
 
 .inner__contianer {
     display: flex;
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
 }
 
 .btn__prev {
@@ -21,4 +21,13 @@
     position: absolute;
     top: 50%;
     right: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    position: absolute;
+    bottom: 4%;
+    right: 31%;
 }
