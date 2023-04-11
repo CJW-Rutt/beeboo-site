@@ -12,6 +12,7 @@ import LearnWhy from '../components/LearnWhy'
 import TextBubble from '../components/TextBubble'
 import HappyBoo from '../components/HappyBoo'
 import TeamPage from '../components/team-page'
+import SplashScreen from '../components/SplashScreen'
 
 export default function Home() {
   return (
@@ -23,17 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ButtonGetStarted/>
-        <ButtonBuzzIt/>
-        <ButtonLetsDoIt/>
-        <Previous/>
-        <Next/>
-        <Close/>
-        <LearnWhat/>
-        <LearnWhy/>
-        <TextBubble component='quiz' />
-        <HappyBoo />
-        <TextBubble component='team' />
+        <SplashScreen/>
       </main>
     </>
   )
