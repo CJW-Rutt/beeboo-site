@@ -3,30 +3,30 @@ import styles from './TextBubble.module.css'
 import Quiz from '../Quiz'
 import TeamPage from '../team-page'
 
-export default function TextBubble({ component }) {
-  const renderContent = () => {
-    switch (component) {
-      case 'quiz':
-        return (
-          <Quiz />
-        )
-      case 'learning':
-        return (
-          <div className={styles.learningStyle}>
-            <p>Example</p>
-            <Image src='/imagehere.png' alt='/placeholder-image' height={200} width={200} />
-          </div>
-        )
-        case 'team':
-          return (
-            <div>
-              <TeamPage />
-            </div>
-          )
-      default:
-        return null
-    }
-  }
+export default function TextBubble({ children }) {
+  // const renderContent = () => {
+  //   switch (component) {
+  //     case 'quiz':
+  //       return (
+  //         <Quiz />
+  //       )
+  //     case 'learning':
+  //       return (
+  //         <div className={styles.learningStyle}>
+  //           <p>Example</p>
+  //           <Image src='/imagehere.png' alt='/placeholder-image' height={200} width={200} />
+  //         </div>
+  //       )
+  //       case 'team':
+  //         return (
+  //           <div>
+  //             <TeamPage />
+  //           </div>
+  //         )
+  //     default:
+  //       return null
+  //   }
+  // }
 
   return (
     <div style={{ position: 'relative', width: '800px', height: '365px' }}>
@@ -40,7 +40,7 @@ export default function TextBubble({ component }) {
           height: '100%',
         }}
       >
-        {renderContent()}
+        {children}
       </div>
     </div>
   )

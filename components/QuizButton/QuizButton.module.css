@@ -8,10 +8,10 @@
 }
 
 .quizButtonPrimary {
-    background-color: var(--button-main);
+    background-color: var(--primary-yellow);
     width: 10rem;
     height: 8.188rem;
-    border: 2px solid var(--black);
+    border: 2px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-size: 1.125;
@@ -25,12 +25,12 @@
 }
 
 .quizButtonBackground {
-    background-color: var(--button-back);
+    background-color: var(--secondary-yellow);
     width: 10rem;
     height: 8.188rem;
     margin-top: -7.9rem;
     margin-right: -0.9rem;
-    border: 2px solid var(--black);
+    border: 2px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-weight: 700;

@@ -1,0 +1,29 @@
+
+.main__container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/welcome-page/welcome-background.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    z-index: -9999;
+}
+
+.h1 {
+    font-size: 2.5rem;
+    margin: 2rem 4rem ;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: row;
+    margin: 0rem 7rem;
+}
+
+.btn__container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5rem;
+    margin: 1rem 25rem;
+}

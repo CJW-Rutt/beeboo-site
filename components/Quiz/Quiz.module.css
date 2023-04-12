@@ -73,6 +73,46 @@
     align-items: flex-end;
 }
 
+.introButton {
+    background-color: var(--primary-yellow);
+    position: relative;
+    width: 10rem;
+    height: 3.188rem;
+    font-size: 1.125rem;
+    border: 2px solid var(--text);
+    border-radius: 0.5rem;
+    color:  black;
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.introButtonBackground {
+    background-color: var(--secondary-yellow);
+    position: relative;
+    width: 10rem;
+    height: 3.188rem;
+    margin-top: -7.9rem;
+    margin-top: -3rem;
+    left: 6px;
+    border: 2px solid var(--text);
+    border-radius: 0.5rem;
+    color:  black;
+    font-weight: 700;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.introButton p {
+    margin-bottom: 0;
+}
 
 @keyframes fadeOut {
     from {

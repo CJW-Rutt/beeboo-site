@@ -8,7 +8,7 @@
 }
 
 .btn__primary {
-    background-color: #FED22B;
+    background-color: var(--primary-yellow);
     width: 95%;
     height: 50%;
     border: 2px solid black;
@@ -23,7 +23,7 @@
 }
 
 .btn__background {
-    background-color: #FFA629;
+    background-color: var(--secondary-yellow);
     width: 95%;
     height: 50%;
     margin-top: -2.9rem;
