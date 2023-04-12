@@ -59,7 +59,7 @@ export default function SplashScreen(props) {
 
           setTimeout(() => {
             props.onAnimationEnd();
-          }, 7000);
+          }, 9000);
 
     }, [])
 
@@ -70,8 +70,8 @@ export default function SplashScreen(props) {
                 id="cloud01"
                 className={styles.cloud01}
                 src="./splash-screen/cloud01.svg"
-                width={400}
-                height={200}
+                width={200}
+                height={100}
                 onLoad={handleFadeIn}
             />
 
@@ -79,8 +79,8 @@ export default function SplashScreen(props) {
                 id="cloud02"
                 className={styles.cloud02}
                 src="./splash-screen/cloud02.svg"
-                width={400}
-                height={200}
+                width={200}
+                height={100}
                 onLoad={handleFadeIn}
             />
 
@@ -88,8 +88,8 @@ export default function SplashScreen(props) {
                 <Image
                     className={styles.boo}
                     src="./splash-screen/boo.svg"
-                    width={300}
-                    height={300}
+                    width={150}
+                    height={150}
                     onLoad={handleFadeIn}
                 />
                 <h1 className={styles.head}>BeeBoo</h1>
