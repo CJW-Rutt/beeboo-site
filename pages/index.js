@@ -15,6 +15,9 @@ import TeamPage from '../components/team-page'
 import SplashScreen from '../components/SplashScreen'
 import WelcomeScreen from '../components/WelcomeScreen'
 import Quiz from '../components/Quiz'
+import Carousel from '../components/Carousel'
+import WelcomeCard from '../components/WelcomeCard'
+
 
 
 export default function Home() {
@@ -26,8 +29,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main>
-        <SplashScreen />
+
+        <WelcomeScreen/>
+        <Carousel/>
+
       </main>
     </>
   )

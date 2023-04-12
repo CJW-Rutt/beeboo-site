@@ -1,0 +1,24 @@
+
+.main__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.inner__contianer {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.btn__prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.btn__next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
