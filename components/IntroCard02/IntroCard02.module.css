@@ -39,13 +39,3 @@
     padding: 1rem 1.5rem;
     z-index: 0;
 }
-
-.card__primary:hover {
-    margin-bottom: -0.35rem;
-    margin-right: 0.5rem;
-    transition: 0.2s ease-in-out;
-}
-
-.card__primary:not(:hover) {
-    transition: 0.2s ease-in-out;
-}
