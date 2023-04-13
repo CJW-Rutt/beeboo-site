@@ -4,6 +4,7 @@ import { quizButtons } from '../../data/quiz.js';
 import { quizQuestions } from '../../data/quiz.js';
 import QuizButton from '../QuizButton';
 import Image from 'next/image';
+import ButtonLearning from '../ButtonLearning';
 
 export default function Quiz() {
   const [currentPage, setCurrentPage] = useState('quizPageOne');
@@ -63,81 +64,89 @@ export default function Quiz() {
         <p>Mason bees are important pollinators that play a crucial role in our ecosystem. By learning how to take care of them, we can help these tiny creatures thrive and make our world a better place. </p>
         <p>In this quiz, we'll test what you learned on BeeBoo so far to see if you can create a safe and healthy environment for mason bees to live and reproduce.</p>
         <p>So, get ready to put your thinking caps on and let's dive into the world of mason bees!</p>
-        <div className={styles.landingButtonContainer}>
-          <div className={styles.introButton} onClick={handleIntroButtonClick}>
-            <p>Take the Quiz!</p>
-          </div>
-          <div className={styles.introButtonBackground} />
+        <div className={styles.introButton} onClick={handleIntroButtonClick}>
+          <p>Take the Quiz!</p>
         </div>
+        <div className={styles.introButtonBackground} />
       </div>
     );
   } else if (resultPage) {
     return (
       <div className={styles.resultContainer}>
-        {resultPage === 'ResultPage1' && (
-          <div className={styles.resultsPage1}>
-            <div className={styles.resultsInnerContainer}>
-              <div className={styles.resultsLeftCol}>
-                <h1>You got 0%.</h1>
-                <h3>It's time to try again!</h3>
-                <p>I know you can do it. You just need to review the important information found in the Learning Section</p>
-                <p>Don't give up yet. Bee's still need your help. They can't survive without you.</p>
-                <p>So let's do a review of all the facts to help bees and make a better future!</p>
-              </div>
-              <div className={styles.resultsRightCol}>
-                <Image src="/happyBee1.png" width={300} height={300}/>
-              </div>
-            </div>
-          </div>
-        )}
-        {resultPage === 'ResultPage2' && (
-          <div className={styles.resultsPage2}>
-            <div className={styles.resultsInnerContainer}>
-              <div className={styles.resultsLeftCol}>
-                <h1>You're almost there!</h1>
-                <h3>But you still need to review more!</h3>
-                <p>You're so close to bee-ing an expert on bees.</p>
-                <p>Without your help the bee population will slowly fade away.</p>
-                <p>Lets make our bee friends happy and go back to learn more about them!</p>
-              </div>
-              <div className={styles.resultsRightCol}>
-                <Image src="/happyBee1.png" width={300} height={300}/>
+        {
+          resultPage === 'ResultPage1' && (
+            <div className={styles.resultsPage1}>
+              <div className={styles.resultsInnerContainer}>
+                <div className={styles.resultsLeftCol}>
+                  <h1>You got 0%.</h1>
+                  <h3>It's time to try again!</h3>
+                  <p>I know you can do it. You just need to review the important information found in the Learning Section</p>
+                  <p>Don't give up yet. Bee's still need your help. They can't survive without you.</p>
+                  <p>So let's do a review of all the facts to help bees and make a better future!</p>
+                  <ButtonLearning />
+                </div>
+                <div className={styles.resultsRightCol}>
+                  <Image src="/happyBee1.png" width={300} height={300}/>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-        {resultPage === 'ResultPage3' && (
-          <div className={styles.resultsPage3}>
-            <div className={styles.resultsInnerContainer}>
-              <div className={styles.resultsLeftCol}>
-                <h1>You Passed! WOW!</h1>
-                <h3>You're a world class Apiarist.</h3>
-                <p>Congratulations, you passed the quiz with flying colours!</p>
-                <p>Your knowledge and understanding of the important steps to create a safe and healthy environment for mason bees to thrive are impressive.</p>
-                <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
-              </div>
-              <div className={styles.resultsRightCol}>
-                <Image src="/happyBee1.png" width={300} height={300}/>
-              </div>
-            </div>
-          </div>
-        )}
-        {resultPage === 'ResultPage4' && (
-          <div className={styles.resultsPage4}>
-            <div className={styles.resultsInnerContainer}>
-              <div className={styles.resultsLeftCol}>
-                <h1>YOU GOT 100%!!!</h1>
-                <h3>The future is in good hands!</h3>
-                <p>Congratulations, you passed the quiz with a PERFECT SCORE!</p>
-                <p>You did it. Your knowledge of the bees and how to help them really shows.</p>
-                <p>Let's make the future better for everyone together!</p>
-              </div>
-              <div className={styles.resultsRightCol}>
-                <Image src="/happyBee1.png" width={300} height={300}/>
+          )
+        }
+        {
+          resultPage === 'ResultPage2' && (
+            <div className={styles.resultsPage2}>
+              <div className={styles.resultsInnerContainer}>
+                <div className={styles.resultsLeftCol}>
+                  <h1>You're almost there!</h1>
+                  <h3>But you still need to review more!</h3>
+                  <p>You're so close to bee-ing an expert on bees.</p>
+                  <p>Without your help the bee population will slowly fade away.</p>
+                  <p>Lets make our bee friends happy and go back to learn more about them!</p>
+                  <ButtonLearning />
+                </div>
+                <div className={styles.resultsRightCol}>
+                  <Image src="/happyBee1.png" width={300} height={300}/>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )
+        }
+        {
+          resultPage === 'ResultPage3' && (
+            <div className={styles.resultsPage3}>
+              <div className={styles.resultsInnerContainer}>
+                <div className={styles.resultsLeftCol}>
+                  <h1>You Passed! WOW!</h1>
+                  <h3>You're a world class Apiarist.</h3>
+                  <p>Congratulations, you passed the quiz with flying colours!</p>
+                  <p>Your knowledge and understanding of the important steps to create a safe and healthy environment for mason bees to thrive is impressive.</p>
+                  <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
+                </div>
+                <div className={styles.resultsRightCol}>
+                  <Image src="/happyBee1.png" width={300} height={300}/>
+                </div>
+              </div>
+            </div>
+          )
+        }
+        {
+          resultPage === 'ResultPage4' && (
+            <div className={styles.resultsPage4}>
+              <div className={styles.resultsInnerContainer}>
+                <div className={styles.resultsLeftCol}>
+                  <h1>YOU GOT 100%!!!</h1>
+                  <h3>The future is in good hands!</h3>
+                  <p>Congratulations, you passed the quiz with a PERFECT SCORE!</p>
+                  <p>You did it. Your knowledge of the bees and how to help them really shows.</p>
+                  <p>Let's make the future better for everyone together!</p>
+                </div>
+                <div className={styles.resultsRightCol}>
+                  <Image src="/happyBee1.png" width={300} height={300}/>
+                </div>
+              </div>
+            </div>
+          )
+        }
       </div>
     );
   } else {
@@ -150,20 +159,22 @@ export default function Quiz() {
           <p>{currentQuestion['3']}</p>
         </div>
         <div className={styles.quizQuestionContainer}>
-          {quizButtons[currentPage]?.map((item, index) => {
-            const answerKey = Object.keys(item)[0];
-            const src = item.src;
+          {
+            quizButtons[currentPage]?.map((item, index) => {
+              const answerKey = Object.keys(item)[0];
+              const src = item.src;
 
-            return (
-              <QuizButton
-                key={index}
-                answer={item[answerKey]}
-                src={src}
-                onClick={() => handleClick(answerKey, item.weight)}
-                fadeOut={fadeOut}
-              />
-            );
-          })}
+              return (
+                <QuizButton
+                  key={index}
+                  answer={item[answerKey]}
+                  src={src}
+                  onClick={() => handleClick(answerKey, item.weight)}
+                  fadeOut={fadeOut}
+                />
+              );
+            })
+          }
         </div>
       </div>
     );
