@@ -28,6 +28,7 @@ export default function Testing() {
         <TextBubble>
             <Quiz />
         </TextBubble>
+        <TeamPage />
       </main>
     </>
   )
