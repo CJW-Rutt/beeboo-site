@@ -33,3 +33,6 @@ yarn-error.log*
 
 # history
 .history
+
+# pages
+testing.js
