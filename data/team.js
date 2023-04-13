@@ -2,16 +2,16 @@ export const teamInfo = [
     {
         name: "Giovana Birck",
         avatar: "/team/giovana.png",
-        description: "giovana's description",
+        description: "Giovana makes things on computers look beautiful and easy to use! She designs really cool things that help people to achieve their goals and make their lives better. Through technology, she aims to keep creating awesome experiences like this one!",
         socialMedia: [
             {
                 platform: "LinkedIn",
-                link: "",
+                link: "https://linkedin.com/in/giovanabirck",
                 img: "/socials/linkedin.svg"
             },
             {
                 platform: "GitHub",
-                link: "",
+                link: "https://github.com/giovanabirck",
                 img: "/socials/github.svg"
             }
         ],
@@ -20,16 +20,16 @@ export const teamInfo = [
     {
         name: "Corey Rutt",
         avatar: "/team/corey.png",
-        description: "test description",
+        description: "Hi, I'm Corey! I'm passionate about coding, technology, and bees. As part of the BeeBoo team, we create engaging content to teach children about the vital role bees play in our ecosystem. Join us! 🐝💻🌍",
         socialMedia: [
             {
                 platform: "LinkedIn",
-                link: "",
+                link: "https://www.linkedin.com/in/corey-rutt-615809268/",
                 img: "/socials/linkedin.svg"
             },
             {
                 platform: "GitHub",
-                link: "",
+                link: "https://github.com/CJW-Rutt",
                 img: "/socials/github.svg"
             }
         ],

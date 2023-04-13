@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Testing.module.css'
 import ButtonGetStarted from '../components/ButtonGetStarted'
 import ButtonBuzzIt from '../components/ButtonBuzzIt'
 import ButtonLetsDoIt from '../components/ButtonLetsDoIt'
@@ -24,10 +24,10 @@ export default function Testing() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <TextBubble>
-            <Quiz />
-        </TextBubble>
+      <main className={styles.main__container}>
+        {/* <TextBubble> */}
+            <TeamPage />
+        {/* </TextBubble> */}
       </main>
     </>
   )
