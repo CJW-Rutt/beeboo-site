@@ -36,3 +36,5 @@ yarn-error.log*
 
 # pages
 testing.js
+/pages/testing.js
+.testing.js
