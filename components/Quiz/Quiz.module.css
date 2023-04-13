@@ -76,7 +76,7 @@
 .introButton {
     background-color: var(--primary-yellow);
     position: relative;
-    width: 10rem;
+    width: 19.375rem;
     height: 3.188rem;
     font-size: 1.125rem;
     border: 2px solid var(--text);
@@ -94,7 +94,7 @@
 .introButtonBackground {
     background-color: var(--secondary-yellow);
     position: relative;
-    width: 10rem;
+    width: 19.375rem;
     height: 3.188rem;
     margin-top: -7.9rem;
     margin-top: -3rem;
@@ -108,6 +108,11 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+}
+
+.introButton:hover {
+    left: 6px;
+    bottom: -8px;
 }
 
 .introButton p {
