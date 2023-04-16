@@ -32,3 +32,13 @@ npm run dev
 yarn dev
 ```
 
+## Installing Dependencies
+
+To create this application, we used the following libraries that need to be installed prior to running this application:
+
+- ChartJS
+
+```
+npm i react-chartjs-2
+```
+
