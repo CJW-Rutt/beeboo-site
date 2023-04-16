@@ -10,6 +10,10 @@
 
 .btn__arrow {
     background-color: #FED22B;
+    background-image: url('/buttons/arrow-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     width: 95%;
     height: 95%;
     border: 2px solid black;
