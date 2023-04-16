@@ -32,3 +32,13 @@ npm run dev
 yarn dev
 ```
 
+## Installing Dependencies
+
+The following dependencies need to be installed:
+
+- ChartJS
+
+```
+npm i react-chartjs-2
+```
+
