@@ -34,7 +34,7 @@ yarn dev
 
 ## Installing Dependencies
 
-To create this application, we used the following libraries that need to be installed prior to running this application:
+The following dependencies need to be installed:
 
 - ChartJS
 
