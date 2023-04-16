@@ -1,0 +1,9 @@
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plantContainer {
+    display: flex;
+    justify-content: space-between;
+}
