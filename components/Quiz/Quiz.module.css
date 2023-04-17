@@ -7,6 +7,14 @@
     height: 100%;
 }
 
+.outerContainer {
+    display: flex;
+}
+
+.quizBackContainer {
+    margin: 15px 20px;
+}
+
 .quizQuestionContainer {
     display: flex;
     justify-content: space-around;
@@ -28,7 +36,6 @@
 .quizQuestion h1 {
     font-size: 36px;
     width: 100%;
-    margin-bottom: 15px;
     margin-top: 15px;
 }
   
@@ -117,6 +124,16 @@
 
 .introButton p {
     margin-bottom: 0;
+}
+
+.titleRow {
+    display: flex;
+}
+
+.innerRow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 @keyframes fadeOut {

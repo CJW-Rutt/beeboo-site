@@ -3,7 +3,13 @@ import styles from './TextBubble.module.css';
 
 export default function TextBubble({ children }) {
     return (
-        <div style={{ position: 'relative', width: '800px', height: '365px' }}>
+        <div style={{ 
+            position: 'absolute', 
+            width: '800px', 
+            height: '365px', 
+            top: '26px', 
+            zIndex: '9999',
+        }}>
             <Image src="/text-bubble.png" alt="text-bubble" height={365} width={800} />
             <div
                 style={{
