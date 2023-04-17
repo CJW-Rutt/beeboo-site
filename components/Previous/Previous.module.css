@@ -1,6 +1,7 @@
 .btn {
     width: 3.8rem;
     height: 4rem;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,11 +10,15 @@
 
 .btn__arrow {
     background-color: #FED22B;
+    background-image: url('/buttons/arrow-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 52px;
     width: 95%;
     height: 95%;
     border: 2px solid black;
     border-radius: 2rem;
-    z-index: 0;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,11 +32,10 @@
     margin-right: -0.5rem;
     border: 2px solid black;
     border-radius: 2rem;
-    z-index: 0;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -1;
 }
 
 .btn__arrow:hover {

@@ -1,4 +1,13 @@
 .content__container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sizing__container {
     height: 323px;
     width: 723px;
     display: flex;
@@ -20,11 +29,32 @@
 
 .team__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 100%;
+    gap: 3rem;
 }
 
 .member__container {
     background-image: "";
 }
+
+.textbubble__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.textbubble__content {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    justify-content: center;
+}
+
+/* .memberInfo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} */

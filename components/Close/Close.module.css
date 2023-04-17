@@ -9,11 +9,15 @@
 
 .btn__arrow {
     background-color: #FED22B;
+    background-image: url('/buttons/close.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     width: 95%;
     height: 95%;
     border: 2px solid black;
     border-radius: 2rem;
-    z-index: 0;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -1;
+    z-index: 1;
 }
 
 .btn__arrow:hover {

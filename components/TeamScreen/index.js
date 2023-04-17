@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from "./Team.module.css"
+import TeamPage from '../team-page';
 
 export default function TeamScreen({ image }) {
 
