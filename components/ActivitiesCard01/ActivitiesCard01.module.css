@@ -1,0 +1,43 @@
+.card {
+    width: 25rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card__primary {
+    background-color: var(--card-primary-blue);
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 400;
+    z-index: 1;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 1.5rem;
+}
+
+.card__background {
+    background-color: var(--card-background-blue);
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    color: var(--text);
+    height: 100%;
+    width: 80%;
+    margin-top: -5.6rem;
+    margin-right: -0.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    z-index: 0;
+}
