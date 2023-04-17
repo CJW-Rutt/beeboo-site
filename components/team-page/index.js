@@ -41,7 +41,12 @@ export default function TeamPage() {
                                             setMemberData(teamInfo[index])
                                             setChooseMember(false)
                                         }}>
-                                            {info.name}
+                                            <div className={styles.hexagon__content}>
+                                                {info.name}
+                                                <Image src={info.avatar} height={78} width={78} />
+                                            </div>
+                                            <Image className={styles.member__hexagon} src="/team/hexagon-base.png" height={140} width={140} />
+                                            <Image className={styles.hexagon__shadow} src="/team/hexagon-shadow.png" height={140} width={140} />
                                         </div>
                                     )
                                 })

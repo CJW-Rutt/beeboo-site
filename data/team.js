@@ -1,6 +1,6 @@
 export const teamInfo = [
     {
-        name: "Giovana Birck",
+        name: "Giovana",
         avatar: "/team/giovana.png",
         description: "Giovana makes things on computers look beautiful and easy to use! She designs really cool things that help people to achieve their goals and make their lives better. Through technology, she aims to keep creating awesome experiences like this one!",
         socialMedia: [
@@ -18,7 +18,7 @@ export const teamInfo = [
         portfolio: "portfolio something"
     },
     {
-        name: "Corey Rutt",
+        name: "Corey",
         avatar: "/team/corey.png",
         description: "Hi, I'm Corey! I'm passionate about coding, technology, and bees. As part of the BeeBoo team, we create engaging content to teach children about the vital role bees play in our ecosystem. Join us! 🐝💻🌍",
         socialMedia: [
@@ -36,7 +36,7 @@ export const teamInfo = [
         portfolio: "portfolio something"
     },
     {
-        name: "Joey Nip",
+        name: "Joey",
         avatar: "/team/joey.png",
         description: "I like to creep around my home and act like a goblin",
         socialMedia: [

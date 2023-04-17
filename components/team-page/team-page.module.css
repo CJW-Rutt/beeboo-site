@@ -34,11 +34,37 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .member__container {
-    background-image: "";
+    height: 192px;
+    width: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member__hexagon {
+    position: absolute;
+    z-index: 0;
+}
+
+.hexagon__shadow {
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    left: 30px;
+}
+
+.hexagon__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1;
 }
 
 .textbubble__container {
