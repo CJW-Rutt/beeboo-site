@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import TextBubble from '../components/TextBubble';
 import ActivitiesMain from '../components/ActivitiesMain';
+import ActivitiesMasonBees from '../components/ActivitiesMasonBees';
 
 export default function Testing() {
     const [isVisible, setIsVisible] = useState(true);
@@ -29,4 +30,5 @@ export default function Testing() {
             </main>
         </>
     );
-} //<ActivitiesPlanting onClose={handleClose} />
+} 
+//

@@ -2,6 +2,7 @@ import styles from './ActivitiesMain.module.css'
 import Image from 'next/image';
 import { useState } from 'react';
 import ActivitiesPlanting from '../ActivitiesPlanting';
+import ActivitiesMasonBees from '../ActivitiesMasonBees';
 import Close from '../Close';
 
 export default function ActivitiesMain({ onClose }) {
@@ -28,7 +29,7 @@ export default function ActivitiesMain({ onClose }) {
             case 'planting':
                 return <ActivitiesPlanting onClose={onClose} />;
             case 'masonBeeKit':
-                return ("Component Here");
+                return <ActivitiesMasonBees onClose={onClose} />;
             case 'visitGardens':
                 return ("Component Here");
             default:
