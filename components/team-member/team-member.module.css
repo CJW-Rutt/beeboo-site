@@ -1,7 +1,7 @@
 .content__container {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    height: 100%;
+    justify-content: center;
 }
 
 .container__top {
@@ -18,12 +18,14 @@
     flex-direction: column;
 }
 
-.social__container {
-    display: flex;
-    gap: 1rem;
+.socials__container {
+    display: grid;
+    /* gap: 1rem; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
-.socials {
+.social {
     display: flex;
     flex-direction: column;
     align-items: center;
