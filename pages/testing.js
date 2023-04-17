@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import TextBubble from '../components/TextBubble';
-import ActivitiesPlanting from '../components/ActivitiesPlanting';
+import ActivitiesMain from '../components/ActivitiesMain';
 
 export default function Testing() {
     const [isVisible, setIsVisible] = useState(true);
@@ -22,11 +22,11 @@ export default function Testing() {
             </Head>
             <main>
                 {isVisible && (
-                    <TextBubble>
-                        <ActivitiesPlanting onClose={handleClose} />
+                    <TextBubble onClose={handleClose}>
+                        <ActivitiesMain onClose={handleClose} />
                     </TextBubble>
                 )}
             </main>
         </>
     );
-}
+} //<ActivitiesPlanting onClose={handleClose} />

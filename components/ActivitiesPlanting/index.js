@@ -13,7 +13,6 @@ export default function ActivitiesPlanting({ onClose }) {
     }
 
     const handleNext = () => {
-        console.log('Clicked Me');
         setStep(step + 1);
     }
 
