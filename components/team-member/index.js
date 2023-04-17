@@ -13,11 +13,11 @@ export default function TeamMember({ name, avatar, description, socialMedia, por
                     </div>
                 </div>
                 <div className={styles.container__bottom}>
-                    <div className={styles.social__container}>
+                    <div className={styles.socials__container}>
                         {
                             socialMedia.map((info, index) => {
                                 return (
-                                    <div className={styles.socials} key={index}>
+                                    <div className={styles.social} key={index}>
                                         <Image src={info.img} height={39} width={39}/>
                                         {info.platform}
                                     </div>
