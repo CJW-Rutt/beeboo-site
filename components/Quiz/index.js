@@ -5,8 +5,9 @@ import { quizQuestions } from '../../data/quiz.js';
 import QuizButton from '../QuizButton';
 import Image from 'next/image';
 import ButtonLearning from '../ButtonLearning';
+import Close from '../Close';
 
-export default function Quiz() {
+export default function Quiz({ onClose }) {
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
@@ -18,7 +19,6 @@ export default function Quiz() {
       determineResultPage();
     }
   }, [currentPage, selectedAnswers]);
-  
 
   const handleClick = (answer, weight) => {
     setSelectedAnswers([...selectedAnswers, weight]);
@@ -39,6 +39,10 @@ export default function Quiz() {
     setShowIntro(false);
   };
 
+  const handleClose = () => {
+    onClose();
+  };
+
   const determineResultPage = () => {
     const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
 
@@ -53,22 +57,27 @@ export default function Quiz() {
     }
   };
 
-
   const currentQuestion = quizQuestions[currentPage]?.[0];
 
   if (showIntro) {
     return (
-      <div className={styles.introContainer}>
-        <h1>It's Quiz Time!</h1>
-        <h2>Find out how ready you are to take care of our friends the mason bees!</h2>
-        <p>Mason bees are important pollinators that play a crucial role in our ecosystem. By learning how to take care of them, we can help these tiny creatures thrive and make our world a better place. </p>
-        <p>In this quiz, we'll test what you learned on BeeBoo so far to see if you can create a safe and healthy environment for mason bees to live and reproduce.</p>
-        <p>So, get ready to put your thinking caps on and let's dive into the world of mason bees!</p>
-        <div className={styles.introButton} onClick={handleIntroButtonClick}>
-          <p>Take the Quiz!</p>
+      <div className={styles.outerContainer}>
+        <div className={styles.introContainer}>
+          <h1>It's Quiz Time!</h1>
+          <h2>Find out how ready you are to take care of our friends the mason bees!</h2>
+          <p>Mason bees are important pollinators that play a crucial role in our ecosystem. By learning how to take care of them, we can help these tiny creatures thrive and make our world a better place. </p>
+          <p>In this quiz, we'll test what you learned on BeeBoo so far to see if you can create a safe and healthy environment for mason bees to live and reproduce.</p>
+          <p>So, get ready to put your thinking caps on and let's dive into the world of mason bees!</p>
+          <div className={styles.introButton} onClick={handleIntroButtonClick}>
+            <p>Take the Quiz!</p>
+          </div>
+          <div className={styles.introButtonBackground} />
         </div>
-        <div className={styles.introButtonBackground} />
+        <div className={styles.quizBackContainer}>
+          <Close onClick={handleClose} />
+        </div>
       </div>
+
     );
   } else if (resultPage) {
     return (
@@ -87,6 +96,9 @@ export default function Quiz() {
                 </div>
                 <div className={styles.resultsRightCol}>
                   <Image src="/happyBee1.png" width={300} height={300}/>
+                </div>
+                <div className={styles.buttonCol}>
+                  <Close onClick={handleClose} />
                 </div>
               </div>
             </div>
@@ -107,6 +119,9 @@ export default function Quiz() {
                 <div className={styles.resultsRightCol}>
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
+                <div className={styles.buttonCol}>
+                  <Close onClick={handleClose} />
+                </div>
               </div>
             </div>
           )
@@ -124,6 +139,9 @@ export default function Quiz() {
                 </div>
                 <div className={styles.resultsRightCol}>
                   <Image src="/happyBee1.png" width={300} height={300}/>
+                </div>
+                <div className={styles.buttonCol}>
+                  <Close onClick={handleClose} />
                 </div>
               </div>
             </div>
@@ -143,6 +161,9 @@ export default function Quiz() {
                 <div className={styles.resultsRightCol}>
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
+                <div className={styles.buttonCol}>
+                  <Close onClick={handleClose} />
+                </div>  
               </div>
             </div>
           )
@@ -153,7 +174,13 @@ export default function Quiz() {
     return (
       <div className={styles.quizContainer}>
         <div className={styles.quizQuestion}>
-          <h1>{currentQuestion.h1}</h1>
+          <div className={styles.titleRow}>
+            <div className={styles.innerRow}>
+              <h1>{currentQuestion.h1}</h1>
+              <h2>{currentQuestion.h2}</h2>
+            </div>
+            <Close onClick={handleClose} />
+          </div>
           <p>{currentQuestion['1']}</p>
           <p>{currentQuestion['2']}</p>
           <p>{currentQuestion['3']}</p>

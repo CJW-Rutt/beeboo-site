@@ -1,7 +1,8 @@
 export const quizQuestions = {
     'quizPageOne': [
         {
-            'h1': 'Question One: How would you set up a bee hive?',
+            'h1': 'Question One:',
+            'h2':  ' How would you set up a bee hive?',
             '1': 'The first step in taking care of mason bees is setting up a safe and comfortable environment for them to live in.',
             '2': 'So, let\'s start with our first question: How would you set up your bee hive?',
             '3': 'Remember, mason bees need specific things to thrive, so choose carefully!',
@@ -9,7 +10,8 @@ export const quizQuestions = {
     ],
     'quizPageTwo': [
         {
-            'h1': 'Question 2: Where would you setup your hive?',
+            'h1': 'Question 2:',
+            'h2': 'Where would you setup your hive?',
             '1': 'Now that you know how to set up a bee hive, let\'s move on to the next question.',
             '2': 'This is an important decision as it can greatly impact the health and productivity of your mason bees. ',
             '3': 'Remember, the location you choose for your bee hive can affect your mason bees\' health and productivity.',
@@ -17,7 +19,8 @@ export const quizQuestions = {
     ],
     'quizPageThree': [
         {
-            'h1': 'Question 3: What should you feed hungry bees?',
+            'h1': 'Question 3:',
+            'h2': 'What should you feed hungry bees?',
             '1': 'Congratulations on making it to the final question! ',
             '2': 'Do you know what to feed mason bees them to keep them healthy and happy?',
             '3': 'Get ready to choose your answer wisely and earn the final points. Good luck! You can do it!',
