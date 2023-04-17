@@ -1,11 +1,42 @@
 
-.container {
-    height:100vh;
+.main__container {
+    height: 100vh;
     width: 100vw;
+    background-image: url("/carousel/quiz-background.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0rem;
+    z-index: -9999;
 }
 
 .img {
     object-fit: cover;
     height:100%;
     width: 100%;
+}
+
+.h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    margin-left: 17rem;
+}
+
+.arrow {
+    rotate: 15deg;
 }
