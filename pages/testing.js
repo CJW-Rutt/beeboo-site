@@ -5,6 +5,8 @@ import { useState } from 'react';
 import TextBubble from '../components/TextBubble';
 import ActivitiesMain from '../components/ActivitiesMain';
 import ActivitiesMasonBees from '../components/ActivitiesMasonBees';
+import InfoPestsClimate from '../components/InfoPestsClimate'
+import InfoPollination from '../components/InfoPollination';
 
 export default function Testing() {
     const [isVisible, setIsVisible] = useState(true);
@@ -24,7 +26,7 @@ export default function Testing() {
             <main>
                 {isVisible && (
                     <TextBubble onClose={handleClose}>
-                        <ActivitiesMain onClose={handleClose} />
+                        <InfoPollination onClose={handleClose} />
                     </TextBubble>
                 )}
             </main>

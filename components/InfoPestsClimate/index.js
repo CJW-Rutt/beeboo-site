@@ -76,9 +76,6 @@ export default function InfoPestsClimate({ onClose }) {
                             <div className={styles.contentColRight}>
                                 <Image src='/pestsclimate/pesticide.png' alt="pesticide graphic" width={194} height={194} />
                             </div>
-                            {/* <div>
-                                <Image src='mascot/surprised.svg' alt='surprised beeboo' width={59} height={65} />
-                            </div> */}
                         </div>
                     )
                 }
@@ -102,65 +99,9 @@ export default function InfoPestsClimate({ onClose }) {
                         </div>
                     )
                 }
-                {/* {
-                    step == 3 && (
-                        <div className={styles.innerContentContainer}>
-                            <div className={styles.contentColLeft}>
-                                <h1>Step 3:</h1>
-                                <h2>Plant the flowers!</h2>
-                                <p>Now it's time to plant the flowers!  Dig a hole slightly larger than the root ball of your plant. Gently remove the plant from its container and loosen the roots.</p>
-                                <p>Place the plant in the hole and backfill with soil. Water thoroughly and add a layer of mulch around the plant. </p>
-                                <p>Plant in a sunny location and space plants apart for good air circulation.</p>
-                            </div>
-                            <div className={styles.contentColRight}>
-                                <Image src='/planting/flower-pot.png' alt="happy mascot" width={208} height={208} />
-                            </div>
-                        </div>
-                    )
-                }
-                {
-                    step == 4 && (
-                        <div className={styles.innerContentContainer}>
-                            <div className={styles.contentColLeft}>
-                                <h1>Step 4:</h1>
-                                <h2>Care for the flowers!</h2>
-                                <p>To keep the flowers healthy and attractive to bees, you'll need to care for them. Here are some tips:</p>
-                                <ul>
-                                    <li>Water the flowers regularly, especially during dry spells</li>
-                                    <li>Mulch around the plants to help retain moisture</li>
-                                    <li>Remove the dried out dead heads</li>
-                                    <li>Fertilize the flowers with a balanced fertilizer</li>
-                                    <li>Monitor the plants for pests and take action if necessary</li>
-                                </ul>
-                            </div>
-                            <div className={styles.contentColRight}>
-                                <Image src='/planting/watering-can.png' alt="happy mascot" width={208} height={208} />
-                            </div>
-                        </div>
-                    )
-                }
-                {
-                    step == 5 && (
-                        <div className={styles.innerContentContainer}>
-                            <div className={styles.contentColLeft}>
-                                <h1>Step 5:</h1>
-                                <h2>Enjoy the bees!</h2>
-                                <p>Once your flowers are in bloom, you should start to see bees visiting them.</p>
-                                <p>Sit back and enjoy the show! Watching bees pollinate flowers can be a fun and educational experience.</p>
-                                <p>By planting flowers for bees, you're helping to provide habitat and food for these important pollinators. So get outside and start planting!</p>
-                            </div>
-                            <div className={styles.contentColRight}>
-                                <Image src='/planting/bee.png' alt="happy mascot" width={208} height={208} />
-                            </div>
-                        </div>
-                    )
-                } */}
             </div>
             <div className={styles.rightButtonCol}>
                 <Close onClick={onClose} />
-                {step == 0 && step !== 5 && <Next onClick={() => {
-                    handleNext()
-                }} />}
             </div>
         </div>
     );

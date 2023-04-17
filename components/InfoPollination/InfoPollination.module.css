@@ -1,0 +1,137 @@
+.contentContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plantContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.backButton {
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 20px;
+}
+
+.rightButtonCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.introContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.plantingStart {
+    background-color: var(--primary-yellow);
+    position: relative;
+    width: 22.375rem;
+    height: 7.188rem;
+    font-size: 1.125rem;
+    border: 2px solid var(--text);
+    border-radius: 0.5rem;
+    color:  black;
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.plantingStartBackground {
+    background-color: var(--secondary-yellow);
+    position: relative;
+    width: 22.375rem;
+    height: 7.188rem;
+    margin-top: -8.4rem;
+    left: 4px;
+    border: 2px solid var(--text);
+    border-radius: 0.5rem;
+    color: black;
+    font-weight: 700;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.innerContentContainer {
+    display: flex;
+    padding: 20px 0px;
+}
+
+.innerContentContainer p {
+    margin: 10px 0px;
+    font-size: 23px;
+}
+
+.innerContentContainer ul {
+    margin: 0;
+}
+
+.step1List {
+    display: flex;
+}
+
+.contentColRight {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    position: relative;
+    left: 25px;
+}
+
+.activitiesButton {
+    background-color: var(--primary-yellow);
+    position: relative;
+    width: 14.375rem;
+    height: 3.188rem;
+    font-size: 1.125rem;
+    border: 2px solid var(--text);
+    border-radius: 0.5rem;
+    color:  black;
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.activitiesButtonBackground{
+    background-color: var(--secondary-yellow);
+    position: relative;
+    width: 14.375rem;
+    height: 3.188rem;
+    margin-top: -3.2rem;
+    left: 3px;
+    border: 2px solid var(--text);
+    border-radius: 0.5rem;
+    color: black;
+    font-weight: 700;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
