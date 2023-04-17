@@ -1,5 +1,5 @@
 .content__container {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
 
 .team__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 100%;
     gap: 3rem;
@@ -49,4 +49,12 @@
 .textbubble__content {
     display: grid;
     grid-template-columns: 7fr 1fr;
+    justify-content: center;
 }
+
+/* .memberInfo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} */

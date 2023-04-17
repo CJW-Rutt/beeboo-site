@@ -1,8 +1,7 @@
 .content__container {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    /* height: 802px;
-    width: 364px; */
+    justify-content: center;
 }
 
 .container__top {
@@ -20,8 +19,10 @@
 }
 
 .socials__container {
-    display: flex;
-    gap: 1rem;
+    display: grid;
+    /* gap: 1rem; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .social {
