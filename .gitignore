@@ -37,3 +37,4 @@ yarn-error.log*
 # pages
 testing.js
 joey-test.js
+joey-test.module.css
