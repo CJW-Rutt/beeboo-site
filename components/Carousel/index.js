@@ -34,14 +34,14 @@ export default function Carousel() {
 
     return(
         <>
-            <div className={styles.main__container}>
-
-                <div 
-                    className={styles.inner__contianer}
-                    style={{
-                        width: `${100 * images.length}%`,    
-                        transform: `translateX(-${(100 / images.length) * currentIndex}%)`
-                    }}>
+        <div className={styles.outer__container}>
+        <div className={styles.main__container}>
+            <div 
+                className={styles.inner__contianer}
+                style={{
+                    width: `${100 * images.length}%`,    
+                    transform: `translateX(-${(100 / images.length) * currentIndex}%)`
+                }}>
 
                     {images.map((image, index) => (
                         <div 
@@ -55,6 +55,8 @@ export default function Carousel() {
                     ))}
 
                 </div>
+            </div>
+            <div className={styles.nav__buttonrow}>
 
                 {currentIndex !== 0 && (
                     <button onClick={prevImage} className={styles.btn__prev}>Prev</button>
@@ -63,9 +65,7 @@ export default function Carousel() {
                 {currentIndex !== images.length - 1 && (
                     <button onClick={nextImage} className={styles.btn__next}>Next</button>
                 )}  
-
                 <div className={styles.navigation}>
-
                     <Image
                         className={styles.nav__btn}
                         src="./carousel/nav-learn.svg"
@@ -93,11 +93,9 @@ export default function Carousel() {
                         width={50}
                         height={50}
                     />
-
                 </div>
-
-
             </div>
+        </div>
         </>
     )
 }

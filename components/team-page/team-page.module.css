@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url('/carousel/team-background.svg');
+    background-size: cover;
 }
 
 .sizing__container {
