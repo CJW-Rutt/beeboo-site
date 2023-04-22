@@ -81,22 +81,22 @@ export default function Carousel() {
                     <Image
                         className={styles.nav__btn}
                         src="./carousel/nav-learn.svg"
-                        width={50}
-                        height={50}
+                        width={55}
+                        height={55}
                     />
 
                     <Image
                         className={styles.nav__btn}
                         src="./carousel/nav-quiz.svg"
-                        width={50}
-                        height={50}
+                        width={55}
+                        height={55}
                     />
 
                     <Image
                         className={styles.nav__btn}
                         src="./carousel/nav-team.svg"
-                        width={50}
-                        height={50}
+                        width={55}
+                        height={55}
                     />
 
                 </div>
