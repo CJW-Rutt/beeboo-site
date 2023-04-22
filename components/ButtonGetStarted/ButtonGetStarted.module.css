@@ -9,7 +9,7 @@
 
 .btn__primary {
     background-color: var(--primary-yellow);
-    width: 100%;
+    width: 50%;
     height: 50%;
     border: 1px solid var(--text);
     border-radius: 0.5rem;
@@ -25,10 +25,10 @@
 
 .btn__background {
     background-color: var(--secondary-yellow);
-    width: 100%;
+    width: 50%;
     height: 50%;
-    margin-top: -2.9rem;
-    margin-right: -0.6rem;
+    margin-top: -2.95rem;
+    margin-right: -0.45rem;
     border: 1px solid var(--text);
     border-radius: 0.5rem;
     color: var(--text);
@@ -42,12 +42,12 @@
 
 }
 
-.btn__primary:hover {
+.btn__primary:active {
     margin-bottom: -0.2rem;
     margin-right: -0.6rem;
     transition: 0.2s ease-in-out;
 }
 
-.btn__primary:not(:hover) {
+.btn__primary:not(:active) {
     transition: 0.2s ease-in-out;
 }

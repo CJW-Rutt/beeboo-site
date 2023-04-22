@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .card__primary {
@@ -29,10 +29,10 @@
     border: 1px solid var(--text);
     border-radius: 0.5rem;
     color: var(--text);
-    height: 100%;
+    height: 40%;
     width: 80%;
-    margin-top: -5.6rem;
-    margin-right: -0.5rem;
+    margin-top: -4.35rem;
+    margin-right: -0.4rem;
     font-size: 0.9rem;
     font-weight: 400;
     display: flex;

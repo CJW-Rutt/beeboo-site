@@ -87,14 +87,14 @@ export default function Carousel() {
 
                     <Image
                         className={styles.nav__btn}
-                        src="./carousel/nav-quiz.svg"
+                        src="./carousel/nav-team.svg"
                         width={55}
                         height={55}
                     />
 
                     <Image
                         className={styles.nav__btn}
-                        src="./carousel/nav-team.svg"
+                        src="./carousel/nav-quiz.svg"
                         width={55}
                         height={55}
                     />
