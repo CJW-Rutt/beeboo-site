@@ -31,6 +31,20 @@
     margin-left: -5rem;
 }
 
+.whats{
+    position: absolute;
+    top: 11%;
+    left: 21%;
+    z-index: 1;
+}
+
+.why{
+    position: absolute;
+    bottom: 68%;
+    right: 62.5%;
+    z-index: 2;
+}
+
 .right {
     margin-top: 1rem;
     display: flex;
@@ -45,4 +59,73 @@
     row-gap: 1rem;
     align-items: center;
     margin-left: -2rem;
+}
+
+.animation__container {
+    width: 120px;
+    position: absolute;
+    top: 16%;
+    right: 65.3%;
+    z-index: 1;
+    rotate: 90deg;
+}
+
+.animation__container02 {
+    width: 120px;
+    position: absolute;
+    top: 16%;
+    right: 62.5%;
+    z-index: 1;
+    rotate: 180deg;
+}
+
+.cloud01 {
+    position: absolute;
+    top: 1%;
+    right: 61%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud02 {
+    position: absolute;
+    top: 7%;
+    left: 20.5%;
+    animation-name: float;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud03 {
+    position: absolute;
+    top: 13%;
+    right: 65%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-5%, 5%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
 }

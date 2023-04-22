@@ -21,8 +21,6 @@ export default function IntroScreen({ image }) {
       path: "./animations/pollen.json",
     })
 
-    
-
     return () => anim.destroy();
   }, [])
 
