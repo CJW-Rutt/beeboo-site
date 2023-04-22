@@ -25,7 +25,7 @@ export default function ActivitiesScreen({ image }) {
       setTimeout(() => {
         setIsActivitiesVisible(true);
         setIsDelayActive(false);
-      }, 500); // set the delay time in milliseconds
+      }, 500);
     }
   };
 

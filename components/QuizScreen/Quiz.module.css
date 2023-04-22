@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 0rem;
+    row-gap: 1rem;
     z-index: -9999;
 }
 
@@ -22,21 +22,111 @@
     margin-top: 1rem;
 }
 
-.center {
+.content__container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 2rem;
+    flex-direction: row;
+    column-gap: 3rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1rem;
-    margin-left: 17rem;
+    margin-right: 6rem;
+    margin-left: -6rem;
+    margin-top: 1rem;
 }
 
-.arrow {
-    rotate: 15deg;
+.quiz__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 24rem;
+}
+
+.city {
+    margin-top: 1.3rem;
+    margin-left: 25rem;
+    z-index: 1;
+}
+
+.house {
+    margin-top: 6.3rem;
+    z-index: 1;
+}
+
+.bea {
+    margin-left: 1rem;
+    margin-top: -1rem;
+    z-index: 1;
+}
+
+.arrow__line {
+    rotate: 50deg;
+    position: absolute;
+    top: 15%;
+    right: 26.5%;
+    z-index: 1;
+}
+
+.animations {
+    rotate: 90deg;
+    margin-top: -17rem;
+}
+
+.animation__container {
+    width: 120px;
+    z-index: 0;
+    rotate: 90deg;
+}
+
+.animation__container02 {
+    width: 120px;
+    z-index: 0;
+    rotate: 180deg;
+}
+
+.cloud01 {
+    position: absolute;
+    top: 1%;
+    right: 20%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud02 {
+    position: absolute;
+    top: 6%;
+    left: 63%;
+    animation-name: float;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud03 {
+    position: absolute;
+    top: 12%;
+    right: 27%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(-5%, 5%);}
+    100% {transform: translate(0, 0);}
 }
