@@ -26,8 +26,8 @@ export default function Carousel() {
     const images = [
         <IntroScreen />,
         <LearnScreen />,
-        <QuizScreen />,
         <ActivitiesScreen />,
+        <QuizScreen />,
         <TeamScreen />
       ];
 

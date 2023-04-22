@@ -32,18 +32,55 @@ export default function ActivitiesScreen({ image }) {
   return (
     <div className={styles.main__container}>
       <h1 className={styles.h1}>Activities await!!</h1>
-        <ActivitiesCard01/>
 
-        <div onClick={handleOpenActivities}>
+      <div className={styles.content__container}>
 
-        <ButtonGetStarted/>
-        
+        <Image
+          className={styles.boo}
+          src="./mascot/boo-happy-right.svg"
+          width={100}
+          height={100}
+        />
+
+        <div className={styles.content}>
+          <ActivitiesCard01/>
+
+          <div onClick={handleOpenActivities}>
+            <ButtonGetStarted
+              className={styles.btn}
+            />
+          </div>
+        </div>
+
       </div>
+
       {isActivitiesVisible && (
         <TextBubble onClose={handleClose}>
             <ActivitiesMain onClose={handleClose} />
         </TextBubble>
       )}
+
+      <Image
+        className={styles.cloud01}
+        src="./carousel/cloud.svg"
+        height={100}
+        width={200}
+      />
+
+      <Image
+        className={styles.cloud02}
+        src="./carousel/cloud-2.svg"
+        height={100}
+        width={200}
+      />
+
+      <Image
+        className={styles.cloud03}
+        src="./carousel/cloud-2.svg"
+        height={100}
+        width={200}
+      />
+
     </div>
   );
 }

@@ -2,13 +2,27 @@
 .main__container {
     height: 100vh;
     width: 100vw;
-    background-image: url("/carousel/activities-background.svg");
+    background-image: url("/carousel/quiz-background.svg");
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 0rem;
     z-index: -9999;
+}
+
+.content__container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    margin-left: -7.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
 }
 
 .img {
@@ -21,4 +35,56 @@
     font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
+}
+
+.boo {
+    rotate: -20deg;
+    z-index: 1;
+    margin-top: 2rem;
+}
+
+
+.cloud01 {
+    position: absolute;
+    top: 1%;
+    right: 41%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud02 {
+    position: absolute;
+    top: 7%;
+    right: 54%;
+    animation-name: float;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud03 {
+    position: absolute;
+    top: 14%;
+    right: 44%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(-5%, 5%);}
+    100% {transform: translate(0, 0);}
 }

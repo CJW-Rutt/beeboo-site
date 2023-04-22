@@ -2,7 +2,7 @@
 .main__container {
     height: 100vh;
     width: 100vw;
-    background-image: url("/carousel/quiz-background.svg");
+    background-image: url("/carousel/activities-background.svg");
     background-size: cover;
     display: flex;
     flex-direction: column;
