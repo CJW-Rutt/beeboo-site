@@ -42,7 +42,7 @@
 
 .card__primary:active {
     margin-bottom: -0.3rem;
-    margin-right: -0.55rem;
+    margin-right: -0.4rem;
     transition: 0.2s ease-in-out;
 }
 

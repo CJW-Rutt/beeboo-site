@@ -36,6 +36,19 @@
     top: 11%;
     left: 21%;
     z-index: 1;
+    width: 190px;
+    height: 190px;
+}
+
+.whats:active {
+    width: 195px;
+    height: 195px;
+    left: 20.95%;
+    transition: 0.1s ease-in-out;
+}
+
+.whats::not(:active) {
+    transition: 0.1s ease-in-out;
 }
 
 .why{
@@ -43,6 +56,35 @@
     bottom: 68%;
     right: 62.5%;
     z-index: 2;
+    width: 230px;
+    height: 230px;
+}
+
+.why:active {
+    width: 235px;
+    height: 235px;
+    bottom: 67.7%;
+    right: 62.45%;
+    transition: 0.1s ease-in-out;
+}
+
+.why::not(:active) {
+    transition: 0.1s ease-in-out;
+}
+
+.arrow__line01 {
+    rotate: -60deg;
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+}
+
+.arrow__line02 {
+    rotate: 60deg;
+    position: absolute;
+    top: 15%;
+    right: 67%;
+    z-index: 1;
 }
 
 .right {
@@ -119,13 +161,7 @@
 }
 
 @keyframes float {
-    0% {
-      transform: translate(0, 0);
-    }
-    50% {
-      transform: translate(-5%, 5%);
-    }
-    100% {
-      transform: translate(0, 0);
-    }
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(-5%, 5%);}
+    100% {transform: translate(0, 0);}
 }

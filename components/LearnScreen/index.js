@@ -60,6 +60,17 @@ export default function LearnScreen({ image }) {
             }}>
                 <LearnCard01/>
                 <Image
+                    className={styles.arrow__line01}
+                    src="/carousel/arrow-line.svg"
+                    width={60}
+                    height={60}
+                />
+                <Image
+                    onClick={() => 
+                        setTimeout(() => {
+                            handleOpenSection('InfoPestsClimate');
+                        }, 500)
+                    }
                     className={styles.whats}
                     src="/carousel/whats-happening-learn.svg"
                     width={190}
@@ -70,14 +81,24 @@ export default function LearnScreen({ image }) {
             {/* <div className={styles.right} onClick={() => handleOpenSection('InfoPollination')}> */}
             <div className={styles.right} onClick={() => {
                 setTimeout(() => {
-                handleOpenSection('InfoPestsClimate');
+                handleOpenSection('InfoPollination');
                 }, 500); // add a delay of 0.5s second before opening the link so we can have the animation feedback
             }}>
                 <h1 className={styles.h1}>Let's learn together!</h1>
                 <div className={styles.right__card}>
                     <LearnCard02/>
-
                     <Image
+                        className={styles.arrow__line02}
+                        src="/carousel/arrow-line.svg"
+                        width={60}
+                        height={60}
+                    />
+                    <Image
+                        onClick={() => 
+                            setTimeout(() => {
+                            handleOpenSection('InfoPollination');
+                            }, 1000)
+                        }
                         className={styles.why}
                         src="/carousel/why-learn.svg"
                         width={230}
