@@ -9,22 +9,22 @@ import lottie from 'lottie-web'
 
 export default function IntroScreen({ image }) {
 
-  // let animationContainer = createRef();
+  let animationContainer = createRef();
 
-  // useEffect(() => {
-  //   const anim = lottie.loadAnimation({
-  //     container: animationContainer.current,
-  //     rerender: "svg",
-  //     loop: true,
-  //     autoplay: true,
-  //     path: "./animations/pollen.json",
-      
-  //   })
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: animationContainer.current,
+      rerender: "svg",
+      loop: true,
+      pingpong: true,
+      autoplay: true,
+      path: "./animations/pollen.json",
+    })
 
-  //   anim.setSpeed(0.1)
+    
 
-  //   return () => anim.destroy();
-  // }, [])
+    return () => anim.destroy();
+  }, [])
 
   return (
     <div className={styles.main__container}>
@@ -59,7 +59,7 @@ export default function IntroScreen({ image }) {
           width={200}
         />
 
-        {/* <div className={styles.animation__container} ref={animationContainer}/> */}
+        {<div className={styles.animation__container} ref={animationContainer}/>}
 
     </div>
   );

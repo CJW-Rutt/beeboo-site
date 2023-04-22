@@ -24,10 +24,10 @@
 }
 
 .animation__container {
-    width: 200px;
+    width: 160px;
     position: absolute;
-    top: 11%;
-    left: 14.4%;
+    top: 11.6%;
+    left: 14.8%;
     z-index: 0;
 }
 
