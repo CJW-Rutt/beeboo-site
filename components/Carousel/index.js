@@ -59,11 +59,23 @@ export default function Carousel() {
             <div className={styles.nav__buttonrow}>
 
                 {currentIndex !== 0 && (
-                    <button onClick={prevImage} className={styles.btn__prev}>Prev</button>
+                    <Image
+                        className={styles.btn__prev}
+                        onClick={prevImage}
+                        src="./carousel/arrow-right.svg"
+                        width={90}
+                        height={90}
+                    />
                 )}
 
                 {currentIndex !== images.length - 1 && (
-                    <button onClick={nextImage} className={styles.btn__next}>Next</button>
+                    <Image
+                        className={styles.btn__next}
+                        onClick={nextImage}
+                        src="./carousel/arrow-left.svg"
+                        width={90}
+                        height={90}
+                    />
                 )}  
                 <div className={styles.navigation}>
                     <Image
@@ -82,17 +94,11 @@ export default function Carousel() {
 
                     <Image
                         className={styles.nav__btn}
-                        src="./carousel/nav-activities.svg"
-                        width={50}
-                        height={50}
-                    />
-
-                    <Image
-                        className={styles.nav__btn}
                         src="./carousel/nav-team.svg"
                         width={50}
                         height={50}
                     />
+
                 </div>
             </div>
         </div>

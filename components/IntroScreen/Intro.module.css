@@ -15,3 +15,68 @@
     font-size: 2rem;
     margin: 1rem 0rem;
 }
+
+.hive {
+    position: absolute;
+    top: 16%;
+    left: 15.5%;
+    z-index: 1;
+}
+
+.animation__container {
+    width: 200px;
+    position: absolute;
+    top: 11%;
+    left: 14.4%;
+    z-index: 0;
+}
+
+.cloud01 {
+    position: absolute;
+    top: 0%;
+    left: 15%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud02 {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    animation-name: float;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud03 {
+    position: absolute;
+    top: 11%;
+    left: 11%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+@keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-5%, 5%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+}

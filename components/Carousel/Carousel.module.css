@@ -13,14 +13,18 @@
 
 .btn__prev {
     position: absolute;
-    top: 50%;
-    left: 0;
+    bottom: 1%;
+    left: 3%;
 }
 
 .btn__next {
     position: absolute;
-    top: 50%;
-    right: 0;
+    bottom: 1%;
+    right: 3%;
+    animation-name: shake;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
 }
 
 .navigation {
@@ -29,5 +33,15 @@
     column-gap: 2rem;
     position: absolute;
     bottom: 4%;
-    right: 35%;
+    right: 38%;
+}
+
+  
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    20% { transform: translate(-1px, -1px) rotate(-1deg) scale(1.02); }
+    40% { transform: translate(1px, 1px) rotate(1deg) scale(1.03); }
+    60% { transform: translate(-1px, -1px) rotate(-1deg) scale(1.03); }
+    80% { transform: translate(1px, 1px) rotate(1deg) scale(1.02); }
+    100% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
 }
