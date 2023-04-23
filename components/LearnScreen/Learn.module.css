@@ -31,6 +31,74 @@
     margin-left: -5rem;
 }
 
+.whats{
+    position: absolute;
+    top: 11%;
+    left: 21%;
+    z-index: 1;
+    width: 190px;
+    height: 190px;
+}
+
+.whats:active {
+    width: 195px;
+    height: 195px;
+    left: 20.95%;
+    transition: 0.1s ease-in-out;
+}
+
+.whats::not(:active) {
+    transition: 0.1s ease-in-out;
+}
+
+.why{
+    position: absolute;
+    bottom: 68%;
+    right: 62.5%;
+    z-index: 2;
+    width: 230px;
+    height: 230px;
+}
+
+.why:active {
+    width: 235px;
+    height: 235px;
+    bottom: 67.7%;
+    right: 62.45%;
+    transition: 0.1s ease-in-out;
+}
+
+.why::not(:active) {
+    transition: 0.1s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    49% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    50% { transform: translate(-1px, -1px) rotate(-1deg) scale(1.02); }
+    52% { transform: translate(1px, 1px) rotate(1deg) scale(1.03); }
+    54% { transform: translate(-1px, -1px) rotate(-1deg) scale(1.03); }
+    56% { transform: translate(1px, 1px) rotate(1deg) scale(1.02); }
+    58% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+    60% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    100% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+}
+
+.arrow__line01 {
+    rotate: -60deg;
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+}
+
+.arrow__line02 {
+    rotate: 60deg;
+    position: absolute;
+    top: 15%;
+    right: 67%;
+    z-index: 1;
+}
+
 .right {
     margin-top: 1rem;
     display: flex;
@@ -45,4 +113,67 @@
     row-gap: 1rem;
     align-items: center;
     margin-left: -2rem;
+}
+
+.animation__container {
+    width: 120px;
+    position: absolute;
+    top: 16%;
+    right: 65.3%;
+    z-index: 1;
+    rotate: 90deg;
+}
+
+.animation__container02 {
+    width: 120px;
+    position: absolute;
+    top: 16%;
+    right: 62.5%;
+    z-index: 1;
+    rotate: 180deg;
+}
+
+.cloud01 {
+    position: absolute;
+    top: 1%;
+    right: 61%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud02 {
+    position: absolute;
+    top: 7%;
+    left: 20.5%;
+    animation-name: float;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.cloud03 {
+    position: absolute;
+    top: 13%;
+    right: 65%;
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(-5%, 5%);}
+    100% {transform: translate(0, 0);}
 }

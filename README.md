@@ -36,9 +36,15 @@ yarn dev
 
 The following dependencies need to be installed:
 
-- ChartJS
+### ChartJS
 
 ```
 npm i react-chartjs-2
+```
+
+### Lottie Animation
+
+```
+npm install lottie-web
 ```
 
