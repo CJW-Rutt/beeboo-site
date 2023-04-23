@@ -17,7 +17,6 @@ export default function Carousel() {
         setCurrentIndex(index);
     };
 
-
     const prevImage = () => {
         const index = currentIndex === 0 ? 0 : currentIndex - 1;
         setCurrentIndex(index);
@@ -29,7 +28,11 @@ export default function Carousel() {
         <ActivitiesScreen />,
         <QuizScreen />,
         <TeamScreen />
-      ];
+    ];
+
+    const navigateToIndex = (index) => {
+        setCurrentIndex(index);
+    }
 
 
     return(
@@ -40,7 +43,7 @@ export default function Carousel() {
                 className={styles.inner__contianer}
                 style={{
                     width: `${100 * images.length}%`,    
-                    transform: `translateX(-${(100 / images.length) * currentIndex}%)`
+                    transform: `translateX(-${(100 / images.length) * currentIndex}%)`,
                 }}>
 
                     {images.map((image, index) => (
@@ -48,9 +51,7 @@ export default function Carousel() {
                             key={index} 
                             style={{ width: `${100 / images.length}%` 
                             }}>
-
                             {image}
-
                         </div>
                     ))}
 
@@ -77,12 +78,15 @@ export default function Carousel() {
                         height={90}
                     />
                 )}  
+
                 <div className={styles.navigation}>
+
                     <Image
                         className={styles.nav__btn}
                         src="./carousel/nav-learn.svg"
                         width={55}
                         height={55}
+                        onClick={() => navigateToIndex(1)}
                     />
 
                     <Image
@@ -90,6 +94,7 @@ export default function Carousel() {
                         src="./carousel/nav-team.svg"
                         width={55}
                         height={55}
+                        onClick={() => navigateToIndex(2)}
                     />
 
                     <Image
@@ -97,10 +102,12 @@ export default function Carousel() {
                         src="./carousel/nav-quiz.svg"
                         width={55}
                         height={55}
+                        onClick={() => navigateToIndex(3)}
                     />
 
                 </div>
             </div>
+
         </div>
         </>
     )
