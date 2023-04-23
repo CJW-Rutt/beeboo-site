@@ -97,7 +97,7 @@ export default function LearnScreen({ image }) {
                         onClick={() => 
                             setTimeout(() => {
                             handleOpenSection('InfoPollination');
-                            }, 1000)
+                            }, 500)
                         }
                         className={styles.why}
                         src="/carousel/why-learn.svg"

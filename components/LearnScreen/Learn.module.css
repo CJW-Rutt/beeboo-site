@@ -72,6 +72,18 @@
     transition: 0.1s ease-in-out;
 }
 
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    49% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    50% { transform: translate(-1px, -1px) rotate(-1deg) scale(1.02); }
+    52% { transform: translate(1px, 1px) rotate(1deg) scale(1.03); }
+    54% { transform: translate(-1px, -1px) rotate(-1deg) scale(1.03); }
+    56% { transform: translate(1px, 1px) rotate(1deg) scale(1.02); }
+    58% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+    60% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+    100% { transform: translate(0px, 0px) rotate(0deg) scale(1);}
+}
+
 .arrow__line01 {
     rotate: -60deg;
     position: absolute;
