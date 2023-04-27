@@ -6,29 +6,24 @@ import TextBubble from '../TextBubble';
 import Quiz from '../Quiz';
 import lottie from 'lottie-web'
 
-export default function QuizScreen({ image }) {
-
+export default function QuizScreen({ image, toggleNavElements }) {
     const [isQuizVisible, setIsQuizVisible] = useState(false);
     const [isDelayActive, setIsDelayActive] = useState(false);
 
     const handleClose = () => {
-        setIsQuizVisible(false);
+      setIsQuizVisible(false);
     };
 
-    // const handleOpenQuiz = () => {
-    //     setIsQuizVisible(true);
-    // };
-
-    //same thing happened here, I could only add the delay this way :(
-      const handleOpenQuiz = () => {
-        if (!isDelayActive) {
-          setIsDelayActive(true);
-          setTimeout(() => {
-            setIsQuizVisible(true);
-            setIsDelayActive(false);
-          }, 500);
-        }
-      };
+    const handleOpenQuiz = () => {
+      if (!isDelayActive) {
+        setIsDelayActive(true);
+        setTimeout(() => {
+          setIsQuizVisible(true);
+          setIsDelayActive(false);
+          toggleNavElements(); // call toggleNavElements here
+        }, 500);
+      }
+    };
 
     let animationContainer1 = createRef();
     let animationContainer2 = createRef();
@@ -142,8 +137,8 @@ export default function QuizScreen({ image }) {
       </div>
 
       {isQuizVisible && (
-        <TextBubble onClose={handleClose}>
-            <Quiz onClose={handleClose} />
+        <TextBubble onClose={() => setIsQuizVisible(false)} toggleNavElements={toggleNavElements}>
+          <Quiz onClose={handleClose} toggleNavElements={toggleNavElements} />
         </TextBubble>
       )}
 

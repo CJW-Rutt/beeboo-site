@@ -6,7 +6,7 @@ import ActivitiesMain from '../ActivitiesMain';
 import TextBubble from '../TextBubble';
 import ButtonGetStarted from '../ButtonGetStarted'
 
-export default function ActivitiesScreen({ image }) {
+export default function ActivitiesScreen({ image, toggleNavElements }) {
   const [isActivitiesVisible, setIsActivitiesVisible] = useState(false);
   const [isDelayActive, setIsDelayActive] = useState(false);
 
@@ -14,14 +14,10 @@ export default function ActivitiesScreen({ image }) {
       setIsActivitiesVisible(false);
   };
 
-  // const handleOpenActivities = () => {
-  //     setIsActivitiesVisible(true);
-  // };
-
-  //I struggle finding a way of doing this delay in a easier way :( Had to overwrite this code to make it work. Let me know if you have a better option
   const handleOpenActivities = () => {
     if (!isDelayActive) {
       setIsDelayActive(true);
+      toggleNavElements();
       setTimeout(() => {
         setIsActivitiesVisible(true);
         setIsDelayActive(false);
@@ -55,8 +51,8 @@ export default function ActivitiesScreen({ image }) {
       </div>
 
       {isActivitiesVisible && (
-        <TextBubble onClose={handleClose}>
-            <ActivitiesMain onClose={handleClose} />
+        <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+            <ActivitiesMain onClose={handleClose} toggleNavElements={toggleNavElements} />
         </TextBubble>
       )}
 

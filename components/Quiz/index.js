@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from './Quiz.module.css';
 import { quizButtons } from '../../data/quiz.js';
 import { quizQuestions } from '../../data/quiz.js';
@@ -7,12 +7,47 @@ import Image from 'next/image';
 import ButtonLearning from '../ButtonLearning';
 import Close from '../Close';
 
-export default function Quiz({ onClose }) {
+
+export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [resultPage, setResultPage] = useState(null);
+
+  useEffect(() => {
+    if (showNavElements) {
+      toggleNavElements();
+    }
+    return () => {
+      if (showNavElements) {
+        toggleNavElements();
+      }
+    };
+  }, [showNavElements, toggleNavElements]);
+
+  const toggleNavElementsCallback = useCallback(() => {
+    toggleNavElements();
+  }, [toggleNavElements]);
+  
+  useEffect(() => {
+    toggleNavElementsCallback();
+    return () => {
+      toggleNavElementsCallback();
+    };
+  }, [toggleNavElementsCallback, toggleNavElements]);
+  
+  useEffect(() => {
+    const showNavElements = toggleNavElements;
+    if (showNavElements) {
+      toggleNavElements();
+    }
+    return () => {
+      if (showNavElements) {
+        toggleNavElements();
+      }
+    };
+  }, [toggleNavElements]);
 
   useEffect(() => {
     if (currentPage === 'quizPageThree' && selectedAnswers.length === 3 ) {
@@ -41,6 +76,12 @@ export default function Quiz({ onClose }) {
 
   const handleClose = () => {
     onClose();
+    toggleNavElements();
+    setCurrentPage('quizPageOne');
+    setFadeOut(false);
+    setShowIntro(true);
+    setSelectedAnswers([]);
+    setResultPage(null);
   };
 
   const determineResultPage = () => {
@@ -163,7 +204,7 @@ export default function Quiz({ onClose }) {
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} />
-                </div>  
+                </div>
               </div>
             </div>
           )
