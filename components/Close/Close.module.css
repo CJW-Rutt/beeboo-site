@@ -9,13 +9,13 @@
 
 .btn__arrow {
     background-color: #FED22B;
-    background-image: url('/buttons/close.png');
+    background-image: url('/buttons/close-icon.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 45px;
     width: 95%;
     height: 95%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 2rem;
     z-index: 2;
     display: flex;
@@ -27,9 +27,9 @@
     background-color: #FFA629;
     width: 95%;
     height: 95%;
-    margin-top: -3.5rem;
-    margin-right: -0.5rem;
-    border: 2px solid black;
+    margin-top: -3.7rem;
+    margin-right: -0.4rem;
+    border: 1px solid black;
     border-radius: 2rem;
     z-index: 0;
     display: flex;
@@ -38,7 +38,11 @@
     z-index: 1;
 }
 
-.btn__arrow:hover {
-    margin-bottom: -0.5rem;
-    margin-right: -0.5rem;
+.btn__arrow:active {
+    margin-bottom: -0.24rem;
+    margin-right: -0.4rem;
+}
+
+.btn__arrow:not(:active) {
+    transition: 0.2s ease-in-out;
 }
