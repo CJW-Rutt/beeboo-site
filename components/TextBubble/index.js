@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import styles from './TextBubble.module.css';
+import React from 'react';
 
-export default function TextBubble({ children }) {
+export default function TextBubble({ children, onClose, toggleNavElements }) {
+    const childrenWithProps = React.Children.map(children, child =>
+        React.cloneElement(child, { onClose, toggleNavElements })
+    );
+
     return (
         <div style={{ 
             position: 'absolute', 
@@ -20,7 +25,7 @@ export default function TextBubble({ children }) {
                     height: '100%',
                 }}
             >
-                {children}
+                {childrenWithProps}
             </div>
         </div>
     );

@@ -5,8 +5,13 @@ import Previous from '../Previous'
 import { useState } from 'react'
 import Image from 'next/image'
 
-export default function ActivitiesMasonBees({ onClose }) {
+export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
     const [step, setStep] = useState(0);
+
+    const handleClose = () => {
+        toggleNavElements();
+        onClose();
+    };
 
     const handleStartPlanting = () => {
         setStep(1);
@@ -98,7 +103,7 @@ export default function ActivitiesMasonBees({ onClose }) {
                 }
             </div>
             <div className={styles.rightButtonCol}>
-                <Close onClick={onClose} />
+                <Close onClick={handleClose} />
                 { step > 0 && step !== 4 && <Next onClick={handleNext} /> }
             </div>
         </div>

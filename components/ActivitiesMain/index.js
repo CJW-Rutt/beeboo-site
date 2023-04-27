@@ -5,7 +5,7 @@ import ActivitiesPlanting from '../ActivitiesPlanting';
 import ActivitiesMasonBees from '../ActivitiesMasonBees';
 import Close from '../Close';
 
-export default function ActivitiesMain({ onClose }) {
+export default function ActivitiesMain({ onClose, toggleNavElements }) {
     const [activeComponent, setActiveComponent] = useState('main');
 
     const handlePlantingClick = () => {
@@ -22,14 +22,16 @@ export default function ActivitiesMain({ onClose }) {
 
     const handleClose = () => {
         setActiveComponent('main');
+        toggleNavElements();
+        onClose();
     };
 
     const renderComponent = () => {
         switch (activeComponent) {
             case 'planting':
-                return <ActivitiesPlanting onClose={onClose} />;
+                return <ActivitiesPlanting onClose={handleClose} toggleNavElements={toggleNavElements} />;
             case 'masonBeeKit':
-                return <ActivitiesMasonBees onClose={onClose} />;
+                return <ActivitiesMasonBees onClose={handleClose} toggleNavElements={toggleNavElements} />;
             case 'visitGardens':
                 return ("Component Here");
             default:
@@ -65,7 +67,7 @@ export default function ActivitiesMain({ onClose }) {
                         </div>
                         <div className={styles.activitiesColTwo}>
                             <div className={styles.closeContainer}>
-                                <Close onClick={onClose} />
+                                <Close onClick={handleClose} />
                             </div>
                         </div>
                     </div>
