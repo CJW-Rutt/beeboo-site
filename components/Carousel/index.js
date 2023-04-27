@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ActivitiesScreen from '../ActivitiesScreen';
 import IntroScreen from '../IntroScreen';
 import LearnScreen from '../LearnScreen';
@@ -9,8 +9,8 @@ import Image from 'next/image';
 
 
 export default function Carousel() {
+
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [showNavElements, setShowNavElements] = useState(true);
 
     const nextImage = () => {
         const index = currentIndex === images.length - 1 ? currentIndex : currentIndex + 1;
@@ -22,24 +22,31 @@ export default function Carousel() {
         setCurrentIndex(index);
     };
 
+    const [showNavElements, setShowNavElements] = useState(true);
+
     const toggleNavElements = () => {
         setShowNavElements(!showNavElements);
     };
 
+    /*
+    const toggleNavElements = (visible) => {
+        setShowNavElements(visible);
+    };
+    Trying to get quiz visibility working but it breaks, this is the key but it breaks the close functionality. WIP
+    */
+    
     const images = [
-        <IntroScreen toggleNavElements={toggleNavElements} />,
-        <LearnScreen toggleNavElements={toggleNavElements} />,
+        <IntroScreen toggleNavElements={toggleNavElements}  />,
+        <LearnScreen toggleNavElements={toggleNavElements}  />,
         <ActivitiesScreen toggleNavElements={toggleNavElements} />,
-        <QuizScreen
-          showNavElements={showNavElements}
-          toggleNavElements={toggleNavElements}
-        />,
-        <TeamScreen toggleNavElements={toggleNavElements} />,
+        <QuizScreen toggleNavElements={toggleNavElements}  />,
+        <TeamScreen toggleNavElements={toggleNavElements}  />
     ];
 
     const navigateToIndex = (index) => {
         setCurrentIndex(index);
     }
+
 
     return(
         <>
