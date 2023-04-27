@@ -5,7 +5,7 @@ import Previous from '../Previous'
 import { useState } from 'react'
 import Image from 'next/image'
 
-export default function InfoPestsClimate({ onClose }) {
+export default function InfoPestsClimate({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0)
     const [topic, setTopic] = useState("");
 

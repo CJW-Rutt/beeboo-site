@@ -5,7 +5,7 @@ import Previous from '../Previous'
 import { useState } from 'react'
 import Image from 'next/image'
 
-export default function InfoPollination({ onClose }) {
+export default function InfoPollination({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0);
 
     const handleStartPolination = () => {
