@@ -38,7 +38,7 @@ export const teamInfo = [
     {
         name: "Joey",
         avatar: "/team/joey.png",
-        description: "I like to creep around my home and act like a goblin",
+        description: "Hello! As a designer, I love to innovate and make things fun, interactive, and memorable. Bees are important and super cute, so let's do our due diligence together!",
         socialMedia: [
             {
                 platform: "LinkedIn",
