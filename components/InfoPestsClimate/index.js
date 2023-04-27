@@ -39,24 +39,51 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
                             <p>
                                 Bees are amazing friends that help nature. They're like little gardeners!
                             </p>
+
                             <h2>
                                 But bees are in trouble because of two big problems:
                             </h2>
-                            <div className={styles.plantingStart}
-                                onClick={() => {
-                                    setTopic("pesticides")
-                                    handleNext()
-                                }}>
-                                Pesticides
+
+                            <div className={styles.btnContainer}>
+
+                                <div className={styles.btn}
+                                    onClick={() => {
+                                        setTopic("pesticides")
+                                        handleNext()
+                                    }}> 
+                                    <div className={styles.btn__primary}>
+                                        <div className={styles.content__container}>
+                                            <h2 className={styles.h2}>Pesticides</h2>
+                                            <Image
+                                                src='/pestsclimate/pesticide.svg'
+                                                width={70}
+                                                height={70}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className={styles.btn__background}></div>
+                                </div>
+
+                                <div className={styles.btn}
+                                    onClick={() => {
+                                        setTopic("climate change")
+                                        handleNext()
+                                    }}> 
+                                    <div className={styles.btn__primary__2}>
+                                        <div className={styles.content__container}>
+                                            <h2 className={styles.h2}>Climate Change</h2>
+                                            <Image
+                                                src='/pestsclimate/global-warming.svg'
+                                                width={70}
+                                                height={70}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className={styles.btn__background__2}></div>
+                                </div>
+
                             </div>
-                            <div className={styles.plantingStart}
-                                onClick={() => {
-                                    setTopic("climate change")
-                                    handleNext()
-                                }}>
-                                Climate Change
-                            </div>
-                            <div className={styles.plantingStartBackground}></div>
+
                         </div>
                     )
                 }

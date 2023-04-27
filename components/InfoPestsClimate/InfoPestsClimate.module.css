@@ -22,10 +22,16 @@
     padding: 15px 20px;
 }
 
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5rem;
+}
+
 .introContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    row-gap: 1.5rem;
     align-items: center;
     text-align: center;
     padding: 15px 20px;
@@ -93,4 +99,105 @@
 
 .info__title {
     text-align: center;
+}
+
+
+/* Button Pesticides */
+.btn {
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.content__container {
+    font-display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.h2{
+    padding-bottom: 0.5rem;
+}
+
+.btn__primary {
+    background-color: var(--primary-yellow);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 1.3rem;
+}
+
+.btn__background {
+    background-color: var(--secondary-yellow);
+    width: 100%;
+    height: 100%;
+    margin-top: -8.3rem;
+    margin-right: -0.5rem;
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 4.2rem 1.3rem;
+}
+
+.btn__primary:active {
+    margin-bottom: -0.2rem;
+    margin-right: -0.6rem;
+    transition: 0.2s ease-in-out;
+}
+
+.btn__primary:not(:active) {
+    transition: 0.2s ease-in-out;
+}
+
+
+/* Button Climate Change */
+.btn__primary__2 {
+    background-color: var(--primary-yellow);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 0.8rem;
+}
+
+.btn__background__2 {
+    background-color: var(--secondary-yellow);
+    width: 100%;
+    height: 100%;
+    margin-top: -8.3rem;
+    margin-right: -0.5rem;
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 4.2rem 0.8rem;
 }
