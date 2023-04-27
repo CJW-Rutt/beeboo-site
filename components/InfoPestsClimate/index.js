@@ -31,13 +31,11 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
                     handlePrevious()
                 }} />}
             </div>
-            <div className={styles.contentContainer}>
+            <div className={styles.content__container}>
                 {
                     step == 0 && topic === "" && (
                         <div className={styles.introContainer}>
-                            <h1>
-                                Did you know bees need your help?
-                            </h1>
+                            <h1>Did you know bees need your help?</h1>
                             <p>
                                 Bees are amazing friends that help nature. They're like little gardeners!
                             </p>
@@ -64,17 +62,20 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
                 }
                 {
                     topic === "pesticides" && (
+
                         <div className={styles.innerContentContainer}>
-                            <div className={styles.contentColLeft}>
-                                <h1 className={styles.info__title}>Pesticides</h1>
-                                <p className={styles.info__text}>Pesticides are chemicals that farmers use to keep bugs away from their crops. These chemicals can be bad for
-                                    bees because when they fly from flower to flower, they
-                                    might accidentally pick up some of the chemicals.
-                                    Yuck! It's like if you got sprayed with stinky bug
-                                    spray and didn't feel so good.</p>
-                            </div>
-                            <div className={styles.contentColRight}>
-                                <Image src='/pestsclimate/pesticide.png' alt="pesticide graphic" width={194} height={194} />
+
+                            <h1 className={styles.info__title}>Pesticides</h1> 
+
+                            <div className={styles.contentContainer}>
+                                <p className={styles.info__text}>
+                                    Pesticides are chemicals that farmers use to keep bugs away from their crops.
+                                    These chemicals can be <strong>bad for bees</strong> because when they fly from flower to
+                                    flower, they might accidentally pick up some of the chemicals. <strong>Yuck! </strong>
+                                     It's like if you got sprayed with stinky bug spray and didn't feel so good.
+                                </p>
+
+                                <Image src='/pestsclimate/pesticide.svg' alt="pesticide graphic" width={160} height={160} />
                             </div>
                         </div>
                     )
@@ -82,20 +83,20 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
                 {
                     topic == "climate change" && (
                         <div className={styles.innerContentContainer}>
-                            <div className={styles.contentColLeft}>
-                                <h1 className={styles.info__title}>
-                                    Climate Change
-                                </h1>
+
+                            <h1 className={styles.info__title}>Climate Change</h1>
+
+                            <div className={styles.contentContainer}>
                                 <p className={styles.info__text}>
-                                    Climate change is when the weather gets warmer and the world changes a lot. This can make it harder for bees
-                                    to find the flowers they need to get nectar and
-                                    pollen. It's like if you went to a birthday party
-                                    but there was no cake or ice cream. <br />No fun!
+                                    Climate change is when the weather gets warmer and the world changes a lot. 
+                                    This can make it <strong>harder for bees to find the flowers</strong> they need to get
+                                    nectar and pollen. It's like if you went to a birthday party
+                                    but there was no cake or ice cream. <br/> <strong>No fun!</strong>
                                 </p>
+
+                                <Image src='/pestsclimate/global-warming.svg' alt="global warming graphic" width={160} height={160} />
                             </div>
-                            <div className={styles.contentColRight}>
-                                <Image src='/pestsclimate/global-warming.png' alt="global warming graphic" width={194} height={194} />
-                            </div>
+
                         </div>
                     )
                 }

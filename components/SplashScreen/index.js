@@ -1,18 +1,20 @@
 import styles from './Splash.module.css'
 import { useState, useEffect } from "react";
 import Image from 'next/image';
+import WelcomeScreen from '../WelcomeScreen'
 
 
 export default function SplashScreen(props) {
+
+    const [showWelcomeScreen, setShowWelcomeScreen] = useState(false)
 
     const handleFadeIn = (event) => {
         event.target.classList.add('fade-in');
     };
 
-    const [fadeInImage, setFadeInImage] = useState('');
-
     const [animationFinished, setAnimationFinished] = useState(false);
 
+    const [fadeInImage, setFadeInImage] = useState('');
 
     useEffect(() => {
         const fadeInTimer = setInterval(() => {
@@ -55,10 +57,13 @@ export default function SplashScreen(props) {
             document.getElementById("cloud01").style.opacity = 0;
             document.getElementById("cloud02").style.opacity = 0;
             document.getElementById("logo").style.opacity = 0;
+            setTimeout(() => {
+                setAnimationFinished(true);
+            }, 1000);
           }, 5000);
 
           setTimeout(() => {
-            props.onAnimationEnd();
+            setShowWelcomeScreen(true);
           }, 9000);
 
     }, [])
@@ -95,7 +100,7 @@ export default function SplashScreen(props) {
                 <h1 className={styles.head}>BeeBoo</h1>
                 <p className={styles.subhead}>learning saving the bees</p>
             </div>
-            {animationFinished && <div className={styles.hidden}></div>}
+            {showWelcomeScreen && <WelcomeScreen />}
         </>
     )
 }
