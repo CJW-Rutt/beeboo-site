@@ -4,8 +4,9 @@ import TeamMember from "../team-member"
 import Image from "next/image"
 import styles from "./team-page.module.css"
 import TextBubble from "../TextBubble"
+import Close from "../Close"
 
-export default function TeamPage() {
+export default function TeamPage({ onClose }) {
 
     const [chooseMember, setChooseMember] = useState(true)
     const [data, setData] = useState({ teamInfo })
@@ -24,7 +25,7 @@ export default function TeamPage() {
                                             Meet the honey-makers!
                                         </h1>
                                         <p className={styles.team__description}>
-                                            Our team is like a colony of bees, working together to create something amazing. Get to know the busy bees who designed and developed this app just for you!
+                                            Thank you for checking out our application! Our team is like a colony of bees, working together to create something amazing. Get to know the busy bees who designed and developed this app just for you!
                                         </p>
                                     </div>
                                 </>
@@ -43,10 +44,10 @@ export default function TeamPage() {
                                         }}>
                                             <div className={styles.hexagon__content}>
                                                 {info.name}
-                                                <Image src={info.avatar} height={78} width={78} />
+                                                <Image src={info.avatar} height={78} width={78} alt="team member avatar" />
                                             </div>
-                                            <Image className={styles.member__hexagon} src="/team/hexagon-base.png" height={140} width={140} />
-                                            <Image className={styles.hexagon__shadow} src="/team/hexagon-shadow.png" height={140} width={140} />
+                                            <Image className={styles.member__hexagon} src="/team/hexagon-base.png" height={140} width={140} alt="hexagon base shape" />
+                                            <Image className={styles.hexagon__shadow} src="/team/hexagon-shadow.png" height={140} width={140} alt="hexagon shadow shape" />
                                         </div>
                                     )
                                 })
@@ -54,6 +55,13 @@ export default function TeamPage() {
                                 <>
                                     <div className={styles.textbubble__container}>
                                         <TextBubble>
+                                            <Image
+                                                className={styles.button__close}
+                                                src='/ui-icons/close.png'
+                                                height={50}
+                                                width={50}
+                                                onClick={() => setChooseMember(true)}
+                                            />
                                             <div className={styles.textbubble__content}>
                                                 <TeamMember
                                                     name={memberData.name}
@@ -61,12 +69,6 @@ export default function TeamPage() {
                                                     avatar={memberData.avatar}
                                                     socialMedia={memberData.socialMedia}
                                                     portfolio={memberData.portfolio} />
-                                                <Image
-                                                    src='/ui-icons/close.png'
-                                                    height={50}
-                                                    width={50}
-                                                    onClick={() => setChooseMember(true)}
-                                                />
                                             </div>
                                         </TextBubble>
                                     </div>
