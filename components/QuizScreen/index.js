@@ -20,7 +20,9 @@ export default function QuizScreen({ image, toggleNavElements }) {
         setTimeout(() => {
           setIsQuizVisible(true);
           setIsDelayActive(false);
-          toggleNavElements(); // call toggleNavElements here
+          if (!isQuizVisible) {
+            toggleNavElements();
+          }
         }, 500);
       }
     };
@@ -137,7 +139,7 @@ export default function QuizScreen({ image, toggleNavElements }) {
       </div>
 
       {isQuizVisible && (
-        <TextBubble onClose={() => setIsQuizVisible(false)} toggleNavElements={toggleNavElements}>
+        <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
           <Quiz onClose={handleClose} toggleNavElements={toggleNavElements} />
         </TextBubble>
       )}

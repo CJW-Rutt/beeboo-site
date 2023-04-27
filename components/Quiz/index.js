@@ -15,45 +15,9 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [resultPage, setResultPage] = useState(null);
 
-  useEffect(() => {
-    if (showNavElements) {
-      toggleNavElements();
-    }
-    return () => {
-      if (showNavElements) {
-        toggleNavElements();
-      }
-    };
-  }, [showNavElements, toggleNavElements]);
-
   const toggleNavElementsCallback = useCallback(() => {
     toggleNavElements();
   }, [toggleNavElements]);
-  
-  useEffect(() => {
-    toggleNavElementsCallback();
-    return () => {
-      toggleNavElementsCallback();
-    };
-  }, [toggleNavElementsCallback, toggleNavElements]);
-  
-  useEffect(() => {
-    const showNavElements = toggleNavElements;
-    if (showNavElements) {
-      toggleNavElements();
-    }
-    return () => {
-      if (showNavElements) {
-        toggleNavElements();
-      }
-    };
-  }, [toggleNavElements]);
-
-  useEffect(() => {
-    if (currentPage === 'quizPageThree' && selectedAnswers.length === 3 ) {
-      determineResultPage();
-    }
-  }, [currentPage, selectedAnswers]);
 
   const handleClick = (answer, weight) => {
     setSelectedAnswers([...selectedAnswers, weight]);
@@ -76,17 +40,25 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
 
   const handleClose = () => {
     onClose();
-    toggleNavElements();
-    setCurrentPage('quizPageOne');
+    toggleNavElements(true);
+    setCurrentPage("quizPageOne");
     setFadeOut(false);
     setShowIntro(true);
     setSelectedAnswers([]);
     setResultPage(null);
   };
 
-  const determineResultPage = () => {
-    const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
+  useEffect(() => {
+    toggleNavElements();
 
+    return () => {
+      toggleNavElements();
+    };
+  }, []);
+
+  const determineResultPage = useCallback(() => {
+    const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
+  
     if (totalWeight <= 0) {
       setResultPage('ResultPage1');
     } else if (totalWeight <= 2) {
@@ -96,7 +68,13 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
     } else {
       setResultPage('ResultPage4');
     }
-  };
+  }, [selectedAnswers]);
+  
+  useEffect(() => {
+    if (currentPage === 'quizPageThree' && selectedAnswers.length === 3) {
+      determineResultPage();
+    }
+  }, [currentPage, selectedAnswers, determineResultPage]);
 
   const currentQuestion = quizQuestions[currentPage]?.[0];
 
