@@ -8,14 +8,16 @@ import InfoPollination from '../InfoPollination';
 import TextBubble from '../TextBubble';
 import lottie from 'lottie-web'
 
-export default function LearnScreen({ image }) {
+export default function LearnScreen({ image, toggleNavElements }) {
     const [activeSection, setActiveSection] = useState(null);
 
     const handleClose = () => {
+        toggleNavElements();
         setActiveSection(null);
     };
 
     const handleOpenSection = (section) => {
+        toggleNavElements();
         setActiveSection(section);
     };
 
@@ -120,14 +122,14 @@ export default function LearnScreen({ image }) {
         </div>
 
         {activeSection === 'InfoPestsClimate' && (
-            <TextBubble onClose={handleClose}>
-                <InfoPestsClimate onClose={handleClose} />
+            <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+                <InfoPestsClimate onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
         )}
 
         {activeSection === 'InfoPollination' && (
-            <TextBubble onClose={handleClose}>
-                <InfoPollination onClose={handleClose} />
+            <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+                <InfoPollination onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
         )}
 
