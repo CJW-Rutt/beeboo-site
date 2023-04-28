@@ -36,8 +36,8 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                             <h2>These little heroes help plants grow <br />by something called pollination</h2>
                             <p>It's like when they go to a flower and give it a little kiss, which helps the flower make babies. And you know what that means? More flowers, more fruits, and more vegetables for us to eat! Yum!</p>
                             <div className={styles.plantingStart} onClick={handleStartPolination}>
-                                Learn More About Polination!
-                                <Image src='/info-pollination/flowerpolly.png' width={319.50} height={73.46} />
+                                Learn More About Pollination!
+                                <Image src='/info-pollination/flowerpolly.svg' width={319.50} height={73.46} />
                             </div>
                             <div className={styles.plantingStartBackground}></div>
                         </div>
