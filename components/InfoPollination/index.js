@@ -134,10 +134,16 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                         Find out what else you can do about bees!
                                     </p>
                                 </div>
-                                <div className={styles.innerButtonContainer}>
-                                    <div className={styles.activitiesButton}>Try These Activities!</div>
-                                    <div className={styles.activitiesButtonBackground}></div>
-                                </div>
+
+                                <div className={styles.btn__2}> 
+                                    <div className={styles.btn__primary__2}>
+                                        <h2 className={styles.h2__2}>ACTIVITIES!</h2>
+                                    </div>
+                                <div className={styles.btn__background__2}></div>
+
+                            </div>
+
+
                             </div>
 
                             <Image src='/info-pollination/beeboy.svg' alt="happy mascot" width={180} height={180} />
