@@ -57,7 +57,7 @@ export default function ActivitiesFarmers({ onClose, toggleNavElements }) {
                             <div className={styles.innerContentContainer}>
                                 <div className={styles.contentColLeft}>
                                     <h1>
-                                        Maintain natural habitats for bees
+                                        Help maintain natural habitats for bees
                                     </h1>
                                     <p>
                                         Farmers rely on bees to help pollinate their crops so that they can grow.

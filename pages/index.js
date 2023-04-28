@@ -5,6 +5,7 @@ import Lottie from 'lottie-web'
 
 import Carousel from '../components/Carousel'
 import SplashScreen from '../components/SplashScreen'
+import BackgroundMusic from '../components/BackgroundMusic'
 
 
 export default function Home() {
@@ -19,9 +20,8 @@ export default function Home() {
       </Head>
 
       <main>
-
-      <Carousel/>
-
+        <Carousel />
+        <BackgroundMusic />
       </main>
     </>
   )
