@@ -94,6 +94,13 @@
     left: 25px;
 }
 
+.chart__contentColRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .activitiesButton {
     background-color: var(--primary-yellow);
     position: relative;
