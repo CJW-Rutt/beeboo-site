@@ -54,7 +54,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>To protect the bees from the rain and sun, place their nest in a dry, protected area such as a shed or garage.</p>    
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/sunflower.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/activities-mason/honeycomb.png' alt="honeycomb graphic" width={208} height={208} />
                             </div>
                         </div>
                     )
@@ -68,7 +68,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>Check out the previous activity for a list of great flowers to plant!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/potting-soil.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/activities-mason/flowers2.png' alt="flowers" width={208} height={208} />
                             </div>
                         </div>
                     )
@@ -82,7 +82,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>Enjoy watching the bees fly in and out of the tubes as they go about their bee-sy lives!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/flower-pot.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/activities-mason/beeflower.png' alt="bees and flowers" width={208} height={208} />
                             </div>
                         </div>
                     )
@@ -96,7 +96,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>To make sure you're ready to take care of the bees, check out our quiz!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/watering-can.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/activities-mason/eureka.png' alt="person sitting and reading a book" width={208} height={208} />
                             </div>
                         </div>
                     )
