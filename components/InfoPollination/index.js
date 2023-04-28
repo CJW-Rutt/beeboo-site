@@ -106,7 +106,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                     step == 5 && (
                         <div className={styles.innerContentContainer}>
                             <div className={styles.contentColLeft}>
-                                <h1>Nature's best friends</h1>
+                                <h1>Nature's best friends </h1>
                                 <p>
                                     Bees are not just cute and fuzzy insects, they're superheroes who help make sure we have food and a beautiful world to live in.
                                     Let's protect them and their homes, so they can keep doing their important work.
