@@ -1,0 +1,7 @@
+.music__button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
