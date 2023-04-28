@@ -39,7 +39,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 Learn More About Polination!
                                 <Image src='/info-pollination/flowerpolly.png' width={319.50} height={73.46} />
                             </div>
-
+                            <div className={styles.plantingStartBackground}></div>
                         </div>
                     )
                 }
@@ -137,11 +137,10 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                     </div>
                                 </div>
                             </div>
+                            <div className={styles.contentColRight}>
+                                <Image src='/info-pollination/beeboy.png' alt="happy mascot" width={208} height={208} />
                             </div>
-                            <Image src='/info-pollination/beeboy.svg' alt="happy mascot" width={180} height={180} />
-                            
                         </div>
-                    
                     )
                 }
             </div>
