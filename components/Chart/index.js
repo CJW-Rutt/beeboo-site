@@ -9,6 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import styles from './Chart.module.css'
 
 ChartJS.register(
   CategoryScale,
@@ -27,24 +28,24 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Total Honey Production by Province',
+      text: 'Top Five Honey Producers by Province in Canada (2021)',
     },
   },
 };
 
-const labels = ['P.E.I.', 'Nova Scotia', 'New Brunswick', 'Quebec', 'Ontario', 'Manitoba', 'Saskatchewan', 'Alberta', 'British Columbia'];
+const labels = ['Ontario', 'Manitoba', 'Saskatchewan', 'Alberta', 'British Columbia'];
 
 export const data = {
   labels,
   datasets: [
     {
       label: 'Thousands of pounds (lb)',
-      data: [192,578,406,4628,6402,18630,19665,34925,4346],
+      data: [6402,18630,19665,34925,4346],
       backgroundColor: '#FED22B',
     },
   ],
 };
 
 export function Chart() {
-  return <Bar options={options} data={data} />;
+  return <Bar className={styles.chart} options={options} data={data} />;
 }
