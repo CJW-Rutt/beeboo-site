@@ -81,11 +81,13 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   if (showIntro) {
     return (
       <div className={styles.outerContainer}>
+        <div className={styles.fillCol}>
+
+        </div>
         <div className={styles.introContainer}>
           <h1>It's Quiz Time!</h1>
           <h2>Find out how ready you are to take care of our friends the mason bees!</h2>
           <p>Mason bees are important pollinators that play a crucial role in our ecosystem. By learning how to take care of them, we can help these tiny creatures thrive and make our world a better place. </p>
-          <p>In this quiz, we'll test what you learned on BeeBoo so far to see if you can create a safe and healthy environment for mason bees to live and reproduce.</p>
           <p>So, get ready to put your thinking caps on and let's dive into the world of mason bees!</p>
           <div className={styles.introButton} onClick={handleIntroButtonClick}>
             <p>Take the Quiz!</p>
@@ -93,7 +95,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
           <div className={styles.introButtonBackground} />
         </div>
         <div className={styles.quizBackContainer}>
-          <Close onClick={handleClose} />
+          <Close onClick={handleClose} width={50} height={50} />
         </div>
       </div>
 
@@ -117,7 +119,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose} width={50} height={50}  />
                 </div>
               </div>
             </div>
@@ -139,7 +141,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose}  />
                 </div>
               </div>
             </div>
@@ -160,7 +162,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose} width={50} height={50}  />
                 </div>
               </div>
             </div>
@@ -181,7 +183,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose} width={50} height={50}  />
                 </div>
               </div>
             </div>
