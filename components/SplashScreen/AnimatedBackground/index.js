@@ -1,5 +1,5 @@
 import AnimationWrapper from '../AnimationWrapper'
-import styles from './AnimatedBackGround.module.css'
+import styles from './AnimatedBackground.module.css'
 
 export default function AnimatedBackground({ delay, duration, top, right, bottom, left }) {
     return (

@@ -124,7 +124,7 @@ export default function LearnScreen({ image, toggleNavElements }) {
             <TextBubble 
                 onClose={handleClose} 
                 toggleNavElements={toggleNavElements}
-                style={{ left: '975px' }}
+                style={{ left: '2770px' }}
             >
                 <InfoPestsClimate onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
@@ -134,7 +134,7 @@ export default function LearnScreen({ image, toggleNavElements }) {
             <TextBubble 
                 onClose={handleClose} 
                 toggleNavElements={toggleNavElements}
-                style={{ left: '975px' }}
+                style={{ left: '2770px' }}
             >
                 <InfoPollination onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
