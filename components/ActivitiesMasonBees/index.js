@@ -118,7 +118,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                 }
             </div>
             <div className={styles.rightButtonCol}>
-                <Close onClick={handleClose} />
+                <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
                 { step > 0 && step !== 4 && <Next onClick={handleNext} /> }
             </div>
         </div>
