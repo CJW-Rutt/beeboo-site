@@ -98,7 +98,6 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
           <Close onClick={handleClose} width={50} height={50} />
         </div>
       </div>
-
     );
   } else if (resultPage) {
     return (
@@ -194,35 +193,42 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   } else {
     return (
       <div className={styles.quizContainer}>
-        <div className={styles.quizQuestion}>
-          <div className={styles.titleRow}>
-            <div className={styles.innerRow}>
-              <h1>{currentQuestion.h1}</h1>
-              <h2>{currentQuestion.h2}</h2>
-            </div>
-            <Close onClick={handleClose} />
-          </div>
-          <p>{currentQuestion['1']}</p>
-          <p>{currentQuestion['2']}</p>
-          <p>{currentQuestion['3']}</p>
-        </div>
-        <div className={styles.quizQuestionContainer}>
-          {
-            quizButtons[currentPage]?.map((item, index) => {
-              const answerKey = Object.keys(item)[0];
-              const src = item.src;
+        <div className={styles.quizButtonColLeft}>
 
-              return (
-                <QuizButton
-                  key={index}
-                  answer={item[answerKey]}
-                  src={src}
-                  onClick={() => handleClick(answerKey, item.weight)}
-                  fadeOut={fadeOut}
-                />
-              );
-            })
-          }
+        </div>
+        <div className={styles.quizContent}>
+          <div className={styles.quizQuestion}>
+            <div className={styles.titleRow}>
+              <div className={styles.innerRow}>
+                <h1>{currentQuestion.h1}</h1>
+                <h2>{currentQuestion.h2}</h2>
+              </div>
+            </div>
+            <p>{currentQuestion['1']}</p>
+            <p>{currentQuestion['2']}</p>
+            <p>{currentQuestion['3']}</p>
+          </div>
+          <div className={styles.quizQuestionContainer}>
+            {
+              quizButtons[currentPage]?.map((item, index) => {
+                const answerKey = Object.keys(item)[0];
+                const src = item.src;
+
+                return (
+                  <QuizButton
+                    key={index}
+                    answer={item[answerKey]}
+                    src={src}
+                    onClick={() => handleClick(answerKey, item.weight)}
+                    fadeOut={fadeOut}
+                  />
+                );
+              })
+            }
+          </div>
+        </div>
+        <div className={styles.quizButtonColRight}>
+          <Close onClick={handleClose} />
         </div>
       </div>
     );
