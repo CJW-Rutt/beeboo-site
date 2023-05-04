@@ -47,7 +47,7 @@ export default function TeamPage({ onClose }) {
                                                 <Image src={info.avatar} height={78} width={78} alt="team member avatar" />
                                             </div>
                                             <Image className={styles.member__hexagon} src="/team/hexagon-base.png" height={140} width={140} alt="hexagon base shape" />
-                                            <Image className={styles.hexagon__shadow} src="/team/hexagon-shadow.png" height={140} width={140} alt="hexagon shadow shape" />
+                                            {/* <Image className={styles.hexagon__shadow} src="/team/hexagon-shadow.png" height={140} width={140} alt="hexagon shadow shape" /> */}
                                         </div>
                                     )
                                 })

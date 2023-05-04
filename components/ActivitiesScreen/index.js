@@ -54,7 +54,7 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
         <TextBubble 
           onClose={handleClose} 
           toggleNavElements={toggleNavElements}
-          style={{ left: '1865px' }}
+          style={{ left: '3665px' }}
           >
             <ActivitiesMain onClose={handleClose} toggleNavElements={toggleNavElements} />
         </TextBubble>

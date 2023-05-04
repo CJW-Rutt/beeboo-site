@@ -54,11 +54,10 @@ export default function LearnScreen({ image, toggleNavElements }) {
     <div className={styles.main__container}>
 
         <div className={styles.container}>
-            {/* <div className={styles.left} onClick={() => handleOpenSection('InfoPestsClimate')}> */}
             <div className={styles.left} onClick={() => {
                 setTimeout(() => {
                 handleOpenSection('InfoPestsClimate');
-                }, 500); // add a delay of 0.5s second before opening the link so we can have the animation feedback
+                }, 500);
             }}>
                 <LearnCard01/>
                 <Image
@@ -80,11 +79,11 @@ export default function LearnScreen({ image, toggleNavElements }) {
                 />
 
             </div>
-            {/* <div className={styles.right} onClick={() => handleOpenSection('InfoPollination')}> */}
+            
             <div className={styles.right} onClick={() => {
                 setTimeout(() => {
                 handleOpenSection('InfoPollination');
-                }, 500); // add a delay of 0.5s second before opening the link so we can have the animation feedback
+                }, 500); 
             }}>
                 <h1 className={styles.h1}>Let's learn together!</h1>
                 <div className={styles.right__card}>
@@ -125,7 +124,7 @@ export default function LearnScreen({ image, toggleNavElements }) {
             <TextBubble 
                 onClose={handleClose} 
                 toggleNavElements={toggleNavElements}
-                style={{ left: '975px' }}
+                style={{ left: '2770px' }}
             >
                 <InfoPestsClimate onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
@@ -135,7 +134,7 @@ export default function LearnScreen({ image, toggleNavElements }) {
             <TextBubble 
                 onClose={handleClose} 
                 toggleNavElements={toggleNavElements}
-                style={{ left: '975px' }}
+                style={{ left: '2770px' }}
             >
                 <InfoPollination onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
