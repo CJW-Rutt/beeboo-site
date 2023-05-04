@@ -2,19 +2,22 @@ import Image from 'next/image';
 import styles from './TextBubble.module.css';
 import React from 'react';
 
-export default function TextBubble({ children, onClose, toggleNavElements }) {
+export default function TextBubble({ children, onClose, toggleNavElements, style }) {
     const childrenWithProps = React.Children.map(children, child =>
         React.cloneElement(child, { onClose, toggleNavElements })
     );
 
     return (
-        <div style={{ 
-            position: 'absolute', 
-            width: '800px', 
-            height: '365px', 
-            top: '26px', 
-            zIndex: '9999',
-        }}>
+        <div 
+            style={{ 
+                position: 'absolute', 
+                width: '800px', 
+                height: '365px', 
+                top: '26px', 
+                zIndex: '9999',
+                ...style
+            }}
+        >
             <Image src="/text-bubble.png" alt="text-bubble" height={365} width={800} />
             <div
                 style={{

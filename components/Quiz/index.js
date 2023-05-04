@@ -104,7 +104,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
       <div className={styles.resultContainer}>
         {
           resultPage === 'ResultPage1' && (
-            <div className={styles.resultsPage1}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You got 0%.</h1>
@@ -126,7 +126,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
         }
         {
           resultPage === 'ResultPage2' && (
-            <div className={styles.resultsPage2}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You're almost there!</h1>
@@ -148,7 +148,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
         }
         {
           resultPage === 'ResultPage3' && (
-            <div className={styles.resultsPage3}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You Passed! WOW!</h1>
@@ -169,7 +169,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
         }
         {
           resultPage === 'ResultPage4' && (
-            <div className={styles.resultsPage4}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>YOU GOT 100%!!!</h1>
