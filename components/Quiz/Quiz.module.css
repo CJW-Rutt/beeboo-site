@@ -104,6 +104,10 @@
     align-items: flex-end;
 }
 
+.resultsPage {
+    height: 88%;
+}
+
 .introButton {
     background-color: var(--primary-yellow);
     position: relative;
@@ -128,8 +132,8 @@
     width: 19.375rem;
     height: 3.188rem;
     margin-top: -7.9rem;
-    margin-top: -3rem;
-    left: 6px;
+    margin-top: -3.2rem;
+    left: 4px;
     border: 2px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
@@ -162,6 +166,10 @@
 
 .fillCol {
     width: 120px;
+}
+
+.resultsRightCol img {
+    padding-top: 22px;
 }
 
 @keyframes fadeOut {
