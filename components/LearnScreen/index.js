@@ -12,12 +12,12 @@ export default function LearnScreen({ image, toggleNavElements }) {
     const [activeSection, setActiveSection] = useState(null);
 
     const handleClose = () => {
-        toggleNavElements();
+        toggleNavElements(true);
         setActiveSection(null);
     };
 
     const handleOpenSection = (section) => {
-        toggleNavElements();
+        toggleNavElements(false);
         setActiveSection(section);
     };
 
