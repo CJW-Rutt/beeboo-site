@@ -1,6 +1,6 @@
 import styles from './ActivitiesMain.module.css'
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import ActivitiesPlanting from '../ActivitiesPlanting';
 import ActivitiesMasonBees from '../ActivitiesMasonBees';
 import ActivitiesFarmers from '../ActivitiesFarmers';
@@ -8,6 +8,10 @@ import Close from '../Close';
 
 export default function ActivitiesMain({ onClose, toggleNavElements }) {
     const [activeComponent, setActiveComponent] = useState('main');
+
+    const toggleNavElementsCallback = useCallback((isVisible) => {
+        toggleNavElements(isVisible);
+      }, [toggleNavElements]);
 
     const handlePlantingClick = () => {
         setActiveComponent('planting');
@@ -27,14 +31,22 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
         onClose();
     };
 
+    useEffect(() => {
+        toggleNavElementsCallback(false);
+    
+        return () => {
+          toggleNavElementsCallback(true);
+        };
+    }, [toggleNavElementsCallback]);
+
     const renderComponent = () => {
         switch (activeComponent) {
             case 'planting':
-                return <ActivitiesPlanting onClose={handleClose} toggleNavElements={toggleNavElements} />;
+                return <ActivitiesPlanting onClose={handleClose}  onToggleNavElements={toggleNavElementsCallback} />;
             case 'masonBeeKit':
-                return <ActivitiesMasonBees onClose={handleClose} toggleNavElements={toggleNavElements} />;
+                return <ActivitiesMasonBees onClose={handleClose}  onToggleNavElements={toggleNavElementsCallback} />;
             case 'supportLocal':
-                return <ActivitiesFarmers onClose={handleClose} toggleNavElements={toggleNavElements}  />;
+                return <ActivitiesFarmers onClose={handleClose}  onToggleNavElements={toggleNavElementsCallback}  />;
             default:
                 return (
                     <div className={styles.activitiesContainer}>
@@ -68,7 +80,7 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
                         </div>
                         <div className={styles.activitiesColTwo}>
                             <div className={styles.closeContainer}>
-                                <Close onClick={handleClose} />
+                                <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
                             </div>
                         </div>
                     </div>

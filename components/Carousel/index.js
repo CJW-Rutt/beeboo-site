@@ -24,16 +24,9 @@ export default function Carousel() {
 
     const [showNavElements, setShowNavElements] = useState(true);
 
-    const toggleNavElements = () => {
-        setShowNavElements(!showNavElements);
+    const toggleNavElements = (isVisible) => {
+        setShowNavElements(isVisible);
     };
-
-    /*
-    const toggleNavElements = (visible) => {
-        setShowNavElements(visible);
-    };
-    Trying to get quiz visibility working but it breaks, this is the key but it breaks the close functionality. WIP
-    */
     
     const images = [
         <IntroScreen toggleNavElements={toggleNavElements}  />,

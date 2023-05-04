@@ -145,7 +145,10 @@ export default function QuizScreen({ image, toggleNavElements }) {
           className={styles.quizModule}
           style={{ right: '915px' }}
         >
-          <Quiz onClose={handleClose} toggleNavElements={toggleNavElements} />
+          <Quiz 
+            onClose={handleClose} 
+            toggleNavElements={toggleNavElements}
+          />
         </TextBubble>
       )}
 
