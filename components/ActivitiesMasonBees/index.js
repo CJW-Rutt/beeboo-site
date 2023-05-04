@@ -2,17 +2,24 @@ import styles from './ActivitiesMasonBees.module.css'
 import Close from '../Close'
 import Next from '../Next'
 import Previous from '../Previous'
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from "react"
 import Image from 'next/image'
 
 export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
     const [step, setStep] = useState(0);
 
+    const toggleNavElementsCallback = useCallback((isVisible) => {
+        if (toggleNavElements) {
+            toggleNavElements(isVisible);
+        }
+    }, [toggleNavElements]);
+
     const handleClose = () => {
-        toggleNavElements();
+        if (toggleNavElements) {
+            toggleNavElements();
+        }
         onClose();
     };
-
     const handleStartPlanting = () => {
         setStep(1);
     }
@@ -26,6 +33,14 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
             setStep(step - 1);
         }
     }
+
+    useEffect(() => {
+        toggleNavElementsCallback(false);
+    
+        return () => {
+          toggleNavElementsCallback(true);
+        };
+    }, [toggleNavElementsCallback]);
 
     return (
         <div className={styles.masonContainer}>
