@@ -1,6 +1,6 @@
 .btn {
-    width: 3.8rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
     background-color: #FFA629;
     width: 95%;
     height: 95%;
-    margin-top: -3.7rem;
+    margin-top: -2.7rem;
     margin-right: -0.4rem;
     border: 1px solid black;
     border-radius: 2rem;

@@ -1,10 +1,29 @@
 .quizContainer {
     display: flex;
+    flex-direction: row;
+}
+
+.quizContent {
+    display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 86%;
     height: 100%;
+}
+
+.quizButtonColLeft {
+    width: 50px;
+}
+
+.quizButtonColRight {
+    width: 50px;
+    padding-top: 15px;
+    padding-right: 20px;
+}
+
+.buttonCol {
+    margin-left: 10px;
 }
 
 .outerContainer {
@@ -26,11 +45,11 @@
 }
 
 .quizQuestion {
-    width: 88%;
+    width: 92%;
 }
 
 .quizQuestion p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .quizQuestion h1 {
@@ -55,6 +74,10 @@
     margin-top: 15px;
 }
 
+.introContainer h2 {
+    width: 70%;
+}
+
 .introContainer h2, .introContainer p  {
     margin-bottom: 15px;
 }
@@ -66,7 +89,8 @@
 .resultsInnerContainer {
     display: flex;
     flex-direction: row;
-    padding: 30px;
+    padding: 15px 20px;
+    padding-left: 50px;
 }
 
 .resultsLeftCol {
@@ -134,6 +158,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+.fillCol {
+    width: 120px;
 }
 
 @keyframes fadeOut {
