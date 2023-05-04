@@ -1,10 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { useState, useEffect, createRef } from 'react'
-import Lottie from 'lottie-web'
-
 import Carousel from '../components/Carousel'
-import SplashScreen from '../components/SplashScreen'
 import BackgroundMusic from '../components/BackgroundMusic'
 
 

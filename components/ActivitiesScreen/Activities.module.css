@@ -47,7 +47,7 @@
 .cloud01 {
     position: absolute;
     top: 1%;
-    right: 41%;
+    right: 29%;
     animation-name: float;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
@@ -59,7 +59,7 @@
 .cloud02 {
     position: absolute;
     top: 7%;
-    right: 54%;
+    right: 39%;
     animation-name: float;
     animation-duration: 6s;
     animation-timing-function: ease-in-out;
@@ -72,7 +72,7 @@
 .cloud03 {
     position: absolute;
     top: 14%;
-    right: 44%;
+    right: 31%;
     animation-name: float;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
