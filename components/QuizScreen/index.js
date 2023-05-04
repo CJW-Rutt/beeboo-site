@@ -139,7 +139,12 @@ export default function QuizScreen({ image, toggleNavElements }) {
       </div>
 
       {isQuizVisible && (
-        <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+        <TextBubble
+          onClose={handleClose}
+          toggleNavElements={toggleNavElements}
+          className={styles.quizModule}
+          style={{ right: '915px' }}
+        >
           <Quiz onClose={handleClose} toggleNavElements={toggleNavElements} />
         </TextBubble>
       )}

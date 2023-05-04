@@ -1,0 +1,31 @@
+.animatedBee {
+    animation-name: float-2;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+  
+.animatedBeeWrapper {
+    opacity: 0;
+    z-index: 0;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+  
+@keyframes float-2 {
+    0% {
+    transform: translateY(0);
+    }
+    50% {
+    transform: translateY(-10%);
+    }
+    100% {
+    transform: translateY(0);
+    }
+}

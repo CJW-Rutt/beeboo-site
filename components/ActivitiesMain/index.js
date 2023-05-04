@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import ActivitiesPlanting from '../ActivitiesPlanting';
 import ActivitiesMasonBees from '../ActivitiesMasonBees';
+import ActivitiesFarmers from '../ActivitiesFarmers';
 import Close from '../Close';
 
 export default function ActivitiesMain({ onClose, toggleNavElements }) {
@@ -16,8 +17,8 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
         setActiveComponent('masonBeeKit');
     };
 
-    const handleVisitGardensClick = () => {
-        setActiveComponent('visitGardens');
+    const handleSupportLocalClick = () => {
+        setActiveComponent('supportLocal');
     };
 
     const handleClose = () => {
@@ -32,8 +33,8 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
                 return <ActivitiesPlanting onClose={handleClose} toggleNavElements={toggleNavElements} />;
             case 'masonBeeKit':
                 return <ActivitiesMasonBees onClose={handleClose} toggleNavElements={toggleNavElements} />;
-            case 'visitGardens':
-                return ("Component Here");
+            case 'supportLocal':
+                return <ActivitiesFarmers onClose={handleClose} toggleNavElements={toggleNavElements}  />;
             default:
                 return (
                     <div className={styles.activitiesContainer}>
@@ -56,10 +57,10 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
                                     </div>
                                     <div className={styles.activityButtonBackground} />
                                 </div>
-                                <div onClick={handleVisitGardensClick}>
+                                <div onClick={handleSupportLocalClick}>
                                     <div className={styles.activityButtonPrimary}>
-                                        <h2>Visit Gardens</h2>
-                                        <Image src="/activities-main/gardens.png" width={67} height={67}/>
+                                        <h2>Support Local</h2>
+                                        <Image src="/activities-main/farm.png" width={67} height={67}/>
                                     </div>
                                     <div className={styles.activityButtonBackground} />
                                 </div>

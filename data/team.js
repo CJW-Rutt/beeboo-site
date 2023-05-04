@@ -51,6 +51,6 @@ export const teamInfo = [
                 img: "/socials/github.svg"
             }
         ],
-        portfolio: ["/bizzybee.png", "/bizzybee.png", "/bizzybee.png", "/bizzybee.png"]
+        portfolio: ["/team/portfolio/joey/1.png", "/team/portfolio/joey/2.png", "/team/portfolio/joey/3.png", "/team/portfolio/joey/4.png"]
     }  
 ]

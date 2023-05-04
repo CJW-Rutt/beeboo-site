@@ -51,7 +51,11 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
       </div>
 
       {isActivitiesVisible && (
-        <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+        <TextBubble 
+          onClose={handleClose} 
+          toggleNavElements={toggleNavElements}
+          style={{ left: '1865px' }}
+          >
             <ActivitiesMain onClose={handleClose} toggleNavElements={toggleNavElements} />
         </TextBubble>
       )}

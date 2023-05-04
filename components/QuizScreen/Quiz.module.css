@@ -65,7 +65,7 @@
     rotate: 50deg;
     position: absolute;
     top: 15%;
-    right: 26.5%;
+    right: 19%;
     z-index: 1;
 }
 
@@ -89,7 +89,7 @@
 .cloud01 {
     position: absolute;
     top: 1%;
-    right: 20%;
+    right: 15%;
     animation-name: float;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
@@ -100,8 +100,8 @@
 
 .cloud02 {
     position: absolute;
-    top: 6%;
-    left: 63%;
+    top: 1%;
+    left: 72%;
     animation-name: float;
     animation-duration: 6s;
     animation-timing-function: ease-in-out;
@@ -114,7 +114,7 @@
 .cloud03 {
     position: absolute;
     top: 12%;
-    right: 27%;
+    right: 19%;
     animation-name: float;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;

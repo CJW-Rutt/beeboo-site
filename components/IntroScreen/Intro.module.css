@@ -19,7 +19,7 @@
 .hive {
     position: absolute;
     top: 16%;
-    left: 15.5%;
+    left: 40%;
     z-index: 1;
 }
 
@@ -27,14 +27,14 @@
     width: 160px;
     position: absolute;
     top: 11.6%;
-    left: 14.8%;
+    left: 39.4%;
     z-index: 0;
 }
 
 .cloud01 {
     position: absolute;
     top: 0%;
-    left: 15%;
+    left: 39%;
     animation-name: float;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;
@@ -46,7 +46,7 @@
 .cloud02 {
     position: absolute;
     top: 2%;
-    left: 2%;
+    left: 29.5%;
     animation-name: float;
     animation-duration: 6s;
     animation-timing-function: ease-in-out;
@@ -59,7 +59,7 @@
 .cloud03 {
     position: absolute;
     top: 11%;
-    left: 11%;
+    left: 32%;
     animation-name: float;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;

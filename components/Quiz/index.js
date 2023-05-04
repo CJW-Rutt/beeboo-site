@@ -81,11 +81,13 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   if (showIntro) {
     return (
       <div className={styles.outerContainer}>
+        <div className={styles.fillCol}>
+
+        </div>
         <div className={styles.introContainer}>
           <h1>It's Quiz Time!</h1>
           <h2>Find out how ready you are to take care of our friends the mason bees!</h2>
           <p>Mason bees are important pollinators that play a crucial role in our ecosystem. By learning how to take care of them, we can help these tiny creatures thrive and make our world a better place. </p>
-          <p>In this quiz, we'll test what you learned on BeeBoo so far to see if you can create a safe and healthy environment for mason bees to live and reproduce.</p>
           <p>So, get ready to put your thinking caps on and let's dive into the world of mason bees!</p>
           <div className={styles.introButton} onClick={handleIntroButtonClick}>
             <p>Take the Quiz!</p>
@@ -93,17 +95,16 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
           <div className={styles.introButtonBackground} />
         </div>
         <div className={styles.quizBackContainer}>
-          <Close onClick={handleClose} />
+          <Close onClick={handleClose} width={50} height={50} />
         </div>
       </div>
-
     );
   } else if (resultPage) {
     return (
       <div className={styles.resultContainer}>
         {
           resultPage === 'ResultPage1' && (
-            <div className={styles.resultsPage1}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You got 0%.</h1>
@@ -117,7 +118,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose} width={50} height={50}  />
                 </div>
               </div>
             </div>
@@ -125,7 +126,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
         }
         {
           resultPage === 'ResultPage2' && (
-            <div className={styles.resultsPage2}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You're almost there!</h1>
@@ -139,7 +140,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose}  />
                 </div>
               </div>
             </div>
@@ -147,7 +148,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
         }
         {
           resultPage === 'ResultPage3' && (
-            <div className={styles.resultsPage3}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You Passed! WOW!</h1>
@@ -160,7 +161,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose} width={50} height={50}  />
                 </div>
               </div>
             </div>
@@ -168,7 +169,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
         }
         {
           resultPage === 'ResultPage4' && (
-            <div className={styles.resultsPage4}>
+            <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>YOU GOT 100%!!!</h1>
@@ -181,7 +182,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} />
+                  <Close onClick={handleClose} width={50} height={50}  />
                 </div>
               </div>
             </div>
@@ -192,35 +193,42 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   } else {
     return (
       <div className={styles.quizContainer}>
-        <div className={styles.quizQuestion}>
-          <div className={styles.titleRow}>
-            <div className={styles.innerRow}>
-              <h1>{currentQuestion.h1}</h1>
-              <h2>{currentQuestion.h2}</h2>
-            </div>
-            <Close onClick={handleClose} />
-          </div>
-          <p>{currentQuestion['1']}</p>
-          <p>{currentQuestion['2']}</p>
-          <p>{currentQuestion['3']}</p>
-        </div>
-        <div className={styles.quizQuestionContainer}>
-          {
-            quizButtons[currentPage]?.map((item, index) => {
-              const answerKey = Object.keys(item)[0];
-              const src = item.src;
+        <div className={styles.quizButtonColLeft}>
 
-              return (
-                <QuizButton
-                  key={index}
-                  answer={item[answerKey]}
-                  src={src}
-                  onClick={() => handleClick(answerKey, item.weight)}
-                  fadeOut={fadeOut}
-                />
-              );
-            })
-          }
+        </div>
+        <div className={styles.quizContent}>
+          <div className={styles.quizQuestion}>
+            <div className={styles.titleRow}>
+              <div className={styles.innerRow}>
+                <h1>{currentQuestion.h1}</h1>
+                <h2>{currentQuestion.h2}</h2>
+              </div>
+            </div>
+            <p>{currentQuestion['1']}</p>
+            <p>{currentQuestion['2']}</p>
+            <p>{currentQuestion['3']}</p>
+          </div>
+          <div className={styles.quizQuestionContainer}>
+            {
+              quizButtons[currentPage]?.map((item, index) => {
+                const answerKey = Object.keys(item)[0];
+                const src = item.src;
+
+                return (
+                  <QuizButton
+                    key={index}
+                    answer={item[answerKey]}
+                    src={src}
+                    onClick={() => handleClick(answerKey, item.weight)}
+                    fadeOut={fadeOut}
+                  />
+                );
+              })
+            }
+          </div>
+        </div>
+        <div className={styles.quizButtonColRight}>
+          <Close onClick={handleClose} />
         </div>
       </div>
     );

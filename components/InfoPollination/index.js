@@ -4,6 +4,7 @@ import Next from '../Next'
 import Previous from '../Previous'
 import { useState } from 'react'
 import Image from 'next/image'
+import { Chart } from "../Chart"
 
 export default function InfoPollination({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0);
@@ -25,57 +26,33 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
     return (
         <div className={styles.plantContainer}>
             <div className={styles.backButton}>
-                { step !== 0 && <Previous onClick={handlePrevious} /> }
+                {step !== 0 && <Previous onClick={handlePrevious} />}
             </div>
             <div className={styles.contentContainer}>
-                { 
+                {
                     step == 0 && (
                         <div className={styles.introContainer}>
-
                             <h1>Nature's Superstars!</h1>
-
-                            <h2 className={styles.h2__content}>Bees help plants grow by something called pollination</h2>
-
-                            <p className={styles.p__content}>
-                                They go to flowers to give it a little kiss, which helps them 
-                                to make babies. This means <strong>more flowers</strong>, more fruits, 
-                                and more vegetables for us to eat! <strong>Yum!</strong>
-                            </p>
-
-                            <div className={styles.btn} onClick={handleStartPolination}> 
-                                <div className={styles.btn__primary}>
-                                    <div className={styles.content__container}>
-                                        <h2 className={styles.h2}>Pollination</h2>
-                                        <Image
-                                            src='/info-pollination/flowerpolly.svg'
-                                            width={300}
-                                            height={70}
-                                        />
-                                    </div>
-                                </div>
-                                <div className={styles.btn__background}></div>
+                            <h2>These little heroes help plants grow <br />by something called pollination</h2>
+                            <p>It's like when they go to a flower and give it a little kiss, which helps the flower make babies. And you know what that means? More flowers, more fruits, and more vegetables for us to eat! Yum!</p>
+                            <div className={styles.plantingStart} onClick={handleStartPolination}>
+                                Learn More About Pollination!
+                                <Image src='/info-pollination/flowerpolly.svg' width={319.50} height={73.46} />
                             </div>
-
+                            <div className={styles.plantingStartBackground}></div>
                         </div>
                     )
                 }
                 {
                     step == 1 && (
                         <div className={styles.innerContentContainer}>
-                            <h1 className={styles.info__title}>Pollination</h1> 
-                            <div className={styles.contentContainer}>
-                                <div className={styles.contentContainer__inner}>
-                                    <p>
-                                        Bees are like superheroes because they help pollinate about one-third of 
-                                        the food we eat. That's a lot of food, right?
-                                    </p>
-                                    <p>
-                                        Without bees, we wouldn't have as many tasty foods like strawberries, 
-                                        watermelons, and even chocolate!
-                                    </p> 
-                                </div>
-
-                                <Image className={styles.chocolate} src='/info-pollination/yummychoco.svg' alt="happy mascot" width={180} height={180} />
+                            <div className={styles.contentColLeft}>
+                                <h1>Fruits and vegetables</h1>
+                                <p>Bees are like superheroes because they help pollinate about one-third of the food we eat. That's a lot of food, right?</p>
+                                <p>Without bees, we wouldn't have as many tasty foods like strawberries, watermelons, and even chocolate!</p>
+                            </div>
+                            <div className={styles.contentColRight}>
+                                <Image src='/info-pollination/fruits.png' alt="happy mascot" width={208} height={208} />
                             </div>
                         </div>
                     )
@@ -83,79 +60,93 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                 {
                     step == 2 && (
                         <div className={styles.innerContentContainer}>
-                            <h1 className={styles.info__title}>Pollination</h1>
-                            <div className={styles.contentContainer}>
-                                <div className={styles.contentContainer__inner}>
-                                    <p>
-                                        But that's not all! Bees are also great at making our world beautiful. 
-                                        They visit flowers of all different colours and shapes, making our 
-                                        gardens and parks so pretty to look at.
-                                    </p>
-                                    <p>
-                                        They're like little artists painting the world with their fuzzy bodies.
-                                    </p> 
-                                </div>
-                                <Image src='/info-pollination/lilacs.svg' alt="happy mascot" width={180} height={180} />
+                            <div className={styles.contentColLeft}>
+                                <h1>Honey</h1>
+                                <p>Bees also make honey out of flower nectar!</p>
+                                <p>Honey is important in cooking and baking delicious treats, like cakes. Honey can also be used as a remedy for sore throats!</p>
+                            </div>
+                            <div className={styles.contentColRight}>
+                                <Image src='/info-pollination/honey.png' alt="happy mascot" width={208} height={208} />
                             </div>
                         </div>
                     )
                 }
                 {
                     step == 3 && (
-                        <div className={styles.innerContentContainer__2}>
-                            <h1 className={styles.info__title}>Nature's best friends</h1>
-                            <div className={styles.contentContainer}>
-                                <div className={styles.contentContainer__inner}>
-                                    <p>
-                                        Bees are not just cute and fuzzy insects, they're superheroes 
-                                        who help make sure we have food and a beautiful world to live in. 
-                                    </p>
-                                    <p>
-                                        Let's protect them and their homes, so 
-                                        they can keep doing their important work.
-                                    </p>
-                                </div>
-
-                                <Image src='/info-pollination/fwappybee.svg' width={180} height={180} />
+                        <div className={styles.innerContentContainer}>
+                            <div className={styles.contentColLeft}>
+                                <h1>Honey</h1>
+                                <h2>Did you know...</h2>
+                                <p>Alberta made the most honey in Canada in 2021!</p>
+                            </div>
+                            <div className={styles.chart__contentColRight}>
+                                <Chart />
                             </div>
                         </div>
                     )
-                }                
+                }
                 {
                     step == 4 && (
-                        <div className={styles.innerContentContainer__3}>
-                            <div className={styles.contentContainer__3}>
-                                <h1 className={styles.info__title}>What you can do!</h1>
-                                <div className={styles.contentContainer__inner}>
-                                    <p>
-                                        We can plant flowers that bees love or start our own colony in our backward!! 
-                                    </p>
-                                    <p>
-                                        Find out what else you can do about bees!
-                                    </p>
-                                </div>
-
-                                <div className={styles.btn__2}> 
-                                    <div className={styles.btn__primary__2}>
-                                        <h2 className={styles.h2__2}>ACTIVITIES!</h2>
-                                    </div>
-                                <div className={styles.btn__background__2}></div>
-
+                        <div className={styles.innerContentContainer}>
+                            <div className={styles.contentColLeft}>
+                                <h1>Flowers</h1>
+                                <p>
+                                    But that's not all! Bees are also great at making our world beautiful.
+                                    They visit flowers of all different colours and shapes, making our gardens and parks so pretty to look at.
+                                    They're like little artists painting the world with their fuzzy bodies.
+                                </p>
                             </div>
-
-
+                            <div className={styles.contentColRight}>
+                                <Image src='/info-pollination/lilacs.png' alt="happy mascot" width={208} height={208} />
                             </div>
-
-                            <Image src='/info-pollination/beeboy.svg' alt="happy mascot" width={180} height={180} />
-                                
                         </div>
-                    
+                    )
+                }
+                {
+                    step == 5 && (
+                        <div className={styles.innerContentContainer}>
+                            <div className={styles.contentColLeft}>
+                                <h1>Nature's best friends </h1>
+                                <p>
+                                    Bees are not just cute and fuzzy insects, they're superheroes who help make sure we have food and a beautiful world to live in.
+                                    Let's protect them and their homes, so they can keep doing their important work.
+                                </p>
+                            </div>
+                            <div className={styles.contentColRight}>
+                                <Image src='/info-pollination/fwappybee.png' width={208} height={208} />
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    step == 6 && (
+                        <div className={styles.innerContentContainer}>
+                            <div className={styles.contentColLeft}>
+                                <h1>What you can do!</h1>
+                                <p>
+                                    We can plant flowers that bees love, like bright and colourful sunflowers, daisies, and lavender.
+                                    Also, we can start our own colony in our backyard!
+                                </p>
+                                <p>
+                                    Find out what else you can do about bees in the next section!
+                                </p>
+                                <div className={styles.buttonContainer}>
+                                    <div className={styles.innerButtonContainer}>
+                                        <div className={styles.activitiesButton}>Try These Activities!</div>
+                                        <div className={styles.activitiesButtonBackground}></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles.contentColRight}>
+                                <Image src='/info-pollination/beeboy.png' alt="happy mascot" width={208} height={208} />
+                            </div>
+                        </div>
                     )
                 }
             </div>
             <div className={styles.rightButtonCol}>
                 <Close onClick={onClose} />
-                { step > 0 && step !== 4 && <Next onClick={handleNext} /> }
+                {step > 0 && step !== 6 && <Next onClick={handleNext} />}
             </div>
         </div>
     );

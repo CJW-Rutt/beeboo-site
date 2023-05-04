@@ -121,13 +121,21 @@ export default function LearnScreen({ image, toggleNavElements }) {
         </div>
 
         {activeSection === 'InfoPestsClimate' && (
-            <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+            <TextBubble 
+                onClose={handleClose} 
+                toggleNavElements={toggleNavElements}
+                style={{ left: '975px' }}
+            >
                 <InfoPestsClimate onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
         )}
 
         {activeSection === 'InfoPollination' && (
-            <TextBubble onClose={handleClose} toggleNavElements={toggleNavElements}>
+            <TextBubble 
+                onClose={handleClose} 
+                toggleNavElements={toggleNavElements}
+                style={{ left: '975px' }}
+            >
                 <InfoPollination onClose={handleClose} toggleNavElements={toggleNavElements} />
             </TextBubble>
         )}
