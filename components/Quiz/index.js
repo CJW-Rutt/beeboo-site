@@ -8,15 +8,15 @@ import ButtonLearning from '../ButtonLearning';
 import Close from '../Close';
 
 
-export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
+export default function Quiz({ onClose, toggleNavElements  }) {
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [resultPage, setResultPage] = useState(null);
 
-  const toggleNavElementsCallback = useCallback(() => {
-    toggleNavElements();
+  const toggleNavElementsCallback = useCallback((isVisible) => {
+    toggleNavElements(isVisible);
   }, [toggleNavElements]);
 
   const handleClick = (answer, weight) => {
@@ -40,7 +40,6 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
 
   const handleClose = () => {
     onClose();
-    toggleNavElements(true);
     setCurrentPage("quizPageOne");
     setFadeOut(false);
     setShowIntro(true);
@@ -49,12 +48,12 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
   };
 
   useEffect(() => {
-    toggleNavElements();
+    toggleNavElementsCallback(false);
 
     return () => {
-      toggleNavElements();
+      toggleNavElementsCallback(true);
     };
-  }, []);
+  }, [toggleNavElementsCallback]);
 
   const determineResultPage = useCallback(() => {
     const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
@@ -95,7 +94,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
           <div className={styles.introButtonBackground} />
         </div>
         <div className={styles.quizBackContainer}>
-          <Close onClick={handleClose} width={50} height={50} />
+          <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
         </div>
       </div>
     );
@@ -118,7 +117,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} width={50} height={50}  />
+                  <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
                 </div>
               </div>
             </div>
@@ -140,7 +139,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose}  />
+                  <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback}  />
                 </div>
               </div>
             </div>
@@ -161,7 +160,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} width={50} height={50}  />
+                  <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
                 </div>
               </div>
             </div>
@@ -182,7 +181,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
                   <Image src="/happyBee1.png" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
-                  <Close onClick={handleClose} width={50} height={50}  />
+                  <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
                 </div>
               </div>
             </div>
@@ -228,7 +227,7 @@ export default function Quiz({ onClose, toggleNavElements, showNavElements  }) {
           </div>
         </div>
         <div className={styles.quizButtonColRight}>
-          <Close onClick={handleClose} />
+          <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
         </div>
       </div>
     );

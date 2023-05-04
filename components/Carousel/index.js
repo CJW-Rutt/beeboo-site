@@ -28,12 +28,8 @@ export default function Carousel() {
 
     const [showNavElements, setShowNavElements] = useState(false);
 
-    const toggleNavElements = (visibility) => {
-        if(visibility) {
-            setShowNavElements(visibility);
-        } else {
-            setShowNavElements(!showNavElements);
-        }  
+    const toggleNavElements = (isVisible) => {
+        setShowNavElements(isVisible);
     };
     
     const screens = [
