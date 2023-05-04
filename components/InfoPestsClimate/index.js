@@ -2,12 +2,16 @@ import styles from './InfoPestsClimate.module.css'
 import Close from '../Close'
 import Next from '../Next'
 import Previous from '../Previous'
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function InfoPestsClimate({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0)
     const [topic, setTopic] = useState("");
+
+    const toggleNavElementsCallback = useCallback((isVisible) => {
+        toggleNavElements(isVisible);
+    }, [toggleNavElements]);
 
     const handleStartPlanting = () => {
         setStep(1);
@@ -22,6 +26,19 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
             setStep(step - 1);
         }
     }
+
+    const handleClose = () => {
+        toggleNavElements(true);
+        onClose();
+    };
+
+    useEffect(() => {
+        toggleNavElementsCallback(false);
+    
+        return () => {
+          toggleNavElementsCallback(true);
+        };
+    }, [toggleNavElementsCallback]);
 
     return (
         <div className={styles.plantContainer}>
@@ -129,7 +146,7 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
                 }
             </div>
             <div className={styles.rightButtonCol}>
-                <Close onClick={onClose} />
+                <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback}  />
             </div>
         </div>
     );
