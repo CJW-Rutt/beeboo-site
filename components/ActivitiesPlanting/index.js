@@ -2,11 +2,24 @@ import styles from './ActivitiesPlanting.module.css'
 import Close from '../Close'
 import Next from '../Next'
 import Previous from '../Previous'
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from "react"
 import Image from 'next/image'
 
-export default function ActivitiesPlanting({ onClose }) {
+export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0);
+
+    const toggleNavElementsCallback = useCallback((isVisible) => {
+        if (toggleNavElements) {
+            toggleNavElements(isVisible);
+        }
+    }, [toggleNavElements]);
+
+    const handleClose = () => {
+        if (toggleNavElements) {
+            toggleNavElements();
+        }
+        onClose();
+    };
 
     const handleStartPlanting = () => {
         setStep(1);
@@ -21,6 +34,14 @@ export default function ActivitiesPlanting({ onClose }) {
             setStep(step - 1);
         }
     }
+
+    useEffect(() => {
+        toggleNavElementsCallback(false);
+    
+        return () => {
+          toggleNavElementsCallback(true);
+        };
+    }, [toggleNavElementsCallback]);
 
     return (
         <div className={styles.plantContainer}>
@@ -146,7 +167,7 @@ export default function ActivitiesPlanting({ onClose }) {
                 }
             </div>
             <div className={styles.rightButtonCol}>
-                <Close onClick={onClose} />
+                <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
                 { step > 0 && step !== 5 && <Next onClick={handleNext} /> }
             </div>
         </div>

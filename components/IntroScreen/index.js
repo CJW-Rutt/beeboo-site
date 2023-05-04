@@ -9,6 +9,8 @@ import lottie from 'lottie-web'
 
 export default function IntroScreen({ image }) {
 
+  var title = process.env.NEXT_PUBLIC_SLIDE_ONE_TITLE;
+
   let animationContainer = createRef();
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export default function IntroScreen({ image }) {
 
   return (
     <div className={styles.main__container}>
-        <h1 className={styles.h1}>Bee-come a hero!</h1>
+        <h1 className={styles.h1}>{title}</h1>
         <IntroCard01/>
         <IntroCard02/>
         <Image
