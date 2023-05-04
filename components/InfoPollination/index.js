@@ -97,7 +97,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 </p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/lilacs.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/info-pollination/lilacs.svg' alt="happy mascot" width={208} height={208} />
                             </div>
                         </div>
                     )
@@ -128,7 +128,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                     Also, we can start our own colony in our backyard!
                                 </p>
                                 <p>
-                                    Find out what else you can do about bees in the next section!
+                                    Find out what else you can do about bees!
                                 </p>
                                 <div className={styles.buttonContainer}>
                                     <div className={styles.innerButtonContainer}>

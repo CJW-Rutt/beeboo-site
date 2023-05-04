@@ -37,7 +37,7 @@
     width: 19.375rem;
     height: 3.188rem;
     font-size: 1.125rem;
-    border: 2px solid var(--text);
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-weight: 700;
@@ -54,9 +54,9 @@
     position: relative;
     width: 19.375rem;
     height: 3.188rem;
-    margin-top: -4.6rem;
+    margin-top: -4.85rem;
     left: 4px;
-    border: 2px solid var(--text);
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color: black;
     font-weight: 700;

@@ -4,11 +4,14 @@
     width: 16rem;
     height: 3.188rem;
     font-size: 1.125rem;
-    border: 2px solid var(--text);
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-weight: 700;
     z-index: 2;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    margin-right: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,10 +23,10 @@
     background-color: var(--secondary-yellow);
     position: absolute;
     width: 16rem;
-    height: 3.188rem;
+    height: 3rem;
     font-size: 1.125rem;
-    margin-right: -0.9rem;
-    border: 2px solid var(--text);
+    margin-left: -1.45rem;
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-weight: 700;
@@ -37,6 +40,6 @@
 }
 
 .learningButton:hover {
-    left: 6px;
+    left: 4px;
     bottom: -7px;
 }

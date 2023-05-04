@@ -37,7 +37,7 @@ export default function Carousel() {
     };
     
     const screens = [
-        <SplashScreen onAnimationFinished={moveToNextScreen}/>, 
+        <SplashScreen onAnimationFinished={moveToNextScreen}/>,
         <WelcomeScreen onGetStartedClick={moveToNextScreen} />,
         <IntroScreen toggleNavElements={toggleNavElements} />,
         <LearnScreen toggleNavElements={toggleNavElements} />,

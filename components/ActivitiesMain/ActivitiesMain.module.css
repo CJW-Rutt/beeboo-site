@@ -45,7 +45,7 @@
     background-color: var(--primary-yellow);
     width: 10rem;
     height: 8.188rem;
-    border: 2px solid var(--text);
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-size: 1.125;
@@ -63,9 +63,9 @@
     background-color: var(--secondary-yellow);
     width: 10rem;
     height: 8.188rem;
-    margin-top: -8.2rem;
+    margin-top: -8.1rem;
     margin-right: 38.1rem;
-    border: 2px solid var(--text);
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color: black;
     font-weight: 700;
@@ -78,4 +78,6 @@
 
 .activityButtonPrimary h2 {
     margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
 }

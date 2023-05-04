@@ -43,7 +43,7 @@ export default function ActivitiesFarmers({ onClose, toggleNavElements }) {
                                 <p>
                                     Supporting local farmers can help your community provide a safer environment for the bees.
                                 </p>
-                                <Image src='/activities-farmer/farmer.png' width={63} height={63} />
+                                <Image src='/activities-farmer/farmer.svg' width={63} height={63} />
                                 <h2>
                                     Keep reading to learn more!
                                 </h2>

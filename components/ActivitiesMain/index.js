@@ -46,14 +46,14 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
                                 <div onClick={handlePlantingClick}>
                                     <div className={styles.activityButtonPrimary}>
                                         <h2>Planting Flowers</h2>
-                                        <Image src="/activities-main/pottedplant.png" width={60} height={60} />
+                                        <Image src="/activities-main/pottedplant.svg" width={60} height={60} />
                                     </div>
                                     <div className={styles.activityButtonBackground} />
                                 </div>
                                 <div onClick={handleMasonBeeClick}>
                                     <div className={styles.activityButtonPrimary}>
                                         <h2>Mason Bee Kit</h2>
-                                        <Image src="/activities-main/apiary.png" width={60} height={60} />
+                                        <Image src="/activities-main/apiary.svg" width={60} height={60} />
                                     </div>
                                     <div className={styles.activityButtonBackground} />
                                 </div>
