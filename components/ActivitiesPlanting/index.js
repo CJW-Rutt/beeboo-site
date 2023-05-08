@@ -55,7 +55,7 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
                                 <h1>Bee-come a Flower Planting Pro</h1>
                                 <h2>Help Save Bees One Bloom at a Time!</h2>
                                 <p>Bees are important pollinators that help plants grow and produce the food we eat.<br />Unfortunately, bees are facing many challenges, including habitat loss and pesticide use.</p>
-                                <h2>But there's something you can do to help bees: plant flowers!<br />Let's go over how to plant flowers to attract bees and help them thrive.</h2>
+                                <h2>But there's something you can do to help bees: plant flowers!<br />Learn how to plant flowers to attract bees and help them thrive.</h2>
                             <div className={styles.plantingStart} onClick={handleStartPlanting}>Let's Get Planting!</div>
                             <div className={styles.plantingStartBackground}></div>
                         </div>

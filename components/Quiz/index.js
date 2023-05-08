@@ -87,7 +87,7 @@ export default function Quiz({ onClose, toggleNavElements  }) {
           <h1>It's Quiz Time!</h1>
           <h2>Find out how ready you are to take care of our friends the mason bees!</h2>
           <p>Mason bees are important pollinators that play a crucial role in our ecosystem. By learning how to take care of them, we can help these tiny creatures thrive and make our world a better place. </p>
-          <p>So, get ready to put your thinking caps on and let's dive into the world of mason bees!</p>
+          <p>Get ready to put your thinking caps on and dive into the world of mason bees!</p>
           <div className={styles.introButton} onClick={handleIntroButtonClick}>
             <p>Take the Quiz!</p>
           </div>
@@ -114,7 +114,7 @@ export default function Quiz({ onClose, toggleNavElements  }) {
                   <ButtonLearning />
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happyBee1.png" width={300} height={300}/>
+                  <Image src="/happybee1.svg" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -136,7 +136,7 @@ export default function Quiz({ onClose, toggleNavElements  }) {
                   <ButtonLearning />
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happyBee1.png" width={300} height={300}/>
+                  <Image src="/happybee1.svg" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback}  />
@@ -151,13 +151,13 @@ export default function Quiz({ onClose, toggleNavElements  }) {
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
                   <h1>You Passed! WOW!</h1>
-                  <h3>You're a world class Apiarist.</h3>
-                  <p>Congratulations, you passed the quiz with flying colours!</p>
+                  <h3>Congratulations, you're a world class Apiarist.</h3>
+                  <p>You passed the quiz with flying colours!</p>
                   <p>Your knowledge and understanding of the important steps to create a safe and healthy environment for mason bees to thrive is impressive.</p>
                   <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happyBee1.png" width={300} height={300}/>
+                  <Image src="/happybee1.svg" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -178,7 +178,7 @@ export default function Quiz({ onClose, toggleNavElements  }) {
                   <p>Let's make the future better for everyone together!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happyBee1.png" width={300} height={300}/>
+                  <Image src="/happybee1.svg" width={300} height={300}/>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />

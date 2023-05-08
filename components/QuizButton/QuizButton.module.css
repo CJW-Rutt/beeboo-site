@@ -11,7 +11,7 @@
     background-color: var(--primary-yellow);
     width: 10rem;
     height: 8.188rem;
-    border: 2px solid var(--text);
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-size: 1.125;
@@ -28,9 +28,9 @@
     background-color: var(--secondary-yellow);
     width: 10rem;
     height: 8.188rem;
-    margin-top: -7.9rem;
-    margin-right: -0.6rem;
-    border: 2px solid var(--text);
+    margin-top: -7.8rem;
+    margin-right: -0.5rem;
+    border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
     font-weight: 700;
@@ -42,8 +42,8 @@
 }
 
 .quizButtonPrimary:hover {
-    margin-bottom: -0.55rem;
-    margin-right: -0.85rem;
+    margin-bottom: -0.5rem;
+    margin-right: -0.5rem;
 }
 
 .answerText {
