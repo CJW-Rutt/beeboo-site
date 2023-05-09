@@ -11,6 +11,7 @@ export default function BackgroundMusic() {
     }, []);
 
     function handlePlay() {
+        audio.volume = 0.3
         audio.play()
         setIsPlaying(true)
     }
