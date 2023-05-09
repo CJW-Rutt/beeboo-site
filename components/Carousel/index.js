@@ -50,6 +50,19 @@ export default function Carousel() {
         transform: `translateX(-${(100 / screens.length) * currentIndex}%)`,
     }
 
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
+
     return(
         <>
             <div className={styles.main__container}>
@@ -62,7 +75,9 @@ export default function Carousel() {
                 </div>
             </div>
             {showNavElements && currentIndex >= 2 && ( 
-                <div className={styles.nav__buttonrow}>
+                <div className={styles.nav__buttonrow} onClick={() => {
+                    playSound(new Audio('/music/nav.mp3'))
+                }}>
                     {currentIndex !== 0 && (
                         <CarouselArrowRight onClick={moveToPreviousScreen} />
                     )}

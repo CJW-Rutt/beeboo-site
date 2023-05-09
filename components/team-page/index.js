@@ -4,13 +4,23 @@ import TeamMember from "../team-member"
 import Image from "next/image"
 import styles from "./team-page.module.css"
 import TextBubble from "../TextBubble"
-import Close from "../Close"
 
 export default function TeamPage({ onClose }) {
-
     const [chooseMember, setChooseMember] = useState(true)
     const [data, setData] = useState({ teamInfo })
     const [memberData, setMemberData] = useState()
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     return (
         <>
@@ -39,6 +49,7 @@ export default function TeamPage({ onClose }) {
                                 data.teamInfo && data.teamInfo.map((info, index) => {
                                     return (
                                         <div className={styles.member__container} key={index} onClick={() => {
+                                            playSound(new Audio('/music/open.mp3'))
                                             setMemberData(teamInfo[index])
                                             setChooseMember(false)
                                         }}>
@@ -60,7 +71,11 @@ export default function TeamPage({ onClose }) {
                                                 src='/ui-icons/close.png'
                                                 height={50}
                                                 width={50}
-                                                onClick={() => setChooseMember(true)}
+                                                onClick={() => {
+                                                    playSound(new Audio('/music/close.mp3'))
+                                                    setChooseMember(true)
+                                                }
+                                                }
                                             />
                                             <div className={styles.textbubble__content}>
                                                 <TeamMember
