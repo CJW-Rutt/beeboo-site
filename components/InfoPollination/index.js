@@ -130,7 +130,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 </p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/fwappybee.png' width={208} height={208} />
+                                <Image src='/info-pollination/fwappybee.svg' width={208} height={208} />
                             </div>
                         </div>
                     )
@@ -155,7 +155,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 </div>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/beeboy.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/info-pollination/beeboy.svg' alt="happy mascot" width={208} height={208} />
                             </div>
                         </div>
                     )

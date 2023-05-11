@@ -40,17 +40,6 @@
     height: 190px;
 }
 
-.whats:active {
-    width: 195px;
-    height: 195px;
-    left: 20.95%;
-    transition: 0.1s ease-in-out;
-}
-
-.whats::not(:active) {
-    transition: 0.1s ease-in-out;
-}
-
 .why{
     position: absolute;
     bottom: 68%;
@@ -58,18 +47,6 @@
     z-index: 2;
     width: 230px;
     height: 230px;
-}
-
-.why:active {
-    width: 235px;
-    height: 235px;
-    bottom: 67.7%;
-    right: 62.45%;
-    transition: 0.1s ease-in-out;
-}
-
-.why::not(:active) {
-    transition: 0.1s ease-in-out;
 }
 
 @keyframes shake {
