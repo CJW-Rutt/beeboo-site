@@ -17,7 +17,25 @@
     display: flex;
     width: 100%;
 }
+
+.main__beeboo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    margin-bottom: -5rem;
+}
+
+.main__beeboo h1{
+    font-size: 3.5rem;
+}
   
+.main__beeboo h2{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 @keyframes float-2 {
     0% {
     transform: translateY(0);
