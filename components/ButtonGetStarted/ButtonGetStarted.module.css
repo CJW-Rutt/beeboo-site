@@ -46,6 +46,7 @@
     margin-bottom: -0.2rem;
     margin-right: -0.6rem;
     transition: 0.2s ease-in-out;
+    width: 50.4%;
 }
 
 .btn__primary:not(:active) {
