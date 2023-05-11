@@ -13,12 +13,18 @@ export default function AnimatedBee({ delay, duration, src, top, right, bottom, 
             bottom={bottom}
             left={left}
         >
-            <Image
-                className={styles.animatedBee}
-                src={src}
-                width={200}
-                height={100}
-            />
+            <div className={styles.main__beeboo}>
+                <Image
+                    className={styles.animatedBee}
+                    src={src}
+                    width={250}
+                    height={125}
+                />
+                <div className={styles.inner__beeboo}>
+                    <h1>Beeboo</h1>
+                    <h2>learning to save the bees</h2>
+                </div>
+            </div>
         </AnimationWrapper>
     )
 }
