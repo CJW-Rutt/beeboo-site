@@ -138,7 +138,13 @@ export default function LearnScreen({ image, toggleNavElements }) {
 
         {activeSection === 'InfoPestsClimate' && (
             <TextBubble 
-                onClose={handleClose} 
+                onClose={handleClose}
+
+                // onClose={() => {
+                //     playSound(new Audio('/music/close.mp3'));
+                //     {handleClose}
+                // }}
+
                 toggleNavElements={toggleNavElements}
                 style={{ left: '2770px' }}
             >

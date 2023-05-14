@@ -1,9 +1,12 @@
 .content__container {
     display: grid;
     grid-template-columns: 2.5fr 5fr;
+    grid-gap: 1.5rem;
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 70%;
+    margin-left: 7.3rem;
 }
 
 .container__left {
@@ -50,5 +53,5 @@
 
 .portfolio__itemsContainer {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }

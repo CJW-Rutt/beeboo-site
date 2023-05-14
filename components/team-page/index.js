@@ -74,8 +74,7 @@ export default function TeamPage({ onClose }) {
                                                 onClick={() => {
                                                     playSound(new Audio('/music/close.mp3'))
                                                     setChooseMember(true)
-                                                }
-                                                }
+                                                }}
                                             />
                                             <div className={styles.textbubble__content}>
                                                 <TeamMember

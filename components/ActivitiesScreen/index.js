@@ -53,22 +53,12 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
         <div className={styles.content}>
           <ActivitiesCard01/>
 
-          {/* <div onClick={
-            playSound(new Audio('/music/open.mp3'))
-            handleOpenActivities}>
-            <ButtonGetStarted
-              className={styles.btn}
-            />
-          </div> */}
-
           <div className={styles.left} onClick={() => {
             playSound(new Audio('/music/open.mp3'))
             handleOpenActivities('InfoPestsClimate');
           }}>
             <ButtonGetStarted className={styles.btn}/>
           </div>
-
-
 
         </div>
 

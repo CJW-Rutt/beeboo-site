@@ -1,20 +1,21 @@
 .quizButton {
     width: 20rem;
-    height: 8.3rem;
+    height: 7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 1rem;
 }
 
 .quizButtonPrimary {
     background-color: var(--primary-yellow);
-    width: 10rem;
-    height: 8.188rem;
+    width: 9rem;
+    height: 9rem;
     border: 1px solid var(--text);
     border-radius: 0.5rem;
     color:  black;
-    font-size: 1.125;
+    font-size: 1;
     font-weight: 700;
     z-index: 2;
     display: flex;
@@ -26,9 +27,9 @@
 
 .quizButtonBackground {
     background-color: var(--secondary-yellow);
-    width: 10rem;
-    height: 8.188rem;
-    margin-top: -7.8rem;
+    width: 9rem;
+    height: 9rem;
+    margin-top: -6.5rem;
     margin-right: -0.5rem;
     border: 1px solid var(--text);
     border-radius: 0.5rem;

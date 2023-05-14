@@ -147,13 +147,13 @@ export default function Quiz({ onClose, toggleNavElements  }) {
         }
         {
           resultPage === 'ResultPage3' && (
-            <div className={styles.resultsPage}>
+            <div className={styles.resultsPage__passed}>
               <div className={styles.resultsInnerContainer}>
-                <div className={styles.resultsLeftCol}>
+                <div className={styles.resultsLeftCol__passed}>
                   <h1>You Passed! WOW!</h1>
                   <h3>Congratulations, you're a world class Apiarist.</h3>
                   <p>You passed the quiz with flying colours!</p>
-                  <p>Your knowledge and understanding of the important steps to create a safe and healthy environment for mason bees to thrive is impressive.</p>
+                  <p>Your knowledge of the important steps to create a safe and healthy environment for mason bees to thrive is impressive.</p>
                   <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
@@ -168,9 +168,9 @@ export default function Quiz({ onClose, toggleNavElements  }) {
         }
         {
           resultPage === 'ResultPage4' && (
-            <div className={styles.resultsPage}>
+            <div className={styles.resultsPage__100}>
               <div className={styles.resultsInnerContainer}>
-                <div className={styles.resultsLeftCol}>
+                <div className={styles.resultsLeftCol__100}>
                   <h1>YOU GOT 100%!!!</h1>
                   <h3>The future is in good hands!</h3>
                   <p>Congratulations, you passed the quiz with a PERFECT SCORE!</p>
