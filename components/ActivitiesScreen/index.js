@@ -9,6 +9,18 @@ import ButtonGetStarted from '../ButtonGetStarted'
 export default function ActivitiesScreen({ image, toggleNavElements }) {
   const [isActivitiesVisible, setIsActivitiesVisible] = useState(false);
   const [isDelayActive, setIsDelayActive] = useState(false);
+  const [audio, setAudio] = useState();
+
+  const playSound = (audio) => {
+      try {
+          if (audio) {
+              setAudio(audio);
+              audio.play();
+          }
+      } catch (error) {
+          console.log("Error playing audio:", error);
+      }
+  }
 
   const handleClose = () => {
       setIsActivitiesVisible(false);
@@ -41,11 +53,13 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
         <div className={styles.content}>
           <ActivitiesCard01/>
 
-          <div onClick={handleOpenActivities}>
-            <ButtonGetStarted
-              className={styles.btn}
-            />
+          <div className={styles.left} onClick={() => {
+            playSound(new Audio('/music/open.mp3'))
+            handleOpenActivities('InfoPestsClimate');
+          }}>
+            <ButtonGetStarted className={styles.btn}/>
           </div>
+
         </div>
 
       </div>

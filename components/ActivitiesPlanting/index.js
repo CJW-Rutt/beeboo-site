@@ -67,26 +67,28 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
                             <div className={styles.contentColLeft}>
                                 <h1>Step 1:</h1>
                                 <h2>Choosing the right flowers!</h2>
-                                <p>Bees are attracted to flowers that are brightly coloured, have a strong fragrance, and are rich in nectar and pollen. </p>
+                                <p>Bees like flowers that are brightly coloured, have a strong fragrance, and are rich in nectar and pollen. </p>
                                 <p>Some of the best flowers to plant for bees include:</p>
                                 <div className={styles.step1List}>
                                     <ul>
                                         <li>Sunflowers</li>
                                         <li>Lavender</li>
                                         <li>Marigolds</li>
-                                        <li>Daisies</li>
                                     </ul>
                                     <ul>
+                                        <li>Daisies</li>
                                         <li>Coneflowers</li>
                                         <li>Cosmos</li>
-                                        <li>Black-eyed Susans</li>
+                                    </ul>
+                                    <ul>
                                         <li>Wildflowers</li>
+                                        <li>Black-eyed Susans</li>
                                     </ul>
                                 </div>
                                 <p>Check out your local nursery or garden centre, or you can start them from seed.</p>      
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/planting/sunflower.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/planting/sunflower.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -107,7 +109,7 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
                                 </ul>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/planting/potting-soil.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/planting/potting-soil.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -123,7 +125,7 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
                                 <p>Plant in a sunny location and space plants apart for good air circulation.</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/planting/flower-pot.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/planting/flower-pot.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -135,16 +137,18 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
                                 <h1>Step 4:</h1>
                                 <h2>Care for the flowers!</h2>
                                 <p>To keep the flowers healthy and attractive to bees, you'll need to care for them. Here are some tips:</p>
-                                <ul>
-                                    <li>Water the flowers regularly, especially during dry spells</li>
-                                    <li>Mulch around the plants to help retain moisture</li>
-                                    <li>Remove the dried out dead heads</li>
-                                    <li>Fertilize the flowers with a balanced fertilizer</li>
-                                    <li>Monitor the plants for pests and take action if necessary</li>
-                                </ul>
+                                <div className={styles.step2List}>
+                                    <ul>
+                                        <li>Water the flowers regularly</li>
+                                        <li>Mulch around the plants to help retain moisture</li>
+                                        <li>Remove the dried out dead heads</li>
+                                        <li>Fertilize the flowers with a balanced fertilizer</li>
+                                        <li>Monitor the plants for pests and take action if necessary</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/planting/watering-can.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/planting/watering-can.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -160,7 +164,7 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
                                 <p>By planting flowers for bees, you're helping to provide habitat and food for these important pollinators. So get outside and start planting!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/planting/bee.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/planting/bee.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )

@@ -7,7 +7,7 @@ export default function QuizButton ({ answer, src, onClick, fadeOut }) {
     return (
         <div onClick={onClick} className={styles.quizButton}>
             <div className={styles.quizButtonPrimary}>
-                <Image src={src} height={61} width={61} />
+                <Image src={src} height={50} width={50} />
                 <div className={styles.answerText}>{answer}</div>        
             </div>
             <div className={styles.quizButtonBackground} />

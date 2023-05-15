@@ -14,7 +14,7 @@ export const quizQuestions = {
             'h2': 'Where would you setup your hive?',
             '1': 'Now that you know how to set up a bee hive, let\'s move on to the next question.',
             '2': 'This is an important decision as it can greatly impact the health and productivity of your mason bees. ',
-            '3': 'Remember, the location you choose for your bee hive can affect your mason bees\' health and productivity.',
+            '3': 'Remember, the location you choose for your bee hive can affect your mason bees\' health.',
         },
     ],
     'quizPageThree': [

@@ -10,6 +10,18 @@ import lottie from 'lottie-web'
 
 export default function LearnScreen({ image, toggleNavElements }) {
     const [activeSection, setActiveSection] = useState(null);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const handleClose = () => {
         toggleNavElements(true);
@@ -55,6 +67,7 @@ export default function LearnScreen({ image, toggleNavElements }) {
 
         <div className={styles.container}>
             <div className={styles.left} onClick={() => {
+                playSound(new Audio('/music/open.mp3'))
                 setTimeout(() => {
                 handleOpenSection('InfoPestsClimate');
                 }, 500);
@@ -67,11 +80,12 @@ export default function LearnScreen({ image, toggleNavElements }) {
                     height={60}
                 />
                 <Image
-                    onClick={() => 
+                    onClick={() => {
+                        playSound(new Audio('/music/open.mp3')); 
                         setTimeout(() => {
                             handleOpenSection('InfoPestsClimate');
                         }, 500)
-                    }
+                    }}
                     className={styles.whats}
                     src="/carousel/whats-happening-learn.svg"
                     width={190}
@@ -81,6 +95,7 @@ export default function LearnScreen({ image, toggleNavElements }) {
             </div>
             
             <div className={styles.right} onClick={() => {
+                playSound(new Audio('/music/open.mp3'))
                 setTimeout(() => {
                 handleOpenSection('InfoPollination');
                 }, 500); 
@@ -95,11 +110,12 @@ export default function LearnScreen({ image, toggleNavElements }) {
                         height={60}
                     />
                     <Image
-                        onClick={() => 
+                        onClick={() => {
+                            playSound(new Audio('/music/open.mp3'));
                             setTimeout(() => {
                             handleOpenSection('InfoPollination');
                             }, 500)
-                        }
+                        }}
                         className={styles.why}
                         src="/carousel/why-learn.svg"
                         width={230}
@@ -122,7 +138,13 @@ export default function LearnScreen({ image, toggleNavElements }) {
 
         {activeSection === 'InfoPestsClimate' && (
             <TextBubble 
-                onClose={handleClose} 
+                onClose={handleClose}
+
+                // onClose={() => {
+                //     playSound(new Audio('/music/close.mp3'));
+                //     {handleClose}
+                // }}
+
                 toggleNavElements={toggleNavElements}
                 style={{ left: '2770px' }}
             >

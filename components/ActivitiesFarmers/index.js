@@ -84,7 +84,7 @@ export default function ActivitiesFarmers({ onClose, toggleNavElements }) {
                                     </p>
                                 </div>
                                 <div className={styles.contentColRight}>
-                                    <Image src='/activities-farmer/field.png' alt="a farm field" width={208} height={208} />
+                                    <Image src='/activities-farmer/field.png' alt="a farm field" width={180} height={180} />
                                 </div>
                             </div>
                         )
@@ -100,10 +100,10 @@ export default function ActivitiesFarmers({ onClose, toggleNavElements }) {
                                         Many small-scale local farms use organic and sustainable farming practices that minimize the use of pesticides and other chemicals.
                                     </p>
                                     <p>
-                                        This can help to reduce the exposure of bees and other pollinators to harmful chemicals that can affect their health and survival.                                    </p>
+                                        This can help to reduce the exposure of bees to harmful chemicals that can affect their health and survival.                                    </p>
                                 </div>
                                 <div className={styles.contentColRight}>
-                                    <Image src='/activities-farmer/sprout.png' alt="growing sprout in soil" width={208} height={208} />
+                                    <Image src='/activities-farmer/sprout.png' alt="growing sprout in soil" width={180} height={180} />
                                 </div>
                             </div>
                         )
@@ -123,7 +123,7 @@ export default function ActivitiesFarmers({ onClose, toggleNavElements }) {
                                     </p>
                                 </div>
                                 <div className={styles.contentColRight}>
-                                    <Image src='/activities-farmer/fruit.png' alt="fruit basket" width={208} height={208} />
+                                    <Image src='/activities-farmer/fruit.png' alt="fruit basket" width={180} height={180} />
                                 </div>
                             </div>
                         )
@@ -137,7 +137,7 @@ export default function ActivitiesFarmers({ onClose, toggleNavElements }) {
                                     <p>You can check online or other resources to find farms in your area</p>
                                 </div>
                                 <div className={styles.contentColRight}>
-                                    <Image src='/activities-farmer/community.png' alt="people with heart" width={208} height={208} />
+                                    <Image src='/activities-farmer/community.png' alt="people with heart" width={180} height={180} />
                                 </div>
                             </div>
                         )

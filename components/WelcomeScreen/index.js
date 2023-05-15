@@ -3,8 +3,22 @@ import Image from "next/image";
 import WelcomeCard from "../WelcomeCard";
 import ButtonGetStarted from "../ButtonGetStarted";
 import styles from "./Welcome.module.css"
+import { useState } from "react";
 
 export default function WelcomeScreen({ onGetStartedClick }) {
+
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     return(
         <>
@@ -32,6 +46,7 @@ export default function WelcomeScreen({ onGetStartedClick }) {
                     <ButtonGetStarted
                         onClick={onGetStartedClick}
                     />
+
                 </div>
 
             </div>

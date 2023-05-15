@@ -9,6 +9,18 @@ import lottie from 'lottie-web'
 export default function QuizScreen({ image, toggleNavElements }) {
     const [isQuizVisible, setIsQuizVisible] = useState(false);
     const [isDelayActive, setIsDelayActive] = useState(false);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const handleClose = () => {
       setIsQuizVisible(false);
@@ -83,6 +95,13 @@ export default function QuizScreen({ image, toggleNavElements }) {
             <div className={styles.card} onClick={handleOpenQuiz}>
               <QuizCard01/>
             </div>
+
+            {/* <div className={styles.card} onClick={() => {
+              playSound(new Audio('/music/open.mp3'));
+              {handleOpenQuiz};
+            }}>
+              <QuizCard01/>
+            </div> */}
 
             <Image
               className={styles.arrow__line}

@@ -28,7 +28,11 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 15px 20px;
+    padding: 15px 0px 15px 20px;
+}
+
+.introContainer h2 {
+    font-size: 1.3rem;
 }
 
 .masonStart {
@@ -91,4 +95,17 @@
     flex-direction: column;
     position: relative;
     left: 25px;
+}
+
+.contentColLeft h1 {
+    padding-bottom: 16px;
+}
+
+.contentColLeft h2 {
+    font-size: 1.3rem;
+}
+
+.contentColLeft p {
+    font-size: 20px;
+    padding-bottom: 16px;
 }

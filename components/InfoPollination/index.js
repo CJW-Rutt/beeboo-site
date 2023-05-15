@@ -54,7 +54,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                             <p>It's like when they go to a flower and give it a little kiss, which helps the flower make babies. And you know what that means? More flowers, more fruits, and more vegetables for us to eat! Yum!</p>
                             <div className={styles.plantingStart} onClick={handleStartPolination}>
                                 Learn More About Pollination!
-                                <Image src='/info-pollination/flowerpolly.svg' width={319.50} height={73.46} />
+                                <Image src='/info-pollination/flowerpolly.svg' width={300} height={70} />
                             </div>
                             <div className={styles.plantingStartBackground}></div>
                         </div>
@@ -69,7 +69,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 <p>Without bees, we wouldn't have as many tasty foods like strawberries, watermelons, and even chocolate!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/fruits.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/info-pollination/fruits.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -83,22 +83,18 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 <p>Honey is important in cooking and baking delicious treats, like cakes. Honey can also be used as a remedy for sore throats!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/honey.png' alt="happy mascot" width={208} height={208} />
+                                <Image src='/info-pollination/honey.png' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
                 }
                 {
                     step == 3 && (
-                        <div className={styles.innerContentContainer}>
-                            <div className={styles.contentColLeft}>
-                                <h1>Honey</h1>
-                                <h2>Did you know...</h2>
-                                <p>Alberta made the most honey in Canada in 2021!</p>
-                            </div>
-                            <div className={styles.chart__contentColRight}>
-                                <Chart />
-                            </div>
+                        <div className={styles.innerContentContainer__chart}>
+                            <h1>Honey</h1>
+                            <h2>Did you know...</h2>
+                            <p>Alberta made the most honey in Canada in 2021!</p>
+                            <Chart/>
                         </div>
                     )
                 }
@@ -114,7 +110,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 </p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/lilacs.svg' alt="happy mascot" width={208} height={208} />
+                                <Image src='/info-pollination/lilacs.svg' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -130,7 +126,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 </p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/fwappybee.svg' width={208} height={208} />
+                                <Image src='/info-pollination/fwappybee.svg' width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -155,7 +151,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                                 </div> */}
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/info-pollination/beeboy.svg' alt="happy mascot" width={208} height={208} />
+                                <Image src='/info-pollination/beeboy.svg' alt="happy mascot" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -163,7 +159,7 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
             </div>
             <div className={styles.rightButtonCol}>
                 <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
-                {step > 0 && step !== 6 && <Next onClick={handleNext} />}
+                {step > 0 && step !== 6 && <Next className={styles.next__button} onClick={handleNext} />}
             </div>
         </div>
     );

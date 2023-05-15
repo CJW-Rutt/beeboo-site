@@ -65,8 +65,8 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                         <div className={styles.innerContentContainer}>
                             <div className={styles.contentColLeft}>
                                 <h1>Setting up the nest</h1>
-                                <p>Mason bees like to live in holes so your DIY kit will likely come with cardboard or bamboo nesting tubes that the bees can use.</p>
-                                <p>To protect the bees from the rain and sun, place their nest in a dry, protected area such as a shed or garage.</p>    
+                                <p>Mason bees like to live in holes so your DIY kit will come with cardboard or bamboo nesting tubes for bees to use.</p>
+                                <p>To protect the bees from the rain and sun, place their nest in a dry, protected area like a shed or garage.</p>    
                             </div>
                             <div className={styles.contentColRight}>
                                 <Image src='/activities-mason/honeycomb.svg' alt="honeycomb graphic" width={208} height={208} />
@@ -83,7 +83,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>Check out the previous activity for a list of great flowers to plant!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/flowers2.svg' alt="flowers" width={208} height={208} />
+                                <Image src='/activities-mason/flowers2.svg' alt="flowers" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -97,7 +97,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>Enjoy watching the bees fly in and out of the tubes as they go about their bee-sy lives!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/beeflower.svg' alt="bees and flowers" width={208} height={208} />
+                                <Image src='/activities-mason/beeflower.svg' alt="bees and flowers" width={180} height={180} />
                             </div>
                         </div>
                     )
@@ -111,7 +111,7 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
                                 <p>To make sure you're ready to take care of the bees, check out our quiz!</p>
                             </div>
                             <div className={styles.contentColRight}>
-                                <Image src='/activities-mason/eureka.svg' alt="person sitting and reading a book" width={208} height={208} />
+                                <Image src='/activities-mason/eureka.svg' alt="person sitting and reading a book" width={180} height={180} />
                             </div>
                         </div>
                     )

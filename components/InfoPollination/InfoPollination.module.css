@@ -15,6 +15,11 @@
     padding: 15px 20px;
 }
 
+.contentColLeft h1 {
+    margin-bottom: 1.5rem;
+}
+
+
 .rightButtonCol {
     display: flex;
     flex-direction: column;
@@ -28,7 +33,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 15px 20px;
+    padding: 15px 0px 15px 20px;
 }
 
 .plantingStart {
@@ -73,8 +78,9 @@
 }
 
 .innerContentContainer p {
-    margin: 10px 0px;
-    font-size: 23px;
+    margin: 18px 0px;
+    font-size: 20px;
+    line-height: 2rem;
 }
 
 .innerContentContainer ul {
@@ -94,12 +100,29 @@
     left: 25px;
 }
 
-.chart__contentColRight {
+
+.innerContentContainer__chart {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
 }
+
+.innerContentContainer__chart h1 {
+    margin-top: 1.25rem;
+    margin-left: -5.45rem;
+}
+
+.innerContentContainer__chart h2 {
+    margin-top: 1rem;
+    margin-left: -5.45rem;
+}
+
+.innerContentContainer__chart p {
+    margin-top: 0.5rem;
+    margin-left: -5.45rem;
+    font-size: 20px;
+}
+
+
 
 .activitiesButton {
     background-color: var(--primary-yellow);
