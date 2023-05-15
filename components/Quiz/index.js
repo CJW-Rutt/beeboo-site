@@ -7,13 +7,24 @@ import Image from 'next/image';
 import ButtonLearning from '../ButtonLearning';
 import Close from '../Close';
 
-
 export default function Quiz({ onClose, toggleNavElements  }) {
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [resultPage, setResultPage] = useState(null);
+  const [audio, setAudio] = useState();
+
+  const playSound = (audio) => {
+      try {
+          if (audio) {
+              setAudio(audio);
+              audio.play();
+          }
+      } catch (error) {
+          console.log("Error playing audio:", error);
+      }
+  }
 
   const toggleNavElementsCallback = useCallback((isVisible) => {
     toggleNavElements(isVisible);
@@ -60,12 +71,16 @@ export default function Quiz({ onClose, toggleNavElements  }) {
   
     if (totalWeight <= 0) {
       setResultPage('ResultPage1');
+      playSound(new Audio('/music/fail.mp3'));
     } else if (totalWeight <= 2) {
       setResultPage('ResultPage2');
+      playSound(new Audio('/music/success.mp3'))
     } else if (totalWeight <= 5) {
       setResultPage('ResultPage3');
+      playSound(new Audio('/music/pass.mp3'))
     } else {
       setResultPage('ResultPage4');
+      playSound(new Audio('/music/tada.m4a'))
     }
   }, [selectedAnswers]);
   
@@ -218,7 +233,10 @@ export default function Quiz({ onClose, toggleNavElements  }) {
                     key={index}
                     answer={item[answerKey]}
                     src={src}
-                    onClick={() => handleClick(answerKey, item.weight)}
+                    onClick={() => {
+                      handleClick(answerKey, item.weight)
+                      playSound(new Audio('/music/quiz-answer.mp3'));
+                    }}
                     fadeOut={fadeOut}
                   />
                 );
