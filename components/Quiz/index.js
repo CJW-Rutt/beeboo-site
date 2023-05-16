@@ -22,16 +22,16 @@ export default function Quiz({ onClose, toggleNavElements }) {
     quizPageFour: null,
   });
 
-
-  const playSound = (audioFile) => {
-    if (audio && !audio.paused) {
-      audio.pause();
-      audio.currentTime = 0;
+  const playSound = (audio) => {
+    try {
+        if (audio) {
+            setAudio(audio);
+            audio.play();
+        }
+    } catch (error) {
+        console.log("Error playing audio:", error);
     }
-    const newAudio = new Audio(audioFile);
-    setAudio(newAudio);
-    newAudio.play();
-  };
+  }
 
   useEffect(() => {
     return () => {
