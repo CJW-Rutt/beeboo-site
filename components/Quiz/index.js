@@ -8,6 +8,7 @@ import ButtonLearning from '../ButtonLearning';
 import Close from '../Close';
 
 export default function Quiz({ onClose, toggleNavElements  }) {
+  console.log('quiz component rendered');
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
@@ -15,18 +16,27 @@ export default function Quiz({ onClose, toggleNavElements  }) {
   const [resultPage, setResultPage] = useState(null);
   const [audio, setAudio] = useState();
 
-  const playSound = (audio) => {
-      try {
-          if (audio) {
-              setAudio(audio);
-              audio.play();
-          }
-      } catch (error) {
-          console.log("Error playing audio:", error);
-      }
+  const playSound = (audioFile) => {
+    if (audio && !audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    const newAudio = new Audio(audioFile);
+    setAudio(newAudio);
+    newAudio.play();
   }
+  
+  useEffect(() => {
+    return () => {
+      if (audio && !audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
+  }, [audio]);
 
   const toggleNavElementsCallback = useCallback((isVisible) => {
+    console.log('QUIZ: toggleNavElementsCallback called with:', isVisible); 
     toggleNavElements(isVisible);
   }, [toggleNavElements]);
 
@@ -50,18 +60,13 @@ export default function Quiz({ onClose, toggleNavElements  }) {
   };
 
   const handleClose = () => {
+    console.log('QUIZ handleClose called');
     onClose();
   };
 
   useEffect(() => {
     toggleNavElementsCallback(false);
-    console.log('false');
-  
-    return () => {
-      toggleNavElementsCallback(true);
-      console.log('true');
-    };
-  }, [toggleNavElementsCallback]);
+  }, []);
 
   const determineResultPage = useCallback(() => {
     const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
