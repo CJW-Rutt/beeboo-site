@@ -8,6 +8,18 @@ import Image from 'next/image'
 export default function InfoPestsClimate({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0)
     const [topic, setTopic] = useState("");
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const toggleNavElementsCallback = useCallback((isVisible) => {
         toggleNavElements(isVisible);
@@ -19,17 +31,20 @@ export default function InfoPestsClimate({ onClose, toggleNavElements }) {
 
     const handleNext = () => {
         setStep(step + 1);
+        playSound(new Audio('/music/quiz-answer.mp3'))
     }
 
     const handlePrevious = () => {
         if (step > 0) {
             setStep(step - 1);
+            playSound(new Audio('/music/quiz-answer.mp3'))
         }
     }
 
     const handleClose = () => {
         toggleNavElements(true);
         onClose();
+        playSound(new Audio('/music/close.mp3'))
     };
 
     useEffect(() => {

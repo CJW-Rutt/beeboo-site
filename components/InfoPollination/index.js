@@ -8,27 +8,43 @@ import { Chart } from "../Chart"
 
 export default function InfoPollination({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const toggleNavElementsCallback = useCallback((isVisible) => {
         toggleNavElements(isVisible);
     }, [toggleNavElements]);
 
     const handleStartPolination = () => {
+        playSound(new Audio('/music/success.mp3'))
         setStep(1);
     }
 
     const handleNext = () => {
+        playSound(new Audio('/music/quiz-answer.mp3'))
         setStep(step + 1);
     }
 
     const handlePrevious = () => {
         if (step > 0) {
             setStep(step - 1);
+            playSound(new Audio('/music/quiz-answer.mp3'))
         }
     }
     
     const handleClose = () => {
         toggleNavElements(true);
+        playSound(new Audio('/music/close.mp3'))
         onClose();
     };
 
@@ -43,7 +59,9 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
     return (
         <div className={styles.plantContainer}>
             <div className={styles.backButton}>
-                {step !== 0 && <Previous onClick={handlePrevious} />}
+                {step !== 0 && <Previous onClick={() => {
+                    handlePrevious();
+                    }} />}
             </div>
             <div className={styles.contentContainer}>
                 {
