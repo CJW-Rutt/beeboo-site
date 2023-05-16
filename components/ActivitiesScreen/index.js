@@ -1,15 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect, createRef } from 'react';
 import Image from 'next/image';
 import styles from "./Activities.module.css"
 import ActivitiesCard01 from '../ActivitiesCard01';
 import ActivitiesMain from '../ActivitiesMain';
 import TextBubble from '../TextBubble';
 import ButtonGetStarted from '../ButtonGetStarted'
+import lottie from 'lottie-web'
+
 
 export default function ActivitiesScreen({ image, toggleNavElements }) {
   const [isActivitiesVisible, setIsActivitiesVisible] = useState(false);
   const [isDelayActive, setIsDelayActive] = useState(false);
   const [audio, setAudio] = useState();
+
+  let animationContainer1 = createRef();
+
+    useEffect(() => {
+        const anim = lottie.loadAnimation({
+          container: animationContainer1.current,
+          rerender: 'svg',
+          loop: true,
+          pingpong: true,
+          autoplay: true,
+          path: './animations/boo.json',
+        });
+    
+        return () => anim.destroy();
+      }, []);
 
   const playSound = (audio) => {
       try {
@@ -43,12 +60,10 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
 
       <div className={styles.content__container}>
 
-        <Image
-          className={styles.boo}
-          src="./mascot/boo-happy-right.svg"
-          width={100}
-          height={100}
-        />
+        {<div 
+          className={styles.animation__container} 
+          ref={animationContainer1}
+        />}
 
         <div className={styles.content}>
           <ActivitiesCard01/>
