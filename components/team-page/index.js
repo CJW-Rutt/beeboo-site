@@ -53,10 +53,13 @@ export default function TeamPage({ onClose, toggleNavElements }) {
                                 <>
                                     <div className={styles.text__container}>
                                         <h1>
-                                            Meet the honey-makers!
+                                            Hooray, you've made it to the end!
                                         </h1>
+                                        <h2 className={styles.thankyou__container}>
+                                            Thank you for checking out our application!
+                                        </h2>
                                         <p className={styles.team__description}>
-                                            Thank you for checking out our application! Our team is like a colony of bees, working together to create something amazing. Get to know the busy bees who designed and developed this app just for you!
+                                        Our team is like a colony of bees, working together to create something amazing. Get to know the busy bees who designed and developed this app just for you!
                                         </p>
                                     </div>
                                 </>
