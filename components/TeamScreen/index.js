@@ -3,11 +3,11 @@ import Image from 'next/image';
 import styles from "./Team.module.css"
 import TeamPage from '../team-page';
 
-export default function TeamScreen({ image }) {
-
+export default function TeamScreen({ image, toggleNavElements}) {
+  console.log(toggleNavElements);
   return (
     <>
-      <TeamPage />
+      <TeamPage toggleNavElements={toggleNavElements} />
       <div className={styles.container}>
         <Image
           className={styles.img}

@@ -1,15 +1,36 @@
-import { useState } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { teamInfo } from "../../data/team"
 import TeamMember from "../team-member"
 import Image from "next/image"
 import styles from "./team-page.module.css"
 import TextBubble from "../TextBubble"
 
-export default function TeamPage({ onClose }) {
+export default function TeamPage({ onClose, toggleNavElements }) {
     const [chooseMember, setChooseMember] = useState(true)
     const [data, setData] = useState({ teamInfo })
     const [memberData, setMemberData] = useState()
     const [audio, setAudio] = useState();
+    
+    const toggleNavElementsCallback = useCallback((isVisible) => {
+        toggleNavElements(isVisible);
+    }, [toggleNavElements]);
+
+    const handleMemberSelect = (index) => {
+        playSound(new Audio('/music/open.mp3'))
+        setMemberData(teamInfo[index])
+        setChooseMember(false)
+        toggleNavElementsCallback(false);
+    }
+
+    const handleMemberClose = () => {
+        playSound(new Audio('/music/close.mp3'))
+        setChooseMember(true)
+        toggleNavElementsCallback(true);
+    }
+
+    useEffect(() => {
+        toggleNavElementsCallback(chooseMember);
+    }, [toggleNavElementsCallback, chooseMember]);
 
     const playSound = (audio) => {
         try {
@@ -48,11 +69,7 @@ export default function TeamPage({ onClose }) {
                             chooseMember ?
                                 data.teamInfo && data.teamInfo.map((info, index) => {
                                     return (
-                                        <div className={styles.member__container} key={index} onClick={() => {
-                                            playSound(new Audio('/music/open.mp3'))
-                                            setMemberData(teamInfo[index])
-                                            setChooseMember(false)
-                                        }}>
+                                        <div className={styles.member__container} key={index} onClick={() => handleMemberSelect(index)}>
                                             <div className={styles.hexagon__content}>
                                                 {info.name}
                                                 <Image src={info.avatar} height={78} width={78} alt="team member avatar" />
@@ -71,10 +88,7 @@ export default function TeamPage({ onClose }) {
                                                 src='/ui-icons/close.png'
                                                 height={50}
                                                 width={50}
-                                                onClick={() => {
-                                                    playSound(new Audio('/music/close.mp3'))
-                                                    setChooseMember(true)
-                                                }}
+                                                onClick={handleMemberClose}
                                             />
                                             <div className={styles.textbubble__content}>
                                                 <TeamMember
