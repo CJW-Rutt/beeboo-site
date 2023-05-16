@@ -8,7 +8,6 @@ import ButtonLearning from '../ButtonLearning';
 import Close from '../Close';
 
 export default function Quiz({ onClose, toggleNavElements }) {
-  console.log('quiz component rendered');
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
@@ -32,15 +31,6 @@ export default function Quiz({ onClose, toggleNavElements }) {
         console.log("Error playing audio:", error);
     }
   }
-
-  useEffect(() => {
-    return () => {
-      if (audio && !audio.paused) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    };
-  }, [audio]);
 
   const toggleNavElementsCallback = useCallback((isVisible) => {
     console.log('QUIZ: toggleNavElementsCallback called with:', isVisible);
@@ -111,7 +101,7 @@ export default function Quiz({ onClose, toggleNavElements }) {
     } else if (totalWeight == 3) {
       setResultPage('ResultPage4');
       playSound(new Audio('/music/tada.m4a'))
-    } else {
+    } else if (totalWeight == 4) {
       setResultPage('ResultPage5');
       playSound(new Audio('/music/tada.m4a'))
     }
