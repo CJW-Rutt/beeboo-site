@@ -8,12 +8,25 @@ import { Chart } from "../Chart"
 
 export default function InfoPollination({ onClose, toggleNavElements }) {
     const [step, setStep] = useState(0);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const toggleNavElementsCallback = useCallback((isVisible) => {
         toggleNavElements(isVisible);
     }, [toggleNavElements]);
 
     const handleStartPolination = () => {
+        playSound(new Audio('/music/success.mp3'))
         setStep(1);
     }
 
@@ -43,7 +56,10 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
     return (
         <div className={styles.plantContainer}>
             <div className={styles.backButton}>
-                {step !== 0 && <Previous onClick={handlePrevious} />}
+                {step !== 0 && <Previous onClick={() => {
+                    handlePrevious();
+                    playSound(new Audio('/music/quiz-answer.mp3'))
+                    }} />}
             </div>
             <div className={styles.contentContainer}>
                 {
@@ -158,8 +174,14 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                 }
             </div>
             <div className={styles.rightButtonCol}>
-                <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
-                {step > 0 && step !== 6 && <Next className={styles.next__button} onClick={handleNext} />}
+                <Close onClick={() => {
+                    handleClose();
+                    playSound(new Audio('/music/close.mp3'))
+                    }} onToggleNavElements={toggleNavElementsCallback} />
+                {step > 0 && step !== 6 && <Next className={styles.next__button} onClick={() => {
+                    handleNext();
+                    playSound(new Audio('/music/quiz-answer.mp3'))
+                    }} />}
             </div>
         </div>
     );
