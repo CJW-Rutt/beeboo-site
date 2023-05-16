@@ -51,18 +51,15 @@ export default function Quiz({ onClose, toggleNavElements  }) {
 
   const handleClose = () => {
     onClose();
-    setCurrentPage("quizPageOne");
-    setFadeOut(false);
-    setShowIntro(true);
-    setSelectedAnswers([]);
-    setResultPage(null);
   };
 
   useEffect(() => {
     toggleNavElementsCallback(false);
-
+    console.log('false');
+  
     return () => {
       toggleNavElementsCallback(true);
+      console.log('true');
     };
   }, [toggleNavElementsCallback]);
 

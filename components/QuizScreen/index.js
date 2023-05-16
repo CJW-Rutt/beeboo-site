@@ -24,8 +24,9 @@ export default function QuizScreen({ image, toggleNavElements }) {
 
     const handleClose = () => {
       setIsQuizVisible(false);
+      toggleNavElements(true);
     };
-
+    
     const handleOpenQuiz = () => {
       if (!isDelayActive) {
         setIsDelayActive(true);
@@ -90,7 +91,10 @@ export default function QuizScreen({ image, toggleNavElements }) {
 
           <div className={styles.quiz__container}>
 
-            <div className={styles.card} onClick={handleOpenQuiz}>
+            <div className={styles.card} onClick={() => {
+              playSound(new Audio('/music/open.mp3'));
+              handleOpenQuiz();
+            }}>
               <QuizCard01/>
             </div>
 
