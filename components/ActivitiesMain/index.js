@@ -8,6 +8,18 @@ import Close from '../Close';
 
 export default function ActivitiesMain({ onClose, toggleNavElements }) {
     const [activeComponent, setActiveComponent] = useState('main');
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const toggleNavElementsCallback = useCallback((isVisible) => {
         toggleNavElements(isVisible);
@@ -15,20 +27,26 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
 
     const handlePlantingClick = () => {
         setActiveComponent('planting');
+        playSound(new Audio('/music/success.mp3'))
+
     };
 
     const handleMasonBeeClick = () => {
         setActiveComponent('masonBeeKit');
+        playSound(new Audio('/music/success.mp3'))
+
     };
 
     const handleSupportLocalClick = () => {
         setActiveComponent('supportLocal');
+        playSound(new Audio('/music/success.mp3'))
     };
 
     const handleClose = () => {
         setActiveComponent('main');
         toggleNavElements(true);
         onClose();
+        playSound(new Audio('/music/close.mp3'))
     };
 
     useEffect(() => {
