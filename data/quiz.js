@@ -94,17 +94,17 @@ export const quizButtons = {
     'quizPageFour': [
         {
             'answerOne': 'Reduces the use of synthetic pesticides',
-            'src': '/quiz-icons/pesticides.png',
+            'src': '/quiz-icons/ramen.png',
             'weight': 1,
         },
         {
             'answerTwo': 'Provides them with cozy blankets',
-            'src': '/quiz-icons/blanket.png',
+            'src': '/quiz-icons/ramen.png',
             'weight': 0,
         },
         {
             'answerThree': 'Teaches them how to dance',
-            'src': '/quiz-icons/dance.png',
+            'src': '/quiz-icons/ramen.png',
             'weight': 0,
         },
     ],

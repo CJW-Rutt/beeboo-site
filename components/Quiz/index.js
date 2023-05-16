@@ -33,43 +33,58 @@ export default function Quiz({ onClose, toggleNavElements }) {
   }
 
   const toggleNavElementsCallback = useCallback((isVisible) => {
-    console.log('QUIZ: toggleNavElementsCallback called with:', isVisible);
     toggleNavElements(isVisible);
   }, [toggleNavElements]);
 
   const handleClick = (answer, weight) => {
-    setSelectedAnswers([...selectedAnswers, weight]);
     setFadeOut(true);
   
     setTimeout(() => {
       if (currentPage === 'landingPage') {
         setCurrentPage('quizPageOne');
       } else if (currentPage === 'quizPageOne') {
-        const isCorrectAnswer = answer === 'correctAnswer1';
+        const isCorrectAnswer = weight === 1;
         setQuestionAnswers((prevAnswers) => ({
           ...prevAnswers,
           quizPageOne: isCorrectAnswer,
         }));
   
+        setSelectedAnswers((prevSelectedAnswers) => [...prevSelectedAnswers, weight]);
+  
         setCurrentPage('quizPageTwo');
       } else if (currentPage === 'quizPageTwo') {
-        const isCorrectAnswer = answer === 'correctAnswer2';
+        const isCorrectAnswer = weight === 1;
         setQuestionAnswers((prevAnswers) => ({
           ...prevAnswers,
           quizPageTwo: isCorrectAnswer,
         }));
   
+        setSelectedAnswers((prevSelectedAnswers) => [...prevSelectedAnswers, weight]);
+  
         setCurrentPage('quizPageThree');
       } else if (currentPage === 'quizPageThree') {
-        const isCorrectAnswer = answer === 'correctAnswer3';
+        const isCorrectAnswer = weight === 1;
         setQuestionAnswers((prevAnswers) => ({
           ...prevAnswers,
           quizPageThree: isCorrectAnswer,
         }));
   
+        setSelectedAnswers((prevSelectedAnswers) => [...prevSelectedAnswers, weight]);
+  
         setCurrentPage('quizPageFour');
       }
+  
       setFadeOut(false);
+
+      if (currentPage === 'quizPageFour') {
+        const isCorrectAnswer = weight === 1;
+        setQuestionAnswers((prevAnswers) => ({
+          ...prevAnswers,
+          quizPageFour: isCorrectAnswer,
+        }));
+      }
+
+
     }, 500);
   };
 
@@ -78,7 +93,6 @@ export default function Quiz({ onClose, toggleNavElements }) {
   };
 
   const handleClose = () => {
-    console.log('QUIZ handleClose called');
     onClose();
   };
 
@@ -88,7 +102,7 @@ export default function Quiz({ onClose, toggleNavElements }) {
 
   const determineResultPage = useCallback(() => {
     const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
-  
+    console.log('Trying to determine Results');
     if (totalWeight <= 0) {
       setResultPage('ResultPage1');
       playSound(new Audio('/music/fail.mp3'));
@@ -108,10 +122,10 @@ export default function Quiz({ onClose, toggleNavElements }) {
   }, [selectedAnswers]);
   
   useEffect(() => {
-    if (currentPage === 'quizPageFour' && selectedAnswers.length === 4) {
+    if (currentPage === 'quizPageFour' && questionAnswers.quizPageFour !== null) {
       determineResultPage();
     }
-  }, [currentPage, selectedAnswers, determineResultPage]);
+  }, [currentPage, questionAnswers, determineResultPage]);
 
   const currentQuestion = quizQuestions[currentPage]?.[0];
 
@@ -151,10 +165,10 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>So let's do a review of all the facts to help bees and make a better future!</p>
                 </div>
                 <div className={styles.questionResult}>
-                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -175,10 +189,10 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Lets make our bee friends happy and go back to learn more about them!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback}  />
@@ -199,10 +213,10 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -223,10 +237,10 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Let's make the future better for everyone together!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -247,10 +261,10 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Let your people shine!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
