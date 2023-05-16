@@ -31,17 +31,20 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
     }
 
     const handleNext = () => {
+        playSound(new Audio('/music/quiz-answer.mp3'))
         setStep(step + 1);
     }
 
     const handlePrevious = () => {
         if (step > 0) {
             setStep(step - 1);
+            playSound(new Audio('/music/quiz-answer.mp3'))
         }
     }
     
     const handleClose = () => {
         toggleNavElements(true);
+        playSound(new Audio('/music/close.mp3'))
         onClose();
     };
 
@@ -58,7 +61,6 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
             <div className={styles.backButton}>
                 {step !== 0 && <Previous onClick={() => {
                     handlePrevious();
-                    playSound(new Audio('/music/quiz-answer.mp3'))
                     }} />}
             </div>
             <div className={styles.contentContainer}>
@@ -174,14 +176,8 @@ export default function InfoPollination({ onClose, toggleNavElements }) {
                 }
             </div>
             <div className={styles.rightButtonCol}>
-                <Close onClick={() => {
-                    handleClose();
-                    playSound(new Audio('/music/close.mp3'))
-                    }} onToggleNavElements={toggleNavElementsCallback} />
-                {step > 0 && step !== 6 && <Next className={styles.next__button} onClick={() => {
-                    handleNext();
-                    playSound(new Audio('/music/quiz-answer.mp3'))
-                    }} />}
+                <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
+                {step > 0 && step !== 6 && <Next className={styles.next__button} onClick={handleNext} />}
             </div>
         </div>
     );
