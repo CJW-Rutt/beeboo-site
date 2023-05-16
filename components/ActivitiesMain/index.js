@@ -33,10 +33,6 @@ export default function ActivitiesMain({ onClose, toggleNavElements }) {
 
     useEffect(() => {
         toggleNavElementsCallback(false);
-    
-        return () => {
-          toggleNavElementsCallback(true);
-        };
     }, [toggleNavElementsCallback]);
 
     const renderComponent = () => {

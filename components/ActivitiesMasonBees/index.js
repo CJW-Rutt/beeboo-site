@@ -36,10 +36,6 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
 
     useEffect(() => {
         toggleNavElementsCallback(false);
-    
-        return () => {
-          toggleNavElementsCallback(true);
-        };
     }, [toggleNavElementsCallback]);
 
     return (

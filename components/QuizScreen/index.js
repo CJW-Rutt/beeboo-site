@@ -29,12 +29,10 @@ export default function QuizScreen({ image, toggleNavElements }) {
     const handleOpenQuiz = () => {
       if (!isDelayActive) {
         setIsDelayActive(true);
+        toggleNavElements(false);
         setTimeout(() => {
           setIsQuizVisible(true);
           setIsDelayActive(false);
-          if (!isQuizVisible) {
-            toggleNavElements();
-          }
         }, 500);
       }
     };

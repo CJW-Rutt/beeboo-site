@@ -40,20 +40,21 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
   }
 
   const handleClose = () => {
-      setIsActivitiesVisible(false);
+    setIsActivitiesVisible(false);
+    toggleNavElements(true);
   };
 
   const handleOpenActivities = () => {
     if (!isDelayActive) {
       setIsDelayActive(true);
-      toggleNavElements();
+      toggleNavElements(false);
+      setIsActivitiesVisible(true);
       setTimeout(() => {
-        setIsActivitiesVisible(true);
         setIsDelayActive(false);
       }, 500);
     }
   };
-
+  
   return (
     <div className={styles.main__container}>
       <h1 className={styles.h1}>Activities await!!</h1>
