@@ -17,10 +17,7 @@ export default function ButtonGetStarted({ onClick }) {
     }
     return (
         <>
-            <div className={styles.btn} onClick={() => {
-                onClick();
-                playSound(new Audio('/music/start.mp3'))
-            }}>
+            <div className={styles.btn} onClick={onClick}>
                 <div className={styles.btn__primary}>GET STARTED!</div>
                 <div className={styles.btn__background}></div>
             </div>
