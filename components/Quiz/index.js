@@ -7,7 +7,7 @@ import Image from 'next/image';
 import ButtonLearning from '../ButtonLearning';
 import Close from '../Close';
 
-export default function Quiz({ onClose, toggleNavElements  }) {
+export default function Quiz({ onClose, toggleNavElements }) {
   console.log('quiz component rendered');
   const [currentPage, setCurrentPage] = useState('quizPageOne');
   const [fadeOut, setFadeOut] = useState(false);
@@ -15,6 +15,13 @@ export default function Quiz({ onClose, toggleNavElements  }) {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [resultPage, setResultPage] = useState(null);
   const [audio, setAudio] = useState();
+  const [questionAnswers, setQuestionAnswers] = useState({
+    quizPageOne: null,
+    quizPageTwo: null,
+    quizPageThree: null,
+    quizPageFour: null,
+  });
+
 
   const playSound = (audioFile) => {
     if (audio && !audio.paused) {
@@ -24,8 +31,8 @@ export default function Quiz({ onClose, toggleNavElements  }) {
     const newAudio = new Audio(audioFile);
     setAudio(newAudio);
     newAudio.play();
-  }
-  
+  };
+
   useEffect(() => {
     return () => {
       if (audio && !audio.paused) {
@@ -36,20 +43,41 @@ export default function Quiz({ onClose, toggleNavElements  }) {
   }, [audio]);
 
   const toggleNavElementsCallback = useCallback((isVisible) => {
-    console.log('QUIZ: toggleNavElementsCallback called with:', isVisible); 
+    console.log('QUIZ: toggleNavElementsCallback called with:', isVisible);
     toggleNavElements(isVisible);
   }, [toggleNavElements]);
 
   const handleClick = (answer, weight) => {
     setSelectedAnswers([...selectedAnswers, weight]);
     setFadeOut(true);
+  
     setTimeout(() => {
       if (currentPage === 'landingPage') {
         setCurrentPage('quizPageOne');
       } else if (currentPage === 'quizPageOne') {
+        const isCorrectAnswer = answer === 'correctAnswer1';
+        setQuestionAnswers((prevAnswers) => ({
+          ...prevAnswers,
+          quizPageOne: isCorrectAnswer,
+        }));
+  
         setCurrentPage('quizPageTwo');
       } else if (currentPage === 'quizPageTwo') {
+        const isCorrectAnswer = answer === 'correctAnswer2';
+        setQuestionAnswers((prevAnswers) => ({
+          ...prevAnswers,
+          quizPageTwo: isCorrectAnswer,
+        }));
+  
         setCurrentPage('quizPageThree');
+      } else if (currentPage === 'quizPageThree') {
+        const isCorrectAnswer = answer === 'correctAnswer3';
+        setQuestionAnswers((prevAnswers) => ({
+          ...prevAnswers,
+          quizPageThree: isCorrectAnswer,
+        }));
+  
+        setCurrentPage('quizPageFour');
       }
       setFadeOut(false);
     }, 500);
@@ -74,20 +102,23 @@ export default function Quiz({ onClose, toggleNavElements  }) {
     if (totalWeight <= 0) {
       setResultPage('ResultPage1');
       playSound(new Audio('/music/fail.mp3'));
-    } else if (totalWeight <= 2) {
+    } else if (totalWeight == 1) {
       setResultPage('ResultPage2');
       playSound(new Audio('/music/success.mp3'))
-    } else if (totalWeight <= 5) {
+    } else if (totalWeight == 2) {
       setResultPage('ResultPage3');
       playSound(new Audio('/music/pass.mp3'))
-    } else {
+    } else if (totalWeight == 3) {
       setResultPage('ResultPage4');
+      playSound(new Audio('/music/tada.m4a'))
+    } else {
+      setResultPage('ResultPage5');
       playSound(new Audio('/music/tada.m4a'))
     }
   }, [selectedAnswers]);
   
   useEffect(() => {
-    if (currentPage === 'quizPageThree' && selectedAnswers.length === 3) {
+    if (currentPage === 'quizPageFour' && selectedAnswers.length === 4) {
       determineResultPage();
     }
   }, [currentPage, selectedAnswers, determineResultPage]);
@@ -128,10 +159,12 @@ export default function Quiz({ onClose, toggleNavElements  }) {
                   <p>I know you can do it. You just need to review the important information found in the Learning Section</p>
                   <p>Don't give up yet. Bee's still need your help. They can't survive without you.</p>
                   <p>So let's do a review of all the facts to help bees and make a better future!</p>
-                  <ButtonLearning />
                 </div>
-                <div className={styles.resultsRightCol}>
-                  <Image src="/happybee1.svg" width={300} height={300}/>
+                <div className={styles.questionResult}>
+                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -145,15 +178,17 @@ export default function Quiz({ onClose, toggleNavElements  }) {
             <div className={styles.resultsPage}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol}>
-                  <h1>You're almost there!</h1>
+                  <h1>You're almost there! 25%!</h1>
                   <h3>But you still need to review more!</h3>
                   <p>You're so close to bee-ing an expert on bees.</p>
                   <p>Without your help the bee population will slowly fade away.</p>
                   <p>Lets make our bee friends happy and go back to learn more about them!</p>
-                  <ButtonLearning />
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happybee1.svg" width={300} height={300}/>
+                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback}  />
@@ -167,14 +202,17 @@ export default function Quiz({ onClose, toggleNavElements  }) {
             <div className={styles.resultsPage__passed}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol__passed}>
-                  <h1>You Passed! WOW!</h1>
-                  <h3>Congratulations, you're a world class Apiarist.</h3>
-                  <p>You passed the quiz with flying colours!</p>
+                  <h1>You Passed! You got 50%!</h1>
+                  <h3>Congratulations, but you could learn more still!</h3>
+                  <p>You passed the quiz, but just barely.</p>
                   <p>Your knowledge of the important steps to create a safe and healthy environment for mason bees to thrive is impressive.</p>
                   <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happybee1.svg" width={300} height={300}/>
+                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -188,14 +226,41 @@ export default function Quiz({ onClose, toggleNavElements  }) {
             <div className={styles.resultsPage__100}>
               <div className={styles.resultsInnerContainer}>
                 <div className={styles.resultsLeftCol__100}>
-                  <h1>YOU GOT 100%!!!</h1>
+                  <h1>YOU GOT 75%!!!</h1>
                   <h3>The future is in good hands!</h3>
                   <p>Congratulations, you passed the quiz with a PERFECT SCORE!</p>
                   <p>You did it. Your knowledge of the bees and how to help them really shows.</p>
                   <p>Let's make the future better for everyone together!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <Image src="/happybee1.svg" width={300} height={300}/>
+                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
+                </div>
+                <div className={styles.buttonCol}>
+                  <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
+                </div>
+              </div>
+            </div>
+          )
+        }
+        {
+          resultPage === 'ResultPage5' && (
+            <div className={styles.resultsPage__100}>
+              <div className={styles.resultsInnerContainer}>
+                <div className={styles.resultsLeftCol__100}>
+                  <h1>YOU GOT 100%!!!</h1>
+                  <h3>You are the BEE SAVIOR!</h3>
+                  <p>The bees praise your knowledge and understanding of their ecosystem.</p>
+                  <p>They swear fealty and allegience to your crown. Go forth great Bee King or Queen.</p>
+                  <p>Let your people shine!</p>
+                </div>
+                <div className={styles.resultsRightCol}>
+                  <p>Question 1: {questionAnswers['quizPageOne'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 2: {questionAnswers['quizPageTwo'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 3: {questionAnswers['quizPageThree'] ? 'Correct' : 'Wrong'}</p>
+                  <p>Question 4: {questionAnswers['quizPageFour'] ? 'Correct' : 'Wrong'}</p>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
