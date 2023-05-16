@@ -36,6 +36,12 @@
     font-weight: 600;
 }
 
+.animation__container {
+    margin-bottom: -5rem;
+    width: 30%;
+    height: 30%;
+}
+
 @keyframes float-2 {
     0% {
     transform: translateY(0);
