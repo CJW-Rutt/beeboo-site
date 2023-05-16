@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ActivitiesScreen from '../ActivitiesScreen';
 import IntroScreen from '../IntroScreen';
 import LearnScreen from '../LearnScreen';
@@ -11,34 +11,32 @@ import WelcomeScreen from '../WelcomeScreen'
 
 
 export default function Carousel() {
-
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showNavElements, setShowNavElements] = useState(false);
 
-    const moveToNextScreen = () => {
+    const moveToNextScreen = useCallback(() => {
         const index = currentIndex === screens.length - 1 ? currentIndex : currentIndex + 1;
         setCurrentIndex(index);
         setShowNavElements(true)
-    };
+    }, [currentIndex]);
 
-    const moveToPreviousScreen = () => {
+    const moveToPreviousScreen = useCallback(() => {
         const index = currentIndex === 0 ? 0 : currentIndex - 1;
         setCurrentIndex(index);
-    };
+    }, [currentIndex]);
 
-    const [showNavElements, setShowNavElements] = useState(false);
-
-    const toggleNavElements = (isVisible) => {
+    const toggleNavElements = useCallback((isVisible) => {
         setShowNavElements(isVisible);
-    };
-    
+    }, []);
+
     const screens = [
-        <SplashScreen onAnimationFinished={moveToNextScreen}/>,
-        <WelcomeScreen onGetStartedClick={moveToNextScreen} />,
-        <IntroScreen toggleNavElements={toggleNavElements} />,
-        <LearnScreen toggleNavElements={toggleNavElements} />,
-        <ActivitiesScreen toggleNavElements={toggleNavElements} />,
-        <QuizScreen toggleNavElements={toggleNavElements} />,
-        <TeamScreen toggleNavElements={toggleNavElements} />
+        { component: SplashScreen, props: { onAnimationFinished: moveToNextScreen }},
+        { component: WelcomeScreen, props: { onGetStartedClick: moveToNextScreen }},
+        { component: IntroScreen, props: { toggleNavElements }},
+        { component: LearnScreen, props: { toggleNavElements }},
+        { component: ActivitiesScreen, props: { toggleNavElements }},
+        { component: QuizScreen, props: { toggleNavElements }},
+        { component: TeamScreen, props: { toggleNavElements }}
     ];
 
     const navigateToIndex = (index) => {
@@ -67,11 +65,11 @@ export default function Carousel() {
         <>
             <div className={styles.main__container}>
                 <div className={styles.inner__contianer} style={someStyle}>
-                    {screens.map((screen, index) => (
-                        <div key={index} style={{ width: `${100 / screens.length}%` }} >
-                            {screen}
-                        </div>
-                    ))}
+                {screens.map((screen, index) => (
+                    <div key={index} style={{ width: `${100 / screens.length}%` }} >
+                        {React.createElement(screen.component, screen.props)}
+                    </div>
+                ))}
                 </div>
             </div>
             {showNavElements && currentIndex >= 2 && ( 

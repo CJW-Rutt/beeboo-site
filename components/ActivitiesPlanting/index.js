@@ -16,7 +16,7 @@ export default function ActivitiesPlanting({ onClose, toggleNavElements }) {
 
     const handleClose = () => {
         if (toggleNavElements) {
-            toggleNavElements();
+            toggleNavElements(true);
         }
         onClose();
     };
