@@ -13,6 +13,18 @@ import WelcomeScreen from '../WelcomeScreen'
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showNavElements, setShowNavElements] = useState(false);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const moveToNextScreen = useCallback(() => {
         const index = currentIndex === screens.length - 1 ? currentIndex : currentIndex + 1;
@@ -46,19 +58,6 @@ export default function Carousel() {
     const someStyle = {
         width: `${100 * screens.length}%`,    
         transform: `translateX(-${(100 / screens.length) * currentIndex}%)`,
-    }
-
-    const [audio, setAudio] = useState();
-
-    const playSound = (audio) => {
-        try {
-            if (audio) {
-                setAudio(audio);
-                audio.play();
-            }
-        } catch (error) {
-            console.log("Error playing audio:", error);
-        }
     }
 
     return(
