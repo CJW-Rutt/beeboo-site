@@ -72,19 +72,16 @@ export default function Quiz({ onClose, toggleNavElements }) {
         setSelectedAnswers((prevSelectedAnswers) => [...prevSelectedAnswers, weight]);
   
         setCurrentPage('quizPageFour');
-      }
-  
-      setFadeOut(false);
-
-      if (currentPage === 'quizPageFour') {
+      } else if (currentPage === 'quizPageFour') {
         const isCorrectAnswer = weight === 1;
         setQuestionAnswers((prevAnswers) => ({
           ...prevAnswers,
           quizPageFour: isCorrectAnswer,
         }));
+  
+        setSelectedAnswers((prevSelectedAnswers) => [...prevSelectedAnswers, weight]);
       }
-
-
+      setFadeOut(false);
     }, 500);
   };
 
@@ -107,16 +104,17 @@ export default function Quiz({ onClose, toggleNavElements }) {
     if (totalWeight <= 0) {
       setResultPage('ResultPage1');
       playSound(new Audio('/music/fail.mp3'));
-    } else if (totalWeight == 1) {
+    } else if (totalWeight === 1) {
       setResultPage('ResultPage2');
       playSound(new Audio('/music/success.mp3'))
-    } else if (totalWeight == 2) {
+    } else if (totalWeight === 2) {
       setResultPage('ResultPage3');
       playSound(new Audio('/music/pass.mp3'))
-    } else if (totalWeight == 3) {
+    } else if (totalWeight === 3) {
       setResultPage('ResultPage4');
       playSound(new Audio('/music/tada.m4a'))
-    } else if (totalWeight == 4) {
+      console.log(totalWeight);
+    } else if (totalWeight >= 4) {
       setResultPage('ResultPage5');
       playSound(new Audio('/music/tada.m4a'))
     }

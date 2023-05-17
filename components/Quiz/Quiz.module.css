@@ -108,12 +108,15 @@
     display: flex;
     flex-direction: column;
     gap: 15px;  
+    width: 50%;
 }
   
 .resultsRightCol {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    margin-right: 28px;
     gap: 10px;
+    width: 28%;
 }
 
 .resultsPage {
@@ -130,8 +133,9 @@
 .resultsLeftCol__passed {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 1rem;
+    width: 50%;
 }
 
 .resultsPage__100 {
@@ -144,8 +148,9 @@
 .resultsLeftCol__100 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 1rem;
+    width: 50%;
 }
 
 .introButton {
@@ -209,11 +214,7 @@
     width: 120px;
 }
 
-.resultsRightCol {
-    display: flex;
-    flex-direction: column;
-    width: 37%;
-}
+
 
 .questionResultContainer {
     display: flex;
