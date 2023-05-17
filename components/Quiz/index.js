@@ -89,10 +89,12 @@ export default function Quiz({ onClose, toggleNavElements }) {
   };
 
   const handleIntroButtonClick = () => {
+    playSound(new Audio('/music/start.mp3'))
     setShowIntro(false);
   };
 
   const handleClose = () => {
+    playSound(new Audio('/music/close.mp3'))
     onClose();
   };
 
