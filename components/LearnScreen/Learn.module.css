@@ -33,7 +33,7 @@
 
 .whats{
     position: absolute;
-    top: 11%;
+    top: 33%;
     left: 43.5%;
     z-index: 1;
     width: 190px;
@@ -42,7 +42,7 @@
 
 .why{
     position: absolute;
-    bottom: 68%;
+    bottom: 0%;
     right: 45%;
     z-index: 2;
     width: 230px;
@@ -64,14 +64,14 @@
 .arrow__line01 {
     rotate: -60deg;
     position: absolute;
-    top: 10%;
+    top: 33%;
     z-index: 1;
 }
 
 .arrow__line02 {
     rotate: 60deg;
     position: absolute;
-    top: 15%;
+    top: 48%;
     right: 48%;
     z-index: 1;
 }
@@ -95,7 +95,7 @@
 .animation__container {
     width: 120px;
     position: absolute;
-    top: 16%;
+    top: 48%;
     right: 45%;
     z-index: 1;
     rotate: 90deg;
@@ -104,7 +104,7 @@
 .animation__container02 {
     width: 120px;
     position: absolute;
-    top: 16%;
+    top: 48%;
     right: 47%;
     z-index: 1;
     rotate: 180deg;
