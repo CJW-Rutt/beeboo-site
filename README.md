@@ -65,7 +65,26 @@ The Quiz functions are defined as:
 - The handleClose function is triggered when the activities are closed. It enables the navigation elements and calls the onClose function passed from the parent component.
 - Each step section is rendered based on the step state. The content and images change accordingly.
 
+3. Chart
+- The chart featured in the Pollination learning section was built using ChartJS.
+- The chart displays the amount of honey produced by province in Canada as of 2021, and also serves as a visualization for which province produced the most.
+- All data was pulled from [Stats Canada](https://agriculture.canada.ca/en/sector/horticulture/reports/statistical-overview-canadian-honey-and-bee-industry-2021#a1.4).
 
+### Background Music
+- The background music involves useEffect, useState, new Audio, and two functions named handlePause and handlePlay.
+- Upon clicking the music icon at the top left of the application, the handlePlay function is called which plays the music and changes setIsPlaying to true.
+- When that change happens, the useEffect is triggered and sets the setAudio variable to the sound track.
+- setIsPlaying is set to false by default since many browsers do not support autoplay. It is up to the user if they want to play the background music.
+
+### Sound Effects
+- The sound effects were implemented using useState and a function called playSound.
+- The playSound function is called when users click on certain elements by using the onClick attribute. If successful, the sound effect will be played and if not, the error will be printed to the console.
+
+### Team Page
+- The team page pulls data from the data/team.js file and uses the map() function to dynamically create each team member's icon.
+- When the user clicks on a member's icon, the chooseMember variable is set to false and displays that specific member's information from the same data/team.js file.
+- The user can then close that team member's text bubble to choose someone else.
+- Each team member's text bubble features their name, a description, images of their recent works, and links to their GitHub and LinkedIn.
 
 ### Getting Started
 
