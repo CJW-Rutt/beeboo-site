@@ -4,7 +4,6 @@ import styles from "./Team.module.css"
 import TeamPage from '../team-page';
 
 export default function TeamScreen({ image, toggleNavElements}) {
-  console.log(toggleNavElements);
   return (
     <>
       <TeamPage toggleNavElements={toggleNavElements} />

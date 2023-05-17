@@ -102,7 +102,6 @@ export default function Quiz({ onClose, toggleNavElements }) {
 
   const determineResultPage = useCallback(() => {
     const totalWeight = selectedAnswers.reduce((a, b) => a + b, 0);
-    console.log('Trying to determine Results');
     if (totalWeight <= 0) {
       setResultPage('ResultPage1');
       playSound(new Audio('/music/fail.mp3'));
@@ -164,11 +163,99 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Don't give up yet. Bee's still need your help. They can't survive without you.</p>
                   <p>So let's do a review of all the facts to help bees and make a better future!</p>
                 </div>
-                <div className={styles.questionResult}>
-                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
+                <div className={styles.resultsRightCol}>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageOne ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitleContainer}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageOne'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageOne'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageTwo ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageTwo'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageTwo'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageThree ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageThree'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageThree'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                      {questionAnswers.quizPageFour ? 
+                            <Image 
+                                src="/quiz-icons/trophy.png"
+                                alt="Correct"
+                                width={50}
+                                height={50}
+                            />
+                        : 
+                            <Image 
+                                src="/quiz-icons/wrong.png"
+                                alt="Wrong"
+                                width={50}
+                                height={50}
+                            />
+                      }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageFour'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageFour'][0].h2}</div>  
+                    </div> 
+                  </div>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -189,10 +276,98 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Lets make our bee friends happy and go back to learn more about them!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageOne ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitleContainer}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageOne'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageOne'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageTwo ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageTwo'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageTwo'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageThree ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageThree'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageThree'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                      {questionAnswers.quizPageFour ? 
+                            <Image 
+                                src="/quiz-icons/trophy.png"
+                                alt="Correct"
+                                width={50}
+                                height={50}
+                            />
+                        : 
+                            <Image 
+                                src="/quiz-icons/wrong.png"
+                                alt="Wrong"
+                                width={50}
+                                height={50}
+                            />
+                      }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageFour'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageFour'][0].h2}</div>  
+                    </div> 
+                  </div>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback}  />
@@ -213,10 +388,98 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Keep up the good work, and continue learning about the fascinating world of bees!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageOne ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitleContainer}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageOne'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageOne'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageTwo ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageTwo'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageTwo'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageThree ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageThree'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageThree'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                      {questionAnswers.quizPageFour ? 
+                            <Image 
+                                src="/quiz-icons/trophy.png"
+                                alt="Correct"
+                                width={50}
+                                height={50}
+                            />
+                        : 
+                            <Image 
+                                src="/quiz-icons/wrong.png"
+                                alt="Wrong"
+                                width={50}
+                                height={50}
+                            />
+                      }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageFour'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageFour'][0].h2}</div>  
+                    </div> 
+                  </div>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -237,10 +500,98 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Let's make the future better for everyone together!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageOne ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitleContainer}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageOne'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageOne'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageTwo ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageTwo'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageTwo'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageThree ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageThree'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageThree'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                      {questionAnswers.quizPageFour ? 
+                            <Image 
+                                src="/quiz-icons/trophy.png"
+                                alt="Correct"
+                                width={50}
+                                height={50}
+                            />
+                        : 
+                            <Image 
+                                src="/quiz-icons/wrong.png"
+                                alt="Wrong"
+                                width={50}
+                                height={50}
+                            />
+                      }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageFour'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageFour'][0].h2}</div>  
+                    </div> 
+                  </div>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
@@ -261,10 +612,98 @@ export default function Quiz({ onClose, toggleNavElements }) {
                   <p>Let your people shine!</p>
                 </div>
                 <div className={styles.resultsRightCol}>
-                  <p>Question 1: {questionAnswers.quizPageOne ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 2: {questionAnswers.quizPageTwo ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 3: {questionAnswers.quizPageThree ? 'Correct' : 'Wrong'}</p>
-                  <p>Question 4: {questionAnswers.quizPageFour ? 'Correct' : 'Wrong'}</p>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageOne ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitleContainer}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageOne'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageOne'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageTwo ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageTwo'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageTwo'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                        {questionAnswers.quizPageThree ? 
+                              <Image 
+                                  src="/quiz-icons/trophy.png"
+                                  alt="Correct"
+                                  width={50}
+                                  height={50}
+                              />
+                          : 
+                              <Image 
+                                  src="/quiz-icons/wrong.png"
+                                  alt="Wrong"
+                                  width={50}
+                                  height={50}
+                              />
+                        }
+                      </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageThree'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageThree'][0].h2}</div>  
+                    </div> 
+                  </div>
+                  <div className={styles.questionResultContainer}>
+                    <div className={styles.resultImage}>
+                      {questionAnswers.quizPageFour ? 
+                            <Image 
+                                src="/quiz-icons/trophy.png"
+                                alt="Correct"
+                                width={50}
+                                height={50}
+                            />
+                        : 
+                            <Image 
+                                src="/quiz-icons/wrong.png"
+                                alt="Wrong"
+                                width={50}
+                                height={50}
+                            />
+                      }
+                    </div>
+                    <div className={styles.questionTitle}>
+                      <div className={styles.questionTitle}>{quizQuestions['quizPageFour'][0].h1}</div>  
+                      <div className={styles.questionSubTitle}>{quizQuestions['quizPageFour'][0].h2}</div>  
+                    </div> 
+                  </div>
                 </div>
                 <div className={styles.buttonCol}>
                   <Close onClick={handleClose} onToggleNavElements={toggleNavElementsCallback} />
