@@ -13,17 +13,18 @@
     height: 752px;
     width: 723px;
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 2.5fr 4fr;
     align-items: center;
     justify-content: center;
 }
 
 .text__container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    /* padding-top: 10px; */
+    margin-top: 10px;
 }
 
 .team__description {
@@ -32,8 +33,7 @@
 
 .team__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
     gap: 2rem;
 }

@@ -32,6 +32,7 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
       try {
           if (audio) {
               setAudio(audio);
+              audio.volume = 0.4;
               audio.play();
           }
       } catch (error) {
@@ -64,6 +65,9 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
         {<div 
           className={styles.animation__container} 
           ref={animationContainer1}
+          onClick={() => {
+            playSound(new Audio('/music/boo.mp3'))
+        }}
         />}
 
         <div className={styles.content}>

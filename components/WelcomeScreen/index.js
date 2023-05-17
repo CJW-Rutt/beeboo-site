@@ -20,7 +20,7 @@ export default function WelcomeScreen({ onGetStartedClick }) {
         }
     }
 
-    return(
+    return (
         <>
             <div className={styles.main__container}>
 
@@ -34,7 +34,7 @@ export default function WelcomeScreen({ onGetStartedClick }) {
                         width={70}
                         height={60}
                     />
-                    <WelcomeCard/>
+                    <WelcomeCard />
                 </div>
 
                 <div className={styles.btn__container}>
@@ -43,9 +43,13 @@ export default function WelcomeScreen({ onGetStartedClick }) {
                         width={70}
                         height={60}
                     />
-                    <ButtonGetStarted
-                        onClick={onGetStartedClick}
-                    />
+                    <div className={styles.audio__container} onClick={() => {
+                        playSound(new Audio('/music/start.mp3'))
+                    }}>
+                        <ButtonGetStarted
+                            onClick={onGetStartedClick}
+                        />
+                    </div>
 
                 </div>
 

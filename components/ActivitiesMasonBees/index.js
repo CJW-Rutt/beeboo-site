@@ -7,6 +7,18 @@ import Image from 'next/image'
 
 export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
     const [step, setStep] = useState(0);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const toggleNavElementsCallback = useCallback((isVisible) => {
         if (toggleNavElements) {
@@ -22,15 +34,18 @@ export default function ActivitiesMasonBees({ onClose, toggleNavElements  }) {
     };
     const handleStartPlanting = () => {
         setStep(1);
+        playSound(new Audio('/music/quiz-answer.mp3'))
     }
 
     const handleNext = () => {
         setStep(step + 1);
+        playSound(new Audio('/music/quiz-answer.mp3'))
     }
 
     const handlePrevious = () => {
         if (step > 0) {
             setStep(step - 1);
+            playSound(new Audio('/music/quiz-answer.mp3'))
         }
     }
 

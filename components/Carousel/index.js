@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ActivitiesScreen from '../ActivitiesScreen';
 import IntroScreen from '../IntroScreen';
 import LearnScreen from '../LearnScreen';
@@ -13,6 +13,18 @@ import WelcomeScreen from '../WelcomeScreen'
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showNavElements, setShowNavElements] = useState(false);
+    const [audio, setAudio] = useState();
+
+    const playSound = (audio) => {
+        try {
+            if (audio) {
+                setAudio(audio);
+                audio.play();
+            }
+        } catch (error) {
+            console.log("Error playing audio:", error);
+        }
+    }
 
     const moveToNextScreen = useCallback(() => {
         const index = currentIndex === screens.length - 1 ? currentIndex : currentIndex + 1;
@@ -30,13 +42,13 @@ export default function Carousel() {
     }, []);
 
     const screens = [
-        { component: SplashScreen, props: { onAnimationFinished: moveToNextScreen }},
-        { component: WelcomeScreen, props: { onGetStartedClick: moveToNextScreen }},
-        { component: IntroScreen, props: { toggleNavElements }},
-        { component: LearnScreen, props: { toggleNavElements }},
-        { component: ActivitiesScreen, props: { toggleNavElements }},
-        { component: QuizScreen, props: { toggleNavElements }},
-        { component: TeamScreen, props: { toggleNavElements }}
+        { component: SplashScreen, props: { onAnimationFinished: moveToNextScreen } },
+        { component: WelcomeScreen, props: { onGetStartedClick: moveToNextScreen } },
+        { component: IntroScreen, props: { toggleNavElements } },
+        { component: LearnScreen, props: { toggleNavElements } },
+        { component: ActivitiesScreen, props: { toggleNavElements } },
+        { component: QuizScreen, props: { toggleNavElements } },
+        { component: TeamScreen, props: { toggleNavElements } }
     ];
 
     const navigateToIndex = (index) => {
@@ -44,46 +56,41 @@ export default function Carousel() {
     }
 
     const someStyle = {
-        width: `${100 * screens.length}%`,    
+        width: `${100 * screens.length}%`,
         transform: `translateX(-${(100 / screens.length) * currentIndex}%)`,
     }
 
-    const [audio, setAudio] = useState();
+    useEffect(() => {
+        setTimeout(() => {
+            if (currentIndex === 6) {
+                playSound(new Audio('/music/tada.m4a'));
+              }
+        }, 900);
+      }, [currentIndex]);
+      
 
-    const playSound = (audio) => {
-        try {
-            if (audio) {
-                setAudio(audio);
-                audio.play();
-            }
-        } catch (error) {
-            console.log("Error playing audio:", error);
-        }
-    }
-
-    return(
+    return (
         <>
             <div className={styles.main__container}>
                 <div className={styles.inner__contianer} style={someStyle}>
-                {screens.map((screen, index) => (
-                    <div key={index} style={{ width: `${100 / screens.length}%` }} >
-                        {React.createElement(screen.component, screen.props)}
-                    </div>
-                ))}
+                    {screens.map((screen, index) => (
+                        <div key={index} style={{ width: `${100 / screens.length}%` }} >
+                            {React.createElement(screen.component, screen.props)}
+                        </div>
+                    ))}
                 </div>
             </div>
-            {showNavElements && currentIndex >= 2 && ( 
+            {showNavElements && currentIndex >= 2 && (
                 <div className={styles.nav__buttonrow} onClick={() => {
                     playSound(new Audio('/music/nav.mp3'))
                 }}>
                     {currentIndex !== 0 && (
                         <CarouselArrowRight onClick={moveToPreviousScreen} />
                     )}
-
                     {currentIndex !== screens.length - 1 && (
                         <CarouselArrowLeft onClick={moveToNextScreen} />
-                    )}  
-                    <CarouselNavigationMenu 
+                    )}
+                    <CarouselNavigationMenu
                         onClickLearn={() => navigateToIndex(3)}
                         onClickTeam={() => navigateToIndex(4)}
                         onClickQuiz={() => navigateToIndex(5)}
@@ -109,9 +116,9 @@ const CarouselArrowLeft = ({ onClick }) => {
 const CarouselNavigationMenu = ({ onClickLearn, onClickTeam, onClickQuiz }) => {
     return (
         <div className={styles.navigation}>
-            <Image className={styles.nav__btn} src="./carousel/nav-learn.svg" width={55} height={55} onClick={onClickLearn}/>
+            <Image className={styles.nav__btn} src="./carousel/nav-learn.svg" width={55} height={55} onClick={onClickLearn} />
             <Image className={styles.nav__btn} src="./carousel/nav-team.svg" width={55} height={55} onClick={onClickTeam} />
-            <Image className={styles.nav__btn} src="./carousel/nav-quiz.svg" width={55} height={55} onClick={onClickQuiz}/>
+            <Image className={styles.nav__btn} src="./carousel/nav-quiz.svg" width={55} height={55} onClick={onClickQuiz} />
         </div>
     )
 }
