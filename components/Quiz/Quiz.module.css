@@ -101,22 +101,24 @@
     flex-direction: row;
     padding: 15px 20px;
     padding-left: 50px;
+    width: 100%;
 }
 
 .resultsLeftCol {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 15px;  
 }
   
 .resultsRightCol {
     display: flex;
     align-items: flex-end;
+    gap: 10px;
 }
 
 .resultsPage {
     height: 88%;
-    width: 80%;
+    width: 87%;
     margin-left: 1.6rem;
 }
 
@@ -135,6 +137,8 @@
 .resultsPage__100 {
     width: 95%;
     margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .resultsLeftCol__100 {
@@ -205,8 +209,32 @@
     width: 120px;
 }
 
-.resultsRightCol img {
-    padding-top: 22px;
+.resultsRightCol {
+    display: flex;
+    flex-direction: column;
+    width: 37%;
+}
+
+.questionResultContainer {
+    display: flex;
+
+}
+
+.resultImage {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    min-width: 50px;
+}
+
+.questionTitle {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.questionSubTitle {
+    font-weight: normal;
+    font-size: 16px;
 }
 
 @keyframes fadeOut {

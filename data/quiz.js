@@ -1,7 +1,7 @@
 export const quizQuestions = {
     'quizPageOne': [
         {
-            'h1': 'Question One:',
+            'h1': 'Question 1:',
             'h2': 'How would you set up a bee hive?',
             '1': 'The first step in taking care of mason bees is setting up a safe and comfortable environment for them to live in.',
             '2': 'So, let\'s start with our first question: How would you set up your bee hive?',
@@ -31,7 +31,7 @@ export const quizQuestions = {
             'h1': 'Question 4:',
             'h2': 'Why is supporting local farmers beneficial for bees?',
             '1': 'You\'re doing great! Now, for the final question. ',
-            '2': 'Supporting local farmers can help maintain the natural habitats that bees need. It also promotes organic farming, which reduces bees\' exposure to harmful chemicals. But how else does it help?',
+            '2': 'Supporting local farmers can help maintain the natural habitats that bees need.',
             '3': 'Think about the impact of buying local on our environment and climate change. Good luck!',
         },
     ],
@@ -93,18 +93,18 @@ export const quizButtons = {
     ],
     'quizPageFour': [
         {
-            'answerOne': 'Reduces the use of synthetic pesticides',
-            'src': '/quiz-icons/ramen.png',
+            'answerOne': 'Reduce the use of synthetic pesticides!',
+            'src': '/quiz-icons/pesticide.png',
             'weight': 1,
         },
         {
-            'answerTwo': 'Provides them with cozy blankets',
-            'src': '/quiz-icons/ramen.png',
+            'answerTwo': 'Provide them with cozy blankets!',
+            'src': '/quiz-icons/blanket.png',
             'weight': 0,
         },
         {
-            'answerThree': 'Teaches them how to dance',
-            'src': '/quiz-icons/ramen.png',
+            'answerThree': 'Teach them how to dance!',
+            'src': '/quiz-icons/dance.png',
             'weight': 0,
         },
     ],
