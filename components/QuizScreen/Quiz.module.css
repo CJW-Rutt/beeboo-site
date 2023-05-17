@@ -64,7 +64,7 @@
 .arrow__line {
     rotate: 50deg;
     position: absolute;
-    top: 15%;
+    top: 45%;
     right: 19%;
     z-index: 1;
 }
