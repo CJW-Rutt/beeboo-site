@@ -42,11 +42,6 @@
     z-index: 1;
 }
 
-.quizButtonPrimary:hover {
-    margin-bottom: -0.5rem;
-    margin-right: -0.5rem;
-}
-
 .answerText {
     width: 90%;
     text-align: center;
