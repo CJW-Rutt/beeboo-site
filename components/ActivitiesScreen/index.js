@@ -108,12 +108,7 @@ export default function ActivitiesScreen({ image, toggleNavElements }) {
         width={200}
       />
 
-      <Image
-        className={styles.cloud03}
-        src="./carousel/cloud-2.svg"
-        height={100}
-        width={200}
-      />
+
 
     </div>
   );
